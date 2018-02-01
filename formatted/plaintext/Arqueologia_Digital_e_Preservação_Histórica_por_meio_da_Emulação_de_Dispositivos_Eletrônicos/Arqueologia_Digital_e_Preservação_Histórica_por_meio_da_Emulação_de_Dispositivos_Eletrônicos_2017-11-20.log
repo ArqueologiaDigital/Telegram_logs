@@ -1,0 +1,239 @@
+[2017-11-20 02:42:32] Felipe "Juca" Sanches added Manoel Lemos
+[2017-11-20 03:20:47] Existe uma piada recorrente de que o MAME hoje em dia emula de tudo ao ponto que algum dia teremos até emulação de cafeteira. Dito isso... eu adoraria um dia tornar real essa piada. Alguém tem acesso a uma dessas máquinas com ficha que fazem vários tipos diferentes de café, capuccino, chocolate quente, etc ? Aquelas que tem display LCD mostrando o preço e vários botóes pra escolher, sabe?
+[2017-11-20 03:21:08] Só pela farra :-D
+[2017-11-20 03:21:17] 😂
+[2017-11-20 03:21:32] ei, cara, vai dormir!
+[2017-11-20 03:21:40] Vc olhou lá o site arqueologia. Org?
+[2017-11-20 03:21:59] Tava mexendo nele até uma meia hr atras
+[2017-11-20 03:22:07] uia!
+[2017-11-20 03:22:07] vi agora
+[2017-11-20 03:22:07] que legal
+[2017-11-20 03:22:33] Foi na raça esse slidesbowzinho
+[2017-11-20 03:22:51] Slideshowzinho
+[2017-11-20 03:22:57] :-)
+[2017-11-20 03:23:15] 👍🏻
+[2017-11-20 03:23:25] Vou dormir agora.
+[2017-11-20 03:23:45] beleza
+[2017-11-20 03:23:51] eu tava estudando o CP400
+[2017-11-20 03:24:04] Eu tbm tenho um
+[2017-11-20 03:24:38] por conta de umas informações que o Manoel Lemos me passou
+[2017-11-20 03:24:45] sobre o layout do Color II
+[2017-11-20 03:24:56] layout de teclado
+[2017-11-20 03:25:00] tem 4 teclas adicionais
+[2017-11-20 03:25:46] aí eu documentei no driver a diferença:
+[2017-11-20 03:25:47] https://github.com/felipesanches/mame/commit/48a3c6c4e6509ce75dbd5094513a059ac30e319b
+[2017-11-20 03:26:07] mas eu nao sei como se usa essas teclas na prática
+[2017-11-20 03:26:33] ouvi dizer que sao teclas reprogramaveis, mas nao achei em lugar nenhum a descrição de como se faz essa reprogramação
+[2017-11-20 03:27:18] então eu fiquei fuçando no debugger pra tentar achar o pedaço do código que detecta o pressionamento dessas teclas adicionais
+[2017-11-20 03:28:08] mas o assembly do M6809 é meio estranho pra mim
+[2017-11-20 03:28:15] Amanhã eu vou pegar o meu CP400 q tá na caixa e olhar se tem o manual junto. Eu não me lembro.
+[2017-11-20 03:28:37] Estranho como assim?
+[2017-11-20 03:28:47] não to muito acostumado ainda, entao tem varias instruções que eu não conheço, o que torna a leitura do código um pouco mais complicada
+[2017-11-20 03:29:34] eu acho engraçado como a gente fica feito barata tonta pulando de um sistema pra outro o tempo todo
+[2017-11-20 03:29:49] mas acho que é algo inerente a esse tipo de pesquisa
+[2017-11-20 03:30:02] ir tateando aos poucos tudo o que aparece pela frente
+[2017-11-20 03:30:10] e de vez enquando encontrar ouro
+[2017-11-20 03:30:14] Pois é. Eu to com duas coisas encostadas no MAME q preciso continuar
+[2017-11-20 03:30:41] Na vdd to parado por enrosco no código mesmo...
+[2017-11-20 03:31:03] Difícil entender aquilo sem ter prática.
+[2017-11-20 03:41:41] e o que é?
+[2017-11-20 03:50:52] bom, diz aí que amanhã eu respondo
+[2017-11-20 03:50:52] to indo dormir
+[2017-11-20 03:52:09] Fica uma dica. Tem um Reddit sobre o MAME. Cheio de gente fazendo perguntas superficiais, mas de vez em quando com anúncios de novos releases (e conversas) dos desenvolvedores.
+[2017-11-20 03:53:04] https://www.reddit.com/r/MAME/
+[2017-11-20 03:54:44] Por exemplo, esse anúncio do release da versão 0.191 lançada mês passado: https://www.reddit.com/r/MAME/comments/78lb1c/mame_0191/
+[2017-11-20 07:16:06] Tem uma no IME na USP
+[2017-11-20 09:52:41] :-)
+[2017-11-20 09:53:05] claro, mas pressuponho que náo seja acessível para abrirmos e extrairmos a ROM, certo ?
+[2017-11-20 16:00:38] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804729011_52982.jpg
+[2017-11-20 16:01:00] Completissimo.
+[2017-11-20 16:02:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514183_44746.jpg
+[2017-11-20 16:02:28] Lindo ele. 😍
+[2017-11-20 16:04:25] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804729543_52937.jpg
+[2017-11-20 16:04:42] opa!
+[2017-11-20 16:05:05] compartilha essas lá no Fiozera! Já tem uma thread lá sobre o CP400 color II do Armando Neto.
+[2017-11-20 16:05:16] Seria legal juntar esse su relato lá na mesma thread
+[2017-11-20 16:05:31] estou escrevendo sobre o CP400 no MAME agora lá também
+[2017-11-20 16:05:50] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512967_44805.jpg
+[2017-11-20 16:06:01] Vou la
+[2017-11-20 16:06:25] E desses manuais eu vou tirar umas fotos detalhadas sobre o teclado
+[2017-11-20 16:07:12] legal
+[2017-11-20 16:08:24] Eu tenho o CP-400 Color II funcionando em casa tb. Para fotos e tudo mais.
+[2017-11-20 16:09:13] confirma pra mim o que aparece na tela logo depois de ligar, ao pressionar cada uma das seguintes teclas: CTRL, PA1, PA2 e PA3
+[2017-11-20 16:13:04] Pra mim vai ser meio complicado liga-lo no conector RF da tv
+[2017-11-20 16:13:42] Eu até tenho o cabo do monitor mas ele é com conector DIN
+[2017-11-20 16:17:48] entendi
+[2017-11-20 16:18:15] bom... em algum momento podemos fazer o teste lá no Garoa ligando ao projetor, como fizemos com o cp400 color II do Manoel Lemos
+[2017-11-20 16:18:57] ou, mais fácil ainda, o próprio Manoel pode fazer os testes no dele, já que ele tem um bom setup montado já no laboratório pessoal da casa dele
+[2017-11-20 16:19:43] Farei em alguns minutos. Tô indo pra casa.
+[2017-11-20 16:20:00] :-)
+[2017-11-20 16:28:24] Seria bom se eu tivesse um espaço suficientemente bom aqui em casa pra deixar essas minhas "tranqueiras" ligadas.
+[2017-11-20 16:29:25] Eu posso estar enganado, mas esse conector de saída pra monitor penso ser video composto. Deve haver algum manual de serviço do CP400 online (vou pesquisar) pra tirar essa minha dúvida.
+[2017-11-20 16:30:00] Pois daí seria relativamente fácil transformar o conector de saída RCA (originalmente RF) num conector de saída vídeo composto.
+[2017-11-20 16:37:11] Já fiz isto! Funciona!
+[2017-11-20 16:38:46] Estou olhando um "esquemático" dele, mas estou com dificuldade em localizar a saída do VDP/conector DIN de vídeo...
+[2017-11-20 16:39:24] http://files.datassette.org/manuais/manual_tecnico_cp400.pdf?file=1&type=node&id=1708&force=
+[2017-11-20 16:39:34] O cara escaneou o esquema em 2 metades.
+[2017-11-20 16:39:44] http://googleweblight.com/?lite_url=http://www.luccas.com.br/index.php/8-bits/pinagens/27-cp-400&ei=cRmCUcTU&lc=en-BR&s=1&m=540&host=www.google.com.br&ts=1511203159&sig=ANTY_L3oj9LvmgT9kLkCmHYVOgrt5_IQqA
+[2017-11-20 16:39:53] Neste link tem os conectores.
+[2017-11-20 16:41:32] É do mesmo cara q escaneou o manual técnico. Dá pra fazer uma furação a mais na traseira, fixar 2 RCA e fazer ligação direta pra sair áudio/vídeo separadamente...
+[2017-11-20 16:41:51] usando cabo blindado.
+[2017-11-20 16:42:12] vou dar uma abrida no meu aqui e ver como está o espaço interno
+[2017-11-20 17:02:47] http://www.luccas.com.br/index.php/8-bits/pinagens/27-cp-400  (pra eu mesmo abrir do outro PC)
+[2017-11-20 17:29:15] fiz uns posts lá no Fiozera sobre esse estudo do CP400 e outros clones nacionais do Color Computer: https://forum.fiozera.com.br/t/tirando-da-caixa-um-cp-400-color-ii-da-prologica/88/4
+[2017-11-20 18:04:55] Caros, vejam o que consegui sobre as teclas:
+[2017-11-20 18:05:08] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723970_75064.jpg
+[2017-11-20 18:05:28] Tela é o que sai na tela.
+[2017-11-20 18:05:45] O restante é o que capturei com um programa em BASIC que lê o teclado.
+[2017-11-20 18:10:40] Que legal!
+[2017-11-20 18:11:04] Manoel, sobre essa sua imagem lá no Fiozera! Junto com um relato do que você fez
+[2017-11-20 18:11:17] E o azul aí na foto, na verdade é aquele quase branco do CP400.
+[2017-11-20 18:11:47] eu não vou poder lidar com isso agora por que preciso voltar a trabalhar (sim, no feriado). Mas mais tarde eu vejo o que você tiver publicado por aqui ou por lá e adapto no código do MAME
+[2017-11-20 18:12:15] Belê!
+[2017-11-20 18:12:21] https://forum.fiozera.com.br/t/tirando-da-caixa-um-cp-400-color-ii-da-prologica/88
+[2017-11-20 18:12:26] Té mais!
+[2017-11-20 18:13:59] aqui no chat a gente bate papo, discute essas coisas enquanto ainda não temos certeza. Lá no Fiozera a gente costuma passar as coisas a limpo. Então é meio redundante sim, mas é uma forma de ter um relato mais bonito e organizado para o público lá. E um espaço de discussão dos detalhes aqui. É assim que a coisa parece ter funcionado na minha cabeça ;-)
+[2017-11-20 18:14:21] São vários canais de comunicação mas acho que conseguimos tirar bom proveito do melhor de cada um deles.
+[2017-11-20 18:15:08] Sim. As idéias fervilham por aqui, qdo vemos q vai amadurecer, passamos a limpo lá no fiozera
+[2017-11-20 18:15:23] Estou com meu CP400 todo aberto aqui.
+[2017-11-20 18:15:27] hehehe
+[2017-11-20 18:15:39] Falou pessoal! Happy Hacking!
+[2017-11-20 18:15:46] E já atualizei o site com as fotos novas
+[2017-11-20 18:16:40] Ah! Um aviso, Manoel. Esse chat tem log público hospedado no Github Pages e sincronizado de vez em quando (manualmente ainda).
+[2017-11-20 18:17:40] @fsanches vc acha conveniente botar um link pra acesso direto a esse log no site?
+[2017-11-20 18:21:25] sim.
+[2017-11-20 18:22:10] por enquanto tá junto com os logs do Telegram do Garoa Hacker Clube: https://garoa.github.io/Telegram_logs_Garoa_Hacker_Clube_Publico/formatted/html/
+[2017-11-20 18:22:52] Vou postar com acesso a esse link: https://garoa.github.io/Telegram_logs_Garoa_Hacker_Clube_Publico/formatted/html/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos%231-0.html
+[2017-11-20 19:43:53] Sabe, quanto mais eu olho pra essa plaquinha do meu CP400 mais eu penso q seria legal portabilizá-lo? Ele já é compacto de certa forma. Tem só a fonte e o modulador RF que ocupam espaço
+[2017-11-20 19:44:07] hehe
+[2017-11-20 19:44:09] e aqueles conectores todos
+[2017-11-20 19:44:12] eu pensei nisso hoje mais cedo
+[2017-11-20 19:44:16] pensou?
+[2017-11-20 19:44:19] sim
+[2017-11-20 19:44:48] botar ele num case de acrílico ou impresso na 3D, juntar um display LCD de 4 a 7"...
+[2017-11-20 19:45:29] retirar o teclado da parte superior do gabinete, ou mesmo construir um novo, usando aquelas chavinhas micro-switch de pressão
+[2017-11-20 19:46:36] eu não sei pra q esse conector da fonte tem 5 terminais... só to vendo um 7805 ali. Vou dar uma espiada no esquema rapidinho.
+[2017-11-20 19:49:21] pensei em possibilidades similares ao ver as fotos desse aqui: http://amxproject.com/?p=2146
+[2017-11-20 19:54:35] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727263_52750.jpg
+[2017-11-20 19:56:18] Agora to vendo no CP400 q tem um TL097 tbm... ele gera tensões de 12 / -12 / -5
+[2017-11-20 19:57:25] o projeto da prológica é muito superior a esse, se nota de cara.
+[2017-11-20 20:00:25] os 8 chips de RAM podem ser trocados por um único hoje em dia
+[2017-11-20 20:00:38] hehehe
+[2017-11-20 20:01:14] cara essa placa do MX-1600 dá nojo... rss
+[2017-11-20 20:01:30] CIs muito mal distribuídos...
+[2017-11-20 20:02:24] colocando os componentes espremidos um do lado do outro, configurando o kicad pra usar uma única camada e usando um auto-router talvez dê pra fazer uma placa nova beeeem mais compacta e possivelmente com um número bem menor de jumpers
+[2017-11-20 20:05:14] é basicamente o q vc já tem no CP400. Se vc ainda retirar a parte extra com o modulador RF e conector para cartuchos (q poderia ser reconectado à pci principal por meio de um flat), fica hiper-compacto.
+[2017-11-20 20:06:56] se bobear, o limite é o tamanho do LCD e do teclado que você deseja
+[2017-11-20 20:06:59] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725627_73199.jpg
+[2017-11-20 20:07:27] É. Isso tá bem bom!
+[2017-11-20 20:07:39] E tentar ver a questão da fonte... com esses +12/-12/-5... talvez isso seja necessário apenas pra interface serial e/ou cassete
+[2017-11-20 20:07:55] Porra os caras da Prológica foram ninjas nessa pci!
+[2017-11-20 20:08:29] Para portabilidade, não é bacana essas tensões todas. O ideal seria enxugar o desnecessário.
+[2017-11-20 20:10:46] Até para de repente possibilitar alimentar o micrinho com uma bateria LiPo...
+[2017-11-20 20:23:38] Manoel, qual interface você usou para extrair a ROM? Um cabo FTDI (Serial-USB) ligado ao Mac ?
+[2017-11-20 20:26:05] Sabe o que seria bem divertido? Tem um comentário que o Marcelo Junio Teixeira fez lá no Fiozera agora dizendo que uma hipótese para as teclas Ctrl, PA1, PA2, PA3 seriam para implementar uma solução de emulação de terminal IBM 3270, mas que nunca ninguém viu isso acontecer de verdade.
+[2017-11-20 20:27:19] Inspirado por esse comentário, e também pelas experiências que fizemos ultimamente lá na USP com terminais da Scopus (https://forum.fiozera.com.br/t/terminais-seriais-da-scopus-modelos-sagitta-150-e-sagitta-180/154) acho que uma idéia pra um projeto bacana seria implementar um terminal serial usando o CP400 e ligá-lo a um laptop configurado pra abrir um console de login via serial
+[2017-11-20 20:35:27] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728116_54048.jpg
+[2017-11-20 20:36:01] Desculpa a pergunta, mas essas teclas especiais, são onde?
+[2017-11-20 20:36:43] vc viu o post no fiozera ja ?
+[2017-11-20 20:37:13] no teclado da IBM eles ficam mais ou menos onde em teclados atuais temos as teclas insert, home e page up
+[2017-11-20 20:37:20] não... me entretive aqui com o CP400
+[2017-11-20 20:37:23] pera
+[2017-11-20 20:37:36] deixa eu me inteirar pra não dar uma de manézim
+[2017-11-20 20:37:40] no CP400 Color II ficam no canto superior direito do layout do teclado
+[2017-11-20 20:37:55] aaaaah
+[2017-11-20 20:38:03] vc disse uma coisa importantíssima
+[2017-11-20 20:38:07] II
+[2017-11-20 20:38:08] aliás... eu tinha feito um comentário lá no fiozera sobre reuso do molde
+[2017-11-20 20:38:33] e agora essa sua foto sobre o teclado sair por completo resolve o mistério
+[2017-11-20 20:38:36] posta lá essa foto
+[2017-11-20 20:38:53] não é adaptação do molde da carcaça. É exatamente a mesma carcaça !!!
+[2017-11-20 20:39:14] :-D
+[2017-11-20 20:40:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728068_54398.jpg
+[2017-11-20 20:40:11] O meu é o de cima
+[2017-11-20 20:40:52] Eu to quase me convencendo a fazer esse meu aqui virar portable
+[2017-11-20 20:40:58] 92%
+[2017-11-20 20:49:41] Sim. FTDI, mas tive que montar um circuito externo com um transistor para inverter o sinal.
+[2017-11-20 20:50:19] Ali na foto... O protoboard é este inversor do sinal.
+[2017-11-20 20:51:08] Eu animaria muito a refazer este projeto com componentes modernos e meter uma telinha LCD nele. Quem anima?
+[2017-11-20 20:51:13] seria muito divertido levantar as informações sobre qual é o protocolo mímino necessário para se fazer um terminal serial compatível com uma sessão se login no GNU/Linux
+[2017-11-20 20:51:43] Acho que é bem tranquilo fazer isto.
+[2017-11-20 20:52:32] Eu fiquei sonhando acordado com algum módulo LCD/touch-screen que pudesse encaixar perfeitamente ali naquele lugar onde hoje vai o teclado
+[2017-11-20 20:53:16] talvez usar as teclas PA1,2,3 para alternar o modo do display. Pra mostrar o próprio desenho do teclado original do cp400, ou do teclado do color II
+[2017-11-20 20:53:23] ou uma imagem do que iria para a tela
+[2017-11-20 20:53:45] mas é pouco prático só poder digitar no teclado ou ver a tela
+[2017-11-20 20:53:49] Haha, massa!
+[2017-11-20 20:55:58] o chato é que pra colocar um LCD e touchscreen provavelmente precisaria ter alguma outra CPU pra tomar conta dessas coisas. E aí o controle do display seria zilhares de vezes mais poderoso que o dispositivo original em si
+[2017-11-20 20:58:01] A forma mais simples de botar um LCD ali seria utilizando um desses prontos, pra câmera de ré, do DX que aceite entrada vídeo composto
+[2017-11-20 20:58:14] é
+[2017-11-20 20:58:17] faz sentido
+[2017-11-20 20:58:20] só q eu acho q nesse caso vc não encontra um com touch screen
+[2017-11-20 20:58:40] só que aó você colocaria onde?
+[2017-11-20 20:58:50] Faria uma carcaça completamente nova ?
+[2017-11-20 20:58:58] Exato
+[2017-11-20 20:59:15] Totalmente, só aproveitaria o teclado original, q eu já retirei da carcaça velha
+[2017-11-20 20:59:35] E mataria a RS-232
+[2017-11-20 20:59:35] Daria para remontar a placa toda? Ou teríamos problemas para conseguir alguns deles?
+[2017-11-20 21:00:00] Esse CI da Texas acho q é bem mosca branca
+[2017-11-20 21:00:11] bom... é mais ou menos um certo pecado destroçar um desses hehehe
+[2017-11-20 21:00:12] 74LS783
+[2017-11-20 21:00:23] mas daria pra dessoldar os componentes e botar tudo em soquete na placa nova
+[2017-11-20 21:00:27] Bom depende da visão, lógico.
+[2017-11-20 21:00:35] Os puristas iriam querer me enforcar
+[2017-11-20 21:00:56] Mas eu to vendo isso com outros olhos... na verdade a idéia de fazer isso me seduz bastante
+[2017-11-20 21:01:38] Esse é o cerne do problema, Werner. A gente não pára de ter idéias novas de projetos... O difícil é a gente terminar os que já começamos...
+[2017-11-20 21:02:10] KKK
+[2017-11-20 21:02:22] Eu sofro com esse excesso de processo criativo dificultando a execução dos projetos anteriores
+[2017-11-20 21:02:26] Ainda to olhando o esquema pra levantar todos os pontos de +12/-12/-5 - já vi q a parte dos 12V é bem na serial
+[2017-11-20 21:02:39] Não é só vc. Nós tendemos a pensar assim
+[2017-11-20 21:02:43] em múltiplas threads
+[2017-11-20 21:02:49] Só sei que me diverti neste feriado. ;-)
+[2017-11-20 21:03:07] Caros, vou ter que me desconectar. Pessoal chegou em casa.
+[2017-11-20 21:03:16] té mais, Manoel!
+[2017-11-20 21:03:39] Vê se consegue depois fazer uns comentários lá no Fiozera com aquela imagem do mapeamento que vc fez do teclado
+[2017-11-20 21:03:43] Se vc for olhar as minhas tralhas, tem até trafo toroidal (2x), transístores de potência, capacitores, pontes de diodo pra 75V e duas PCIs q eu mandei fazer pra um amplificador de potência q eu nunca comecei a construir
+[2017-11-20 21:03:50] é o gancho pra eu escrever mais um pouquinho também
+[2017-11-20 21:04:22] Eu penso q, pra gente poder ter algum sucesso palpável, precisamos endireitar os pensamentos.
+[2017-11-20 21:04:26] É fato.
+[2017-11-20 21:05:02] Na minha visão particular, eu acho q deveriamos terminar o PF
+[2017-11-20 21:05:20] Essa coisa de fazer um site para organizar os conteúdos para visitantes ajuda bastante a organizar as idéias
+[2017-11-20 21:05:30] os posts no Fiozera também ajudam bastante nesse sentido
+[2017-11-20 21:05:45] já aqui no Telegram é o CAOS !
+[2017-11-20 21:05:50] é
+[2017-11-20 21:06:07] concordo!
+[2017-11-20 21:06:13] mas acho q a gente precisa se engajar num único objetivo. Pra só depois passarmos ao próximo.
+[2017-11-20 21:06:32] Senão fica um monte de idéias não-acabadas em cima da bancada.
+[2017-11-20 21:06:50] Painel emulado e PCBs do decodificador e debugger didático da CDE-3, são os projetos prioritários a curto prazo
+[2017-11-20 21:06:59] Boa!
+[2017-11-20 21:07:18] E eu to 100% a fim de disponibilizar todo o meu esforço nesse sentido.
+[2017-11-20 21:07:22] o site é secundário, mas importante também para o amadurecimento de uma comunidade
+[2017-11-20 21:07:46] O site eu faço com um pé nas costas, modéstia à parte, como vc já deve ter notado.
+[2017-11-20 21:08:13] Só o pessoal expressar as idéias. Eu tendo novas idéias, tbm coloco lá.
+[2017-11-20 21:08:31] o site é a parte mais fácil. Só precisamos ter mais conteúdo pra apresentar.
+[2017-11-20 21:08:48] quanto a ter multiplos projetos em paralelo, eu acho OK (e pra ser sincero, inevitável). Mas desde que haja trabalho constante intercalando entre os projetos. Dando um passinho em cada um. Multiplexando o avanço em vários projetos...
+[2017-11-20 21:09:30] Isso pode ser possível. Uma vez q em um projeto acabe alguma coisa enroscando, podemos focar em outro até aparecer uma solução.
+[2017-11-20 21:09:39] eu tenho projetos pessoais meus que eu nem escrevi ainda no Fiozera, mas acho que devia
+[2017-11-20 21:09:57] ultimamente eu entrei nesse rítmo de "brain-dump"
+[2017-11-20 21:10:13] Mas se, por exemplo, temos os recursos pra finalizar uma idéia, não há nada que impeça ela de seguir adiante, então toquemos.
+[2017-11-20 21:11:18] tentando escrever posts sobre coisas que fiz no passado mas não documentei e acabou ficando perdido em algum repositório de código antigo (como no Google Code) ou em backups de um servidor da USP que saiu do ar, mas tenho cópias dos arquivos no meu laptop, ou até mesmo projetos cuja descrição e memória ficaram apenas dentro da minha cabeça
+[2017-11-20 21:11:30] É bom despejar o conteúdo mental no fiozera, isso deixa a semente plantada e evita esquecimentos. Meu post do consolezinho Sega está lá, e eu acho q vou dar um update colocando a minha idéia de desenhar um case novo pra ele no 123-D e posteriormente imprimir na 3D
+[2017-11-20 21:11:38] eu tenho uma necessidade muito grande de botar essas coisas pra fora. Torná-las públicas e mais acessíveis.
+[2017-11-20 21:12:45] O RicBit me deu exatamente essa dica uns 12 anos atrás...
+[2017-11-20 21:12:48] eu acho
+[2017-11-20 21:14:58] 😊
+[2017-11-20 21:15:15] parece que eu demorei uns 12 anos pra aprender :-P
+[2017-11-20 21:15:19] O Manoel Lemos q temos aqui no Telegram por acaso é esse aqui? http://blog.fazedores.com/colaborador/manoel-lemos/
+[2017-11-20 21:15:55] Sim, ele mesmo. Ele é amigo do Felipe Sanches também: http://blog.fazedores.com/colaborador/felipe-juca-sanches/
+[2017-11-20 21:16:18] Ah olha só
+[2017-11-20 21:16:22] Nunca ouvi falar desse
+[2017-11-20 21:16:53] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_328774854541050158.webp
+[2017-11-20 21:17:08] Conhece esse cara? https://www.linkedin.com/in/wernermoecke/
+[2017-11-20 21:18:22] Ei! Quer almoçar na 4a feira aqui perto de casa? Eu devo me encontrar com o Armando Neto, que é um dos criadores do Fiozera.
+[2017-11-20 21:18:56] Claro, será legal
+[2017-11-20 21:18:59] Vamos combinar os detalhes em chat privado, então.
+[2017-11-20 21:19:22] 👍🏻
+[2017-11-20 22:35:48] @Manoel, projeto assim "meio que" já existe. O Victor Trucco fez a Multicore ano passado, uma placa que sintetiza praticamente todos os sistemas 8-bits da época em uma FPGA. Ele chegou a fabricar em escala e vendeu várias pros amigos dele.
+[2017-11-20 22:35:50] https://www.victortrucco.com/Multicore/Multicore
+[2017-11-20 22:37:53] Essa plaquinha segue a mesma arquitetura que ele usou na TBBlue, que eu tenho, ela sintetiza todos os micros da família Sinclair. Eu montei a minha dentro de uma carcaça do TK90X que eu tinha aqui, ela serve direitinho. Essa Multicore vai mais além - vc só precisa carregar a FPGA com os binários e tem todos os sistemas (listados na página dele).
+[2017-11-20 22:38:43] Eu digo "meio que" pois ele não costuma dar continuidade à produção das placas dele, a não ser q haja uma demanda enorme. Depois q faz uma fornada, dificilmente sai outra.
+[2017-11-20 22:59:25] Complementando o meu último comentário, parece que vai haver uma versão expandida da Multicore (v2), que segundo o próprio Victor comentou no início do mês (https://www.facebook.com/groups/retrocomputaria/permalink/1550526435005054/) tem previsão de lançto pro ano q vem.

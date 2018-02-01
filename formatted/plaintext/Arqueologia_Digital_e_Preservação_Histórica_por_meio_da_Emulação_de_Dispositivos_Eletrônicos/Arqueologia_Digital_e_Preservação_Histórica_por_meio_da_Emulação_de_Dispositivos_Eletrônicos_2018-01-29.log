@@ -1,0 +1,152 @@
+[2018-01-29 10:47:49] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806122118_33297.jpg
+[2018-01-29 10:47:57] Protótipo de um disco em cartucho, da Univac, com 2,2mb de capacidade
+[2018-01-29 10:48:04] (1966)
+[2018-01-29 10:48:29] wow!
+[2018-01-29 10:49:45] Nesse domingo eu gravei um episódio novo para o Happy Hacking Video Blog sobre essa leitora de fitas perfuradas. Deve ser publicado em breve (talvez semana que vem) lá no canal do Youtube: https://www.youtube.com/c/HappyHackingVideoBlog
+[2018-01-29 15:14:41] Yo juca
+[2018-01-29 15:14:41] Yay!
+[2018-01-29 15:14:41] Eu tirei a placa mae do scopus pra tirar umas fotos high rez dessa desgraça
+[2018-01-29 15:14:41] E eu vi isso aqui
+[2018-01-29 15:14:41] legal
+[2018-01-29 15:14:41] manda
+[2018-01-29 15:14:41] achou alguma novidade ?
+[2018-01-29 15:14:41] Isso é uma rom né
+[2018-01-29 15:14:41] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121381_32844.jpg
+[2018-01-29 15:14:41] Sim, só que não sei se o nosso leitor sabe ler isso
+[2018-01-29 15:14:41] teria que anotar o que está escrito na etiqueta e qual a posição desse chip na PCB antes de tirar
+[2018-01-29 15:14:41] e só depois de tirar a foto e anotar as infos podemos remover a etiqueta pra ver qual o código do chip (debaixo da etiqueta)
+[2018-01-29 15:14:41] a nao ser que tenha algo escrito na propria pcb
+[2018-01-29 15:14:41] aí dá pra evitar de zoar a etiqueta
+[2018-01-29 15:14:41] veja se a pcb tem o código do chip
+[2018-01-29 15:14:41] modelo da eprom
+[2018-01-29 15:14:42] aposto que é uma PAL ou GAL
+[2018-01-29 15:14:42] mas pode ser outra coisa também
+[2018-01-29 15:14:42] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806120194_33038.jpg
+[2018-01-29 15:14:42] essa PROMzinha aí deve ser usada para configuração de mapeamento de memória ou algo similar
+[2018-01-29 15:14:42] TBP 28L22
+[2018-01-29 15:14:42] deve ser isso
+[2018-01-29 15:14:42] vamos dar uma googlada
+[2018-01-29 15:16:29] Alem desse chipzinho
+[2018-01-29 15:16:31] Tem esses
+[2018-01-29 15:16:46] http://www.alldatasheet.com/datasheet-pdf/pdf/28766/TI/TBP28L22MJ.html
+[2018-01-29 15:17:00] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514860_84371.jpg
+[2018-01-29 15:17:12] Um deles tem o mesmo codigo dessa epromzinha ai
+[2018-01-29 15:20:06] Na lista de devices suportados pelo leitor "universal" MiniPRO eu não achei 28L22. Tem um código similar lá que talvez tenha algum nivel de compatibilidade, mas eu não arriscaria sem ter certeza. Teria que estudar melhor.
+[2018-01-29 15:20:14] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121753_33582.jpg
+[2018-01-29 15:22:24] Em vez de arriscar, prefiro montar um leitor usando um Arduino seguindo esse diagrama aqui:
+[2018-01-29 15:22:33] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723115_124276.jpg
+[2018-01-29 15:24:20] Basta ligar os sinais /G1 e /G2 em GND e ligar todos os A[n] e Q[n] em pinos digitais do arduino
+[2018-01-29 15:24:43] veja, entretanto, que não tem pino suficiente num Arduino pra ligar tudo isso ao mesmo tempo hahaha
+[2018-01-29 15:24:59] (mas existe um truquezinho pra lidar com esse problema)
+[2018-01-29 15:25:55] hmmm... na verdade tem pino suficiente sim, usando os pinos analógicos configurados como pinos digitais também
+[2018-01-29 15:26:10] 8 bits de endereçamento + 8 bits de dados = 16 sinais
+[2018-01-29 15:26:59] vc precisa reservar os pinos digitais D0 e D1  para a interface USB-Serial com o PC, mas pode usar os outros 12 (de D2 até D13)
+[2018-01-29 15:27:03] Chute: CsIBM decodifica os endereços de I/O compatíveis com o PC IBM e CsScopus os endereços das portas específicas da Scopus
+[2018-01-29 15:27:26] e aí pode usar A0, A1, A2 e A3 configurados como pinos digitais para ter mais 4 sinais.
+[2018-01-29 15:28:07] Isso seria ótimo! Pois nos dá exatamente o que precisamos para implementar o emulador no MAME. O memory-map do 8088
+[2018-01-29 15:28:31] Aquela prom marcada como Ram deve ser a seleção dos chips da Ram.
+[2018-01-29 16:01:33] Os 4 chips sao tbp28l22n
+[2018-01-29 16:01:41] Eu tirei o adesivo de um deles
+[2018-01-29 16:01:49] E ta escrito a mesma coisa no chip
+[2018-01-29 16:02:11] Todos eles tem essa marcaçao na placa mae
+[2018-01-29 16:02:22] Entao é razoavel assumir que todos eles sao iguais
+[2018-01-29 16:03:01] Eu tava procurando na internet por algum prom que talvez seja compativel e n achei nada
+[2018-01-29 16:03:18] bom... anota direitinho qual era o texto da label que vc removeu
+[2018-01-29 16:03:23] e bota o chip de volta no lugar
+[2018-01-29 16:03:30] assim que der a gente monta um leitor com arduino
+[2018-01-29 16:03:37] e extrai o conteudo deles
+[2018-01-29 16:03:38] Eu tirei foto bonitinho, dont worry
+[2018-01-29 16:03:49] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_38846012097298894.webp
+[2018-01-29 16:03:53] Eu nem tirei o chip do lgar
+[2018-01-29 17:14:35] Ronaldo joined with an invite link
+[2018-01-29 17:14:56] Opa, só observando, aqui
+[2018-01-29 17:18:22] Legal, Ronaldo!
+[2018-01-29 17:18:27] Seja bem-vindo
+[2018-01-29 17:18:51] Valeu!
+[2018-01-29 17:19:30] Eu sempre peço para os novos participantes do grupo darem uma breve intrudução se apresentando e contando um pouco sobre o interesse pessoal que têm na história da computação e como acreditam que podem ajudar a preservar (e desvendar e recontar) essas histórias
+[2018-01-29 17:19:58] Ok, deixa eu pensar
+[2018-01-29 17:20:29] Conta um pouco pra gente de quem é você e por que você gosta dessas coisas :-D
+[2018-01-29 17:22:38] Eu sou professor de inglês, cursei licenciatura na UFRGS. Tenho 36 anos. O primeiro micro que eu usei na vida foi um CP400 Color, emprestado de um amigo do meu irmão. O primeiro que eu tive foi um MSX - um Hotbit com drive de disquete.
+[2018-01-29 17:23:40] Eu coleciono computadores antigos, tenho alguns MSX, um TK85, Silicon Graphics O2, Indy, um Mac Performa e um Astrocade.
+[2018-01-29 17:26:22] Eu já ajudei com preservação de fitas de Astrocade, inclusive. Descobri o formato no qual as fitas da primeira versão dele estavam gravadas, reuni e escrevi programas pra ler os dados gravados em áudio. Vários programas que só tinham cópias ilegíveis puderam ser lidos com isso.
+[2018-01-29 17:26:56] que legal!
+[2018-01-29 17:28:31] Os programas que foram digitalizados estão aqui. Quando o formato era desconhecido poucos tinham sido digitalizados, porque era necessário gravar tudo em wav:
+[2018-01-29 17:28:42] http://www.ballyalley.com/program_downloads/300_baud_programs/300_baud_programs.html
+[2018-01-29 17:29:27] poxa, bacana demais essa sua contribuição!
+[2018-01-29 17:29:59] O Affonso, que está aqui no grupo também, andou fazendo algo similar com fitas de MSX: https://forum.fiozera.com.br/t/recuperacao-de-dados-de-fitas-cassette-msx/177
+[2018-01-29 17:30:35] Seria legal se você pudesse reservar um tempinho para contar sua história lá no Fórum Fiozera também, Ronaldo.
+[2018-01-29 17:31:19] Com fotos das fitas, screenshots do site, detalhes do formato de armazenamento, quem mais colaborou no projeto, quais ferramentas foram usadas, etc
+[2018-01-29 17:31:48] aqui a gente bate papos aleatórios, mas gostamos também de passar a limpo de vez em quando as coisas mais relevantes lá no Fórum Fiozera.
+[2018-01-29 17:31:57] Veja aí se você gosta da idéia :-)
+[2018-01-29 17:32:21] Tem um monte de coisa legal lá já: http://forum.fiozera.com.br/
+[2018-01-29 17:33:37] Aqui tem os programas que eu escrevi e reuni - são os de 300-baud http://www.ballyalley.com/program_downloads/tape_archive_tools/tape_archive_tools.html
+[2018-01-29 17:34:58] Eu escrevi programas pra poder converter os dados tokenizados em TXT e vice-versa, pra poder corrigir e editar os programas no PC. É bem mais fácil do que editar no computador original.
+[2018-01-29 17:35:31] da hora!
+[2018-01-29 17:39:00] Os programas ocupavam 3 megabytes, ou mais, em wav. Gerando os wav digitalmente eles ficam sem ruído, então comprimem a taxas absurdas. Agora eles gravam os programas num pacote em zip, com a listagem em TXT e o wav - comprimido, tudo ocupa um pouco mais de 10 KB.
+[2018-01-29 17:39:16] (cada, no caso)
+[2018-01-29 17:40:22] Fora que as gravações ruins podem ser processadas de jeitos impossíveis com o hardware original
+[2018-01-29 18:01:15] Eu fiz a maioria do trabalho remotamente, sem nunca ter visto o hardware de verdade. Eu pegava o áudio digitalizado, fazia as coisas e mandava de volta pra testarem no hardware original. Me ajudaram muito o Paul Thacker, que sempre se empenhou pessoalmente em digitalizar essas fitas de 300 baud; o Adam Trionfo, que mantém o site, o autor do KCS, que agora eu não recordo o nome e o Marcus Von Cube, que fez programas pra gravar e ler fitas de um computador da Casio, e que eu também vi que eram úteis.
+[2018-01-29 18:02:45] legal!
+[2018-01-29 18:03:00] ah! eu esqueci de mencionar... esse grupo aqui é público ok?
+[2018-01-29 18:03:13] tudo o que é discutido aqui fica arquivado e acessível para leitura na web
+[2018-01-29 18:03:22] com o propósito de não perder esses relatos
+[2018-01-29 18:03:33] Aliás, esse próprio KCS - ele é o programa que converte bytes raw em padrão Kansas City pra bytes - foi uma história à parte. Era um programa com o fonte escrito em forth, compilado pra DOS. A gente contatou o autor e ele recompilou o programa pra Windows.
+[2018-01-29 18:03:46] Ok, sem problemas.
+[2018-01-29 18:04:19] Você conhece o Internet Archive?
+[2018-01-29 18:04:27] Sim
+[2018-01-29 18:04:32] Seria importante fazer um backup desse acervo de fitas lá
+[2018-01-29 18:04:39] Achei bastante software da SGI lá
+[2018-01-29 18:05:13] Seria bom fazer backup de todo o ballyalley.com
+[2018-01-29 18:05:20] Eu sei que para acervos de arquivos correlatos eles criam uma classificação própria mediante requisição, pra poder publicar tudo junto como uma coleção
+[2018-01-29 18:05:49] eu pedi e eles me deram por exemplo acesso de curador para uma coleção que eu criei um tempo atrás: https://archive.org/details/msdos_demoscene
+[2018-01-29 18:05:51] Ele é "a" referência de Astrocade na Internet, e tem foco em preservação de tudo o que é relacionado. Muita coisa só se acha lá.
+[2018-01-29 18:10:54] Coloca no slot livre uma placa de interface com arduino, uma ponte serial-USB e transforma num leitor de papel perfurado USB
+[2018-01-29 18:11:43] Sim!!! Eu pensei em fazer isso sim. Na real, é exatamente o que já fizemos. Só que como usamos o conector da placa #2, o arduino teve que ficar do lado de fora. Seria mesmo muito legal embutir o arduino pra ficar compacto e com uma porta USB disponível.
+[2018-01-29 18:14:37] Do jeito que está funciona perfeitamente, mas colocar interno seria uma homenagem à funcionalidade original
+[2018-01-29 18:16:23] Inclusive, seria possível deixar as duas, talvez - serial e USB
+[2018-01-29 18:31:03] Provavelmente os sinais do conector externo estão naquele backplane interno
+[2018-01-29 18:31:04] é.... perfeitamente ainda não tá, por que nós estamos tendo erros de leitura mais ou menos periódicos, a cada 7, 8 ou 9 bytes, um é comido e outro é lido em duplicidade
+[2018-01-29 18:31:11] acho que é problema mecânico
+[2018-01-29 18:33:15] É uma oportunidade de ver se o hardware moderno não pode ajudar a detectar esses erros. Talvez seja um problema de tracionamento no papel: ele enrosca e demora demais pra ser lido. Dependendo de como os dados são mandados pro microcontrolador seria possível detectar um prolongamento excessivo na leitura de um byte e gerar um alerta.
+[2018-01-29 18:34:38] a leitura é bufferizada, portanto o erro deve se propagar pelos buffers e chegar ao arduino sem atrasos
+[2018-01-29 18:35:15] Entendi. Será que o barramento interno não tem os dados diretamente dos fotorreceptores?
+[2018-01-29 18:35:22] eu pretendo abrir a máquina e inspecionar os mecanismos. Mas preciso de uma certa dose de coragem para fazê-lo
+[2018-01-29 18:35:39] Se tivesse, daria pra fazer uma interface melhor que a original
+[2018-01-29 18:35:55] Deve ter. Muito provavelmente tem sim. Mas ainda não verifiquei
+[2018-01-29 18:36:22] o buffer interno é de 3 bytes :-)
+[2018-01-29 18:36:38] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_328774854541050158.webp
+[2018-01-29 18:36:54] Hahaha
+[2018-01-29 18:39:56] Eu olhei a foto da fita, ela tem uma linha de furos que deve ser de tracionamento e outra que deve ser de clock. Talvez a interface esteja ignorando os furos de clock e contando com um passo mecânico pra pular cada byte.
+[2018-01-29 18:40:13] não
+[2018-01-29 18:40:17] não tem clock nao
+[2018-01-29 18:40:20] é tudo dado
+[2018-01-29 18:40:31] só os furos menores que são de tracionamento
+[2018-01-29 18:40:54] mas podem realmente funcionar como "clock"
+[2018-01-29 18:41:18] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512631_85151.jpg
+[2018-01-29 18:41:20] alias... essa máquina não traciona por esses furinhos não. Ela traciona com um disco de borracha (eu acho)
+[2018-01-29 18:41:48] a fileirinha de furos menores é a linha de tracionamento/sincronismo
+[2018-01-29 18:41:52] o resto é tudo bit
+[2018-01-29 18:41:57] 3 pra lá 5 pra cá
+[2018-01-29 18:42:29] Eu olhei melhor, aqui. Realmente, tem só 8 linhas de furos grandes. Mas uma delas está toda preenchida. Tem certeza que não é 7 bits? Vários sistemas antigos ignoravam o bit mais alto, talvez ele esteja sendo usado como clock
+[2018-01-29 18:42:44] a fileira contínua está assim por que é uma fita ASCII
+[2018-01-29 18:42:52] Sim
+[2018-01-29 18:42:58] e eles usavam ASCII de 7 bits, com o bit mais significativo sempre ligado
+[2018-01-29 18:43:04] Arrã
+[2018-01-29 18:43:19] que é a metade oposta da tabela que a gente usa hoje em dia
+[2018-01-29 18:43:36] tem que zerar esse bit alto pra ler os dados ASCII num editor de texto moderno
+[2018-01-29 18:44:09] Isso serve como clock, caso todas as fitas que vocês têm sejam assim. Se os dados dos fotorreceptores estão no barramento interno, dá pra usar o bit 7 como clock.
+[2018-01-29 18:44:20] faço logging deso a expresses dados no monitor serial do arduino usando a expressão Serial.write(data & 0x7F);
+[2018-01-29 18:44:42] tanto o sete quanto o dos furinhos de sincronismo/tracionamento
+[2018-01-29 18:45:20] A questão é ter um fotorreceptor já acoplado aos furos de tracionamento. Nesse do bit 7 já deve ter.
+[2018-01-29 18:45:24] tenho certeza que todos os 9 furos/não-furos são lidos para cada posição
+[2018-01-29 18:45:33] Hmm
+[2018-01-29 18:45:41] sim, tem. O manual técnico explica isso direitinho
+[2018-01-29 18:45:45] Ahh
+[2018-01-29 18:46:02] Tem 2 manuais aqui: https://archive.org/details/affonsoamendola_bol_A
+[2018-01-29 18:46:07] O Affonso escaneou pra gente
+[2018-01-29 18:46:12] Vou ler, hahahaha
+[2018-01-29 18:46:32] tem uma seleção lá pra alternar entre os 2 PDFs
+[2018-01-29 18:46:43] na primeira vez que eu vi eu não percebi que eram 2 documentos
+[2018-01-29 18:46:49] Eu vi
+[2018-01-29 23:58:11] Uriel Agria Corbacho joined with an invite link
+[2018-01-29 23:59:05] Boa noite!

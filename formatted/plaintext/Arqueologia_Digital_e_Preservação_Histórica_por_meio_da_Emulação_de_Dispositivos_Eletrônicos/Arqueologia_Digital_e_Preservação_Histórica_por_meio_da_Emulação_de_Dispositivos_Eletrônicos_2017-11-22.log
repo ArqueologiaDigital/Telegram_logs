@@ -1,0 +1,66 @@
+[2017-11-22 00:29:11] Quem vai querê?? https://www.ebay.com/itm/Radio-Shack-TRS-80-Color-Computer-2-CoCo-26-3127-New-NOS-NIB/182811311758?hash=item2a90673e8e:g:KYkAAOSwK89Z15qm
+[2017-11-22 11:32:56] Fiz agora uma postagem no Facebook resumindo o trabalho feito no CP400 Color II (e outros clones brasileiros de CoCo) essa semana.
+[2017-11-22 11:33:14] E ao ler o texto da minha própria postagem, tive um insight
+[2017-11-22 11:33:31] (1) o que vai pro facebook fica no facebook
+[2017-11-22 11:33:57] não é bom para preservação, sei lá como será o acesso a essa postagem no futuro
+[2017-11-22 11:34:21] já hoje, se não me engano, só quem faz login no facebook consegue ler
+[2017-11-22 11:34:30] (2) é o tipo de resumão que cairia muito bem no site arqueologiadigital.org
+[2017-11-22 11:36:00] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723850_76361.jpg
+[2017-11-22 11:38:34] Sim sem duvida
+[2017-11-22 11:39:07] Daqui 15min a pessoa não consegue mais ver esse post
+[2017-11-22 11:40:28] Chega a ser impossível localizar um post no fb depois d certo tempo. Pra fins d preservação é melhor ter isso no fórum, onde é mais fácil de localizar e interagir posteriormente.
+[2017-11-22 11:42:34] sim
+[2017-11-22 11:43:39] o que quero dizer é que recentemente adquiri esse hábito de divulgar no Facebook para atrair mais gente
+[2017-11-22 11:43:55] e inclusive foi assim que a professora Tereza acabou me contactando
+[2017-11-22 11:44:39] e que já que eu escrevo esses resumões, posso aproveitá-los para alimentar uma home-page para o arqueologiadigital.org
+[2017-11-22 11:46:16] cadastrei uma issue lá com o texto: https://github.com/ArqueologiaDigital/ArqueologiaDigital.github.io/issues/5
+[2017-11-22 11:46:46] vou sempre colocar esse prefixo [homepage] em issues relativas a conteúdo pendente para ser publicado no site
+[2017-11-22 12:19:01] Mas não entendi uma coisa...
+[2017-11-22 12:19:42] Com esse seu ultimo comentário, vc deseja uma página nova no domínio arqueologiadigital.org, a cada post no fiozera?
+[2017-11-22 12:19:47] fiquei confuso
+[2017-11-22 12:20:21] vc quer publicar um post na pagina arqueologiadigital.org a cada novo post?
+[2017-11-22 12:20:35] não seria meio redundante isso, uma vez que já temos o forum?
+[2017-11-22 12:53:43] É como um tipo de índice. O site seria um "portal" para os diversos conteudos que estao hj espalhados entre Fiozera, GitHub, Internet Archive, YouTube, etc...
+[2017-11-22 12:55:08] Na prática, seria mais ou menos como? montar na página uma coleção de links para cada post?
+[2017-11-22 12:55:29] Pq já tem link direto pro fiozera, pro internet archive...
+[2017-11-22 12:55:45] e em cada um desses o conteúdo novo já é indexado.
+[2017-11-22 13:00:23] Acho que seria como o layout de um portal de notícias.
+[2017-11-22 13:01:05] Bloquinhos de paragrafo + imagem com link pro conteudo mais completo
+[2017-11-22 13:01:56] Talvez algo similar a esse site: https://arcadeblogger.com
+[2017-11-22 14:33:10] Sim.
+[2017-11-22 14:38:20] Esse feed teria q ser alimentado manualmente
+[2017-11-22 14:40:09] O que se faz, é ter um arquivinho guardado no servidor, onde ele lê linha por linha e monta o feed baseado nesse .txt
+[2017-11-22 14:41:49] Mas esse feed fica na dependência das pessoas irem atualizando sempre q for necessário.
+[2017-11-22 14:41:59] na mão mesmo.
+[2017-11-22 14:46:08] @fsanches se vc concordar, posso criar assim e deixar uma demo lá
+[2017-11-22 14:59:40] sim, eu acho legal
+[2017-11-22 15:00:23] 👍
+[2017-11-22 17:48:31] OFFTOPIC: No sábado dia 02/DEZ teremos uma pequena demoparty no Garoa. Já temos confirmação de que receberemos uma submissão de um grupo da demoscene argentina chamado PVM: Pungas de Villa Marteli
+[2017-11-22 17:49:28] Vamos no mínimo assistir no telão o que eles mandarem. Talvez mais alguém mande mais alguma coisa. Mas acho que não, por que foi mal anunciado. Quem sabe ano que vem façamos uma festa maior. Mas já é incrível saber que ao menos um grupo vai mandar alguma coisa!
+[2017-11-22 17:51:07] 👍🏻
+[2017-11-22 17:55:22] os argentinos fazem muita coisa de Commodore 64
+[2017-11-22 17:55:40] eu até tenho um c64, mas nao tenho ainda como carregar discos nele
+[2017-11-22 17:55:53] entao provavelmente vou usar um emulador
+[2017-11-22 17:56:08] Eu queria um desse
+[2017-11-22 17:56:10] um dos argentinos me orientou a usar o VICE
+[2017-11-22 17:56:24] apesar de eu gostar muito do MAME, eles preferem o VICE
+[2017-11-22 17:56:24] Eu uso o CCS
+[2017-11-22 17:56:34] acho bom
+[2017-11-22 17:57:02] na verdade o cara nem usa o MAME, entao ele nao sabe dizer se é bom ou ruim. Mas ele sabe que o VICE, com umas configurações bem específicas, é supostamente muito bom para rodar as demos deles
+[2017-11-22 17:57:21] então já compilei aqui e to com o setup pronto pra rodar o que eles mandarem
+[2017-11-22 17:57:31] testei com umas demos antigas deles
+[2017-11-22 17:57:31] blz
+[2017-11-22 17:58:23] Então é isso! Vou passar o dia todo no Garoa no dia 02/DEZ conversando sobre demoscene com quem se interessar, vendo o que os argentinos mandarem, etc...
+[2017-11-22 17:59:06] talvez eu leve meu c64 pro Garoa nesse dia e tente fazer alguma gambiarra pra tentar rodar a demos deles no hardware de verdade. Mas acho improvavel que eu consiga. Entao ja to garantindo o setup de emulador.
+[2017-11-22 18:02:43] não existe alguma i/f pra compactFlash ou SD feita pra esse micro?
+[2017-11-22 18:02:52] q vc pudesse carregar nele?
+[2017-11-22 18:04:02] eu cheguei a tentar usar uma interface USB feita com arduino
+[2017-11-22 18:04:12] funciona
+[2017-11-22 18:04:19] http://www.lemon64.com/forum/viewtopic.php?t=53380
+[2017-11-22 18:04:23] mas nao para varias das demos que usam fastloader
+[2017-11-22 18:05:19] http://store.go4retro.com/uiec-sd/
+[2017-11-22 18:07:31] http://www.retrocomputaria.com.br/tag/sd2iec/
+[2017-11-22 18:09:26] https://www.thefuturewas8bit.com/index.php/shop/commodore.html
+[2017-11-22 18:21:35] Então... mas eu suspeito que esse sd2iec tenha o mesmo problema do emulador de disquete feito com arduino que eu testei
+[2017-11-22 18:21:49] depois eu conto os detalhes. Aliás... rende um post no Fiozera essa história...
+[2017-11-22 18:21:57] agora precisa sair. Té mais

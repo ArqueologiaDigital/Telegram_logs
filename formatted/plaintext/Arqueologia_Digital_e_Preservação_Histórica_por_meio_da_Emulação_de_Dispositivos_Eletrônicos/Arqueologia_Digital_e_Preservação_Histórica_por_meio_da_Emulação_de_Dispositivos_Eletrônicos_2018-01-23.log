@@ -1,0 +1,45 @@
+[2018-01-23 08:47:56] Pergunta: onde eu acho "ascii-art" que use caracteres de Videotexto e que possa ser reproduzida livremente?
+[2018-01-23 08:59:39] Demo "Nothing But PETSCII" no Commodore 64
+[2018-01-23 09:00:02] https://www.youtube.com/watch?v=86fX4s7tPBA
+[2018-01-23 09:29:14] https://news.ycombinator.com/item?id=16212695
+[2018-01-23 10:37:13] @DQuadros, @agaelebe e Affonso: O Sebastião Barreto me disse agora que prefere ir lá na USP na 6a feira. Tudo bem pra vocês ?
+[2018-01-23 10:38:27] Outras pessoas daqui desse grupo que tiverem interesse em visitar a mostra de computadores antigos lá na Poli junto com a gente precisam avisar com antecedência para eu poder fazer um pedido de autorização pra entrar no campus aos finais de semana e feriados.
+[2018-01-23 10:39:04] (A não ser, é claro, que queiram visitar em dias úteis, quando o acesso à USP é livre para o público geral.)
+[2018-01-23 10:39:26] Talvez o @rbanffy se interesse em ir lá algum dia, né?
+[2018-01-23 10:41:23] Por mim ta deboas
+[2018-01-23 10:52:58] Por mim pode ser sexta na metade para o final da tarde.
+[2018-01-23 10:54:15] ok, combinado então
+[2018-01-23 10:55:03] É, eu não consigo, só no final de semana mesmo :( 
+@fsanches tenta fazer uns vídeos fotos lá pra adicionarmos no Happy Hacking
+[2018-01-23 10:55:09] 6a feira. Eu pretendo chegar logo depois do almoço lá pras 13 ou 14h (por que na USP não tem opção de alimentação aos feriados)
+[2018-01-23 10:56:28] OK. Podemos ir lá de novo no Sábado pra gravar uns episódios, @agaelebe
+[2018-01-23 10:56:38] blza
+[2018-01-23 10:58:36] @DQuadros um dos itens interessantes que temos lá agora é esse aparelho aqui: https://archive.org/stream/affonsoamendola_bol_A/TechDescription
+[2018-01-23 10:58:57] Um leitor de fitas perfuradas. Fabricado na Suécia em 1974.
+[2018-01-23 11:04:16] Pedi pro Tião trazer a caixa de fitas perfuradas dele, da época do Patinho Feio
+[2018-01-23 11:04:29] pra gente fazer a leitura e documentar
+[2018-01-23 11:04:39] e ver o que dá pra rodar no emulador
+[2018-01-23 11:14:58] Beleza, eu vi nas mensagens anteriores.
+[2018-01-23 18:33:00] Eu e o felipe estavamos conversando aqui sobre o que priorizar em termos dos projetos relacionados ao acervo daqui
+[2018-01-23 18:33:08] Check it
+[2018-01-23 18:33:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513473_80967.jpg
+[2018-01-23 18:34:22] As colunas são: "A = Affonso", "J = Juca" e "Pub = Público geral"
+[2018-01-23 18:34:54] indicam as prioridades dos items sob a ótica de cada um de nós e também em relação ao que nós consideramos ter maior apelo para o público em geral
+[2018-01-23 18:35:37] dessa tabela elencamos 3 projetos principais para dedicarmos esforços prioritários:
+[2018-01-23 18:37:29] A: Coisas relacionadas ao Patinho Feio como: (1) leitura das fitas perfuradas do acervo pessoal do Sebastião Barreto (2) emular o conteúdo dessas fitas no MAME (3) interfacear o EMU com a leitora de fitas perfuradas Facit 4021 (4) interfacear o emulador do Patinho Feio no MAME com a teletype de verdade, integrar tudo com a réplica do painel frontal do Patinho Feio rodando emulação num Arduino ou RaspberryPi, etc
+[2018-01-23 18:38:48] B: Coisas relacionadas ao CP-500 pois supostamente têm apelo emotivo para as pessoas que viveram aquela época. Entretanto parece um projeto de restauro meio complicado pois o computador está "no estado" e todo desmontado.
+[2018-01-23 18:39:24] C: dumpar o restante das ROMs do Nexus 2600 e extrair uma imagem do conteúdo do HD
+[2018-01-23 18:40:02] do lado direito da foto tem uma lista de sub-tarefas relacionados a esses 3 principais projetos
+[2018-01-23 23:49:02] https://github.com/felipesanches/mame/tree/nexus2600
+[2018-01-23 23:51:00] Ooooh nice
+[2018-01-23 23:51:02] Thanks
+[2018-01-23 23:51:45] Eu to tentando fazer do meu jeito aqui (levando um pau, mas vamo que vamo) se eu encontrar alguma barreira que eu n consiga passar eu dou uma comparada aí com o que vc fez
+[2018-01-23 23:53:07] legal hahaha
+[2018-01-23 23:53:07] é uma boa mesmo
+[2018-01-23 23:53:32] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5134355861581332488
+[2018-01-23 23:53:33] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5134355861581332489
+[2018-01-23 23:53:34] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5134355861581332490
+[2018-01-23 23:53:55] a rom do adaptador CGA eu ainda não dumpei
+[2018-01-23 23:54:16] Ahh, no worries
+[2018-01-23 23:54:18] por enquanto to usando uma ROM de bitmap de gráficos duma outra placa CGA que já tem no MAME
+[2018-01-23 23:54:27] assim que eu dumpar eu aviso e mando aqui

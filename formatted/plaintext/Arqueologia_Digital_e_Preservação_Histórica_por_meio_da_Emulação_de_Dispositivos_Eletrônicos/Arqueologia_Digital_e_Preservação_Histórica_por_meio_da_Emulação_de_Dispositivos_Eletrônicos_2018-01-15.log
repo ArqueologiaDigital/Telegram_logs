@@ -1,0 +1,116 @@
+[2018-01-15 02:40:45] Você já assistiu Halt and Catch Fire?
+[2018-01-15 06:41:35] Eu vi. As 4 temporadas. Bem legal.
+[2018-01-15 07:54:18] É um seriado sensacional !!!
+[2018-01-15 17:07:27] conseguimos hoje bootar o nexus 2600 com o teclado da scopus que apareceu aqui
+[2018-01-15 17:07:31] funcionou
+[2018-01-15 17:07:41] bootou no IBM PCDOS 3.3
+[2018-01-15 17:07:52] tem aqui um Norton Editor
+[2018-01-15 17:08:24] E também um compilador ISIS86 (da linguagem PL/M)
+[2018-01-15 17:08:42] nao parece ter interpretador BASIC
+[2018-01-15 17:09:02] a não ser que o próprio nexus 2600 já possua um BASIC embutido em ROM. Não sei se é o caso
+[2018-01-15 17:24:15] Não, ele não tem BASIC em Rom, apesar de ter uma história interessante a respeito.
+[2018-01-15 17:25:58] O PC IBM original tinha um BASIC em ROM, para ser usado nas configurações sem disquete (ele tinha interface para K7!). O PCDOS da IBM tinha o BASICA que usava rotinas da ROM.
+[2018-01-15 17:26:32] Para os compatíveis a Microsoft oferecia o MS-DOS e o GWBASIC (que não dependia da ROM).
+[2018-01-15 17:29:27] A Scopus fez um acordo com a Microsoft nos tempos do micro de 8 bits (CP/M80) e com isto obteve os fontes do BASIC para 8080. A Scopus converteu os fontes para o 8088 (como a própria Microsoft fez) e acrescentou os novos comandos. Não ficou igual, mas foi um belo trabalho.
+[2018-01-15 17:30:41] Tinha os picaretas que instalavam nos clones cópias piratas da ROM do BASIC da IBM.
+[2018-01-15 17:32:21] Mas tudo isto morreu muito rápido. No XT a interface K7 foi retirada e o BASIC em ROM estava lá só por compatibilidade. Não acho que muita gente tenha usado o interpretador BASIC.
+[2018-01-15 17:34:32] Mas ele nos trouxe um clássico, o DONKEY.BAS (https://en.wikipedia.org/wiki/DONKEY.BAS)
+[2018-01-15 17:37:53] Que história!
+[2018-01-15 17:39:41] Teve muita história interessante aqui e lá fora no início dos microcomputadores.
+[2018-01-15 17:46:19] jogamos alley cat aqui agora
+[2018-01-15 17:47:19] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804729446_93471.jpg
+[2018-01-15 17:47:19] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117797_25016.jpg
+[2018-01-15 17:47:19] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514505_77272.jpg
+[2018-01-15 17:47:19] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725755_115451.jpg
+[2018-01-15 17:47:19] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723443_114612.jpg
+[2018-01-15 17:48:49] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806123570_25287.jpg
+[2018-01-15 17:49:36] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806123627_25468.jpg
+[2018-01-15 17:50:35] Opa, olha o Zork I ali!
+[2018-01-15 17:51:07] Aliás, no final do ano passado comecei a jogar pela terceira vez e acabei encostando antes de terminar.
+[2018-01-15 17:52:26] Alguma hora vou procurar o que sobrou dos meus disquetes. O leitor de 5 1/4 está funcionando?
+[2018-01-15 17:52:30] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806119246_26014.jpg
+[2018-01-15 17:52:53] Sim :-)
+[2018-01-15 17:54:38] Devo ter algumas coisas divertidas. Quem sabe acho um disco de 5 1/4 do Z (software de comunicação da empresa que eu trabalhei depois da Scopus).
+[2018-01-15 17:55:38] Com certeza tenho alguns discos originais de jogos.
+[2018-01-15 17:55:57] legal!
+[2018-01-15 17:56:16] Acho que já tá num ponto bom pra eu rascunhar um post lá no Fiozera :-D
+[2018-01-15 17:56:36] Vou procurar e quem sabe a gente combina uma visita na semana que vem.
+[2018-01-15 17:56:47] Eu ainda não tenho certeza se os dumps das ROMs que eu fiz estão bons
+[2018-01-15 17:57:07] eu tava pensando em programar um extrator das ROMs pra rodar no proprio 2600
+[2018-01-15 17:57:18] mas pra isso eu preciso de um ambiente de desenvolvimento
+[2018-01-15 17:57:28] BASIC já seria ótimo
+[2018-01-15 17:57:31] Veja se tem o debug
+[2018-01-15 17:57:38] ah boa
+[2018-01-15 17:57:52] se tiver o debug dá pra programar direto em asm né?
+[2018-01-15 17:58:27] Até certo ponto... Mas dá para fazer DUMPs e salvar trechos da memória em binário.
+[2018-01-15 17:58:50] E fazer disasm simples
+[2018-01-15 17:59:52] ah
+[2018-01-15 18:00:01] o proprio debug oferece funcionalidade de dump?
+[2018-01-15 18:02:19] sim, tem o debug
+[2018-01-15 18:02:22] mas eu nao sei usar
+[2018-01-15 18:02:32] O comando display lista a memória. Basta redirecionar a saída para um arquivo.
+[2018-01-15 18:02:46] Para salvar em binário tem o comando W
+[2018-01-15 18:07:03] Mas cuidado que o comando W também serve para escrever direto em um setor de disco.
+[2018-01-15 18:07:36] Um tutorial sugerido pelo Bing: http://thestarman.pcministry.com/asm/debug/debug2.htm
+[2018-01-15 18:11:04] eu sei que as ROMs ficam nos endereços 0000 a 1FFF e de E000 a FFFF
+[2018-01-15 18:11:28] mas nao é isso que acho lendo esses offsets no segmento zero
+[2018-01-15 18:11:52] eu sempre achei que PC calculasse endereço efetivo fazendo offset + 16 * segmento
+[2018-01-15 18:11:56] Não tem ROM no início da memória. Lá fica o vetor de interrupções que precisa ficar em Ram
+[2018-01-15 18:12:28] O BIOS fica no alto da memória, F000:xxxx
+[2018-01-15 18:13:19] ok, achei
+[2018-01-15 18:13:32] e a outra ROM é o que ?
+[2018-01-15 18:14:26] Eu não tenho certeza. Desconfio que o BIOS precisou ser quebrado em duas partes
+[2018-01-15 18:16:29] O espaço original para o BIOS era F000:E000 a F000:FFFF
+[2018-01-15 18:17:23] O BASIC ficava em F6000H – FDFFFH
+[2018-01-15 18:18:22] eita
+[2018-01-15 18:19:03] Dá uma olhada em https://archive.org/search.php?query=ibm%20pc%20technical%20reference
+[2018-01-15 18:21:01] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514548_76912.jpg
+[2018-01-15 18:22:51] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804729203_89658.jpg
+[2018-01-15 18:23:02] O Technical Reference inclui esquemas do hardware e listagens do BIOS
+[2018-01-15 18:24:43] Agora brinca lá no debug com "U F0000:E05B"
+[2018-01-15 18:25:15] o que é e05b ?
+[2018-01-15 18:25:35] É o trecho depois dos FF, me parece ser código
+[2018-01-15 18:25:51] é
+[2018-01-15 18:25:54] acabei de ver
+[2018-01-15 18:26:13] vi também que um dos dumps que usei pra essa imagem tá errado em alguns bytes
+[2018-01-15 18:26:27] vou ver se algum dos outros arquivos de dump batem com essa imagem
+[2018-01-15 18:26:47] Se você quiser salvar a memória em arquivos:
+[2018-01-15 18:26:53] N arquivo
+[2018-01-15 18:27:57] RBX
+[2018-01-15 18:28:00] colocar zero
+[2018-01-15 18:28:02] RCX
+[2018-01-15 18:28:08] colocar o tamanho em hexa
+[2018-01-15 18:28:17] W endereço
+[2018-01-15 18:29:01] Tome o cuidado de colocar só um parâmetro no comando W, senão ele acha que é escrita direta em disco
+[2018-01-15 18:36:21] É exatamente o ponto de entrada do código. Olha o que temos quando booto o MAME com essas ROMs:
+[2018-01-15 18:36:27] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513047_77548.jpg
+[2018-01-15 18:37:21] e logo em seguida:
+[2018-01-15 18:37:26] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806118009_25628.jpg
+[2018-01-15 18:38:10] O bandido aí é o valor d550h
+[2018-01-15 18:38:38] o que eu entendi até agora sobre a arquitetura dos XT é que apenas 10 dos bits de endereço são decodificados para portas de I/O
+[2018-01-15 18:38:51] ou seja, há portas de 0 até 3FF
+[2018-01-15 18:39:21] e esse código aí tá escrevendo numa porta no endereço D550 !
+[2018-01-15 18:40:25] se eu ignorar os 6 bits altos seria o endereço 150h... que não sei o que é. Se não ignorar, significa que isso aí é algum hardware custom da scopus que não segue o mapeamento de I/O clássico dos XT
+[2018-01-15 18:57:39] por que BX=0 ?
+[2018-01-15 18:58:07] CX é contador, portanto boto nele o tamanho (2000h por exemplo pra pegar os 8kbytes de uma das ROMs)
+[2018-01-15 18:58:12] mas e o BX?
+[2018-01-15 19:15:59] Bx é a parte alta do tamanho
+[2018-01-15 19:25:38] Não lembro desta história de 10 bits. Mas pode ser que mais bits sejam decodificados na placa mãe do 2600. É uma forma de colocar novos registradores com baixo risco de incompatibilidade
+[2018-01-15 19:28:20] Pode ser o port que seleciona o clock entre 4.77 e 8 MHz
+[2018-01-15 19:41:15] Dessa eu nao sabia!
+[2018-01-15 19:42:22] Existia esse chaveamento, é?
+[2018-01-15 19:42:32] Com qual motivo ?
+[2018-01-15 20:25:53] No Nexus 1600 nós quisemos rodar a 8 MHz para ser mais rápido que o IBM e os clones.
+[2018-01-15 20:26:33] A mudança para a velocidade padrão de 4.77 era em uma dip switch.
+[2018-01-15 20:27:40] Mas os concorrentes adoravam dizer que o Nexus era pouco compatível e muita gente rodava a 4.77 por medinho
+[2018-01-15 20:29:05] No 2600 a mudança pode ser feita por uma combinação no teclado, para facilitar o pessoal a experimentar rodar a 8MHz
+[2018-01-15 20:31:47] Foi só na época do 286 que micros com velocidade diferente ficaram populares. Foi a época do famoso botão Turbo
+[2018-01-15 20:34:19] Achei alguns disquetes antigos, mas estou começando a achar que a minha coleção de discos de DOS foi para o lixo em algum purge
+[2018-01-15 21:53:29] Mike Howard added R.T. Saito
+[2018-01-15 22:43:48] uma coisa bacana que o MAME oferece é a opção de linha de comando -oslog que faz com que todos acessos de memória ou de I/O em endereços onde não há nada mapeado no emulador, sejam reportados na saída padrão (no terminal).
+[2018-01-15 22:44:26] por exemplo, o driver de IBM PC XT rodando com as ROMs do Scopus Nexus 2600 emite esses erros (quando uso -oslog):
+[2018-01-15 22:44:39] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514410_76890.jpg
+[2018-01-15 22:47:00] Aí temos vários endereços desconhecidos naquela faixa alta (acima de 3FFh) como o D550h e também E140h, E150h, E340h e E350h.
+[2018-01-15 22:47:31] Mas temos também 2 endereços abaixo de 3FFh: o 3B8h e o 1C0h
+[2018-01-15 22:48:23] No Google acho coisas como: "Technically, screen-blanking utilities for the Monochrome Adapter can shut off the display by writing a 0 to bit 3 of output port 3B8h"
+[2018-01-15 22:49:15] E essa página parece bem interessante: http://www.seasip.info/VintagePC/mda.html

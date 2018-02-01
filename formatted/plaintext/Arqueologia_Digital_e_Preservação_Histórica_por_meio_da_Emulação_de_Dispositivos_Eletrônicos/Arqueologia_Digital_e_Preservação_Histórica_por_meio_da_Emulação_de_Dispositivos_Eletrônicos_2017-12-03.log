@@ -1,0 +1,117 @@
+[2017-12-03 16:25:14] @wmoecke @fsanches se tem swap device, o driver zswap é muito melhor
+[2017-12-03 16:28:20] estamos falando sobre driver de vídeo
+[2017-12-03 16:30:17] DirectFB morreu faz muito tempo...
+[2017-12-03 16:30:32] tbm sabemos...
+[2017-12-03 16:30:47] e se usa algo equivalente hoje em dia?
+[2017-12-03 16:36:00] acho que não tem
+[2017-12-03 16:36:22] directfb na verdade não é muito melhor que usar o fbdev direto
+[2017-12-03 16:36:54] http://www.sci.fi/~syrjala/gl/readme.txt
+[2017-12-03 16:37:15] É aquela sugestão, tentar compilar a última versão do DFB pra ARM...
+[2017-12-03 16:37:27] Outra coisa, não achei.
+[2017-12-03 16:37:47] SDL 1.2 sim tem suporte para fbdev direto
+[2017-12-03 16:37:51] Parece q era o único jeito de ter uma boa biblioteca gráfica com footprint baixo.
+[2017-12-03 16:46:46] Segue um artigo q estou lendo, até agora parece pertinente: https://www.mess.org/howto/sdlmame_sdlmess_framebuffer#sdl_library_with_a_modified_directfb_driver
+[2017-12-03 16:51:16] Algo me diz q esse parece ser o caminho para usar o MAME no RPi: http://rbelmont.mameworld.info/?page_id=163
+[2017-12-03 18:17:39] esses artigos parecem bem antigos
+[2017-12-03 18:18:05] falam de patches na SDL, mas hoje a SDL se entendi bem ja suportaria fbdev nativamente, sem precisar de patches
+[2017-12-03 18:18:37] o que me dá nó na cabeça é que do lado do kernel acho que já tá tudo certo pois aparece um /dev/fb0
+[2017-12-03 18:19:13] e cat /proc/fb me diz: BCM2708
+[2017-12-03 18:20:37] entretanto, do lado da SDL, quando rolo o MAME com SDL_VIDEODRIVER=directfb recebo uma mensagem "SDL directfb not available"
+[2017-12-03 18:20:48] Então. Mas é td velho msm.. Agora eu t pergunto, a versão do mame q vc compilou, ela é otimizada pra usar fb ou está usando X?
+[2017-12-03 18:21:14] supostamente tem suporte às duas coisas
+[2017-12-03 18:21:22] quando tento rodar com fb não rola
+[2017-12-03 18:21:31] mas com X rola com performance ruim
+[2017-12-03 18:21:47] jogando essa msg no Google, i q aparece?
+[2017-12-03 18:21:59] quase nada
+[2017-12-03 18:22:05] Sim o X não é adequado pra embedded
+[2017-12-03 18:22:45] Essa versao do mame q vc está usando é a última?
+[2017-12-03 18:23:00] git master
+[2017-12-03 18:23:12] Pq se for, será q ela ainda mantém suporte ao fb sdl?
+[2017-12-03 18:23:20] (eu nunca uso nada além de git master)
+[2017-12-03 18:23:46] Não seria melhor nesse caso, vc usar uma versão mais otimizada, mesmo q antiga?
+[2017-12-03 18:24:15] não, por que eu preciso fazer meus próprios patches no MAME do git
+[2017-12-03 18:24:26] Bom...
+[2017-12-03 18:24:29] não entou interessado em ficar preso no passado
+[2017-12-03 18:24:44] meu interesse é entender o problema de verdade e lidar com ele no presente e futuro
+[2017-12-03 18:24:46] Nesse caso acho q não tem solução.
+[2017-12-03 18:24:58] sempre tem solução!
+[2017-12-03 18:25:03] Vc não vai conseguir rodar esse mame no Arm.
+[2017-12-03 18:25:21] nunca diga que eu não vou conseguir ! hahaha
+[2017-12-03 18:25:34] Acho q não. O hardware nao comporta o overhead desse Mame q vc está compilando.
+[2017-12-03 18:25:52] com todo o respeito? Bullshit!
+[2017-12-03 18:25:53] Como vc já comprovou.
+[2017-12-03 18:26:18] tá cheio de gente rodando MAME em RPi
+[2017-12-03 18:26:25] o que falta é descobrir qual é otruque
+[2017-12-03 18:27:24] o que é que essas distros tunadas fazem? Como é que rodam o MAME no RetroPie, por exemplo ?
+[2017-12-03 18:30:07] Nao rodam
+[2017-12-03 18:30:24] Rodam Retroarch
+[2017-12-03 18:30:55] 🤷‍♂
+[2017-12-03 18:32:03] É lógico q vc pode pegar esse Mame q vc tem aí e ir tunando ele pra rodar em ARM. O q vai acabar resultando em um port igual ao SDLMAME...
+[2017-12-03 18:33:26] o MAME de hoje em dia é o SDLMAME de antigamente !
+[2017-12-03 18:33:50] não existe mais SDLMAME, por que o port para SDL foi integrado ao git do mame oficial.
+[2017-12-03 18:34:43] https://github.com/RetroPie/RetroPie-Setup/wiki/MAME
+[2017-12-03 18:41:13] Todos versões antigas do MAME... 0.37b5
+[2017-12-03 18:41:35] Mas então pq não roda?
+[2017-12-03 18:41:53] Se estão integrados, pq o erro?
+[2017-12-03 18:42:13] não sei...
+[2017-12-03 18:42:29] tem MAME 0.174 lá também.
+[2017-12-03 18:43:10] E não é antigo?
+[2017-12-03 18:43:27] é do ano passado
+[2017-12-03 18:43:33] Vc falou q não quer antigo
+[2017-12-03 18:43:35] ou seja, é relativamente recente
+[2017-12-03 18:43:43] É passado!
+[2017-12-03 18:44:01] o que eu quis dizer é que não são só versões jurássicas de MAME que o pessoal tá rodando em RPi
+[2017-12-03 18:44:25] então deve haver um jeito de eu rodar MAME do git no RPi com performance decente também
+[2017-12-03 18:44:40] quero saber qual é o truque de configuração que é feito nessas distros
+[2017-12-03 18:51:00] http://docs.mamedev.org/commandline/sdlconfig.html
+[2017-12-03 19:21:17] to tentando compilar o DirectFB no RPi3 aqui. Mas tá dando essa mensagem de erro logo no ./autogen.sh (que por sua vez chama o ./configure automaticamente):
+[2017-12-03 19:21:28] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806118314_2546.jpg
+[2017-12-03 19:24:00] parece que tem a ver com isso aqui:
+[2017-12-03 19:24:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804730153_63973.jpg
+[2017-12-03 19:24:37] acho que o código foi migrado pra outro repo, mas a mensagem de erro permaneceu com a URL do repo antigo
+[2017-12-03 19:27:04] ok, estou compilando o tal do flux
+[2017-12-03 19:27:11] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513015_54945.jpg
+[2017-12-03 19:27:58] pronto. Compilei e instalei o flux e agora vou tentar de novo compilar o DirectFB
+[2017-12-03 19:31:20] 👍 é parece q tem essa dependência mesmo. Tem q resolver. Torcendo aqui.
+[2017-12-03 19:31:39] resolveu a questão da dependencia
+[2017-12-03 19:31:45] to agora compilando o DirectFB
+[2017-12-03 19:34:10] 😁
+[2017-12-03 21:00:08] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117488_2731.jpg
+[2017-12-03 21:00:18] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725893_85637.jpg
+[2017-12-03 21:00:53] recompilando SDL agora com suporte a directfb
+[2017-12-03 21:01:07] ou seja... re-recompilando :-P
+[2017-12-03 21:01:37] Agora vai!!!
+[2017-12-03 21:01:45] 🙈
+[2017-12-03 21:01:47] sim, talvez
+[2017-12-03 21:02:16] Pensamento positivo cazzo
+[2017-12-03 21:25:57] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121851_2739.jpg
+[2017-12-03 21:47:22] bom... ao menos agora ele tá tentendo
+[2017-12-03 21:47:27] tentando
+[2017-12-03 21:47:32] mas át dando segfault
+[2017-12-03 21:47:36] instalei o gdb aqui
+[2017-12-03 21:47:43] e fiz um backtrace do segfault
+[2017-12-03 21:48:01] ele quebra durante o device probe
+[2017-12-03 21:48:08] "hot plug"
+[2017-12-03 21:48:40] ele basicamente tenta inicializar cada um dos drivers até um dar um OK no método de probe do hardware
+[2017-12-03 22:18:51] Essa msg de hot plug detection enabled
+[2017-12-03 22:19:02] Vem desse Fusion dispatcher?
+[2017-12-03 22:19:35] Aliás q setup é esse seu?? (curiosidade)
+[2017-12-03 22:20:40] Raspberry Pi 3 ligado via HDMI na TV da sala. (E via ethernet no roteador wifi da sala)
+[2017-12-03 22:21:32] nao tenho ideia ainda do que seja esse fusion dispatcher
+[2017-12-03 22:21:46] Vc consegue localizar essa string nos fontes do FB?
+[2017-12-03 22:22:28] mas me peguei com a seguinte questão... talvez o directfb não tenha um driver para o framebuffer do rpi (modelo Broadcom BCM2708)
+[2017-12-03 22:22:57] não achei nada no código fonte do directfb que pareça suportar esse chip de video usado no rpi
+[2017-12-03 22:23:52] E na SDL?
+[2017-12-03 22:24:22] na SDL o código deve ser genérico usando alguma API
+[2017-12-03 22:28:48] Qual é a versão desse directfb q vc está compilando?
+[2017-12-03 22:29:53] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726517_63976.jpg
+[2017-12-03 22:29:55] git master
+[2017-12-03 22:30:39] Mas qual é o número da versão?
+[2017-12-03 22:31:02] não sei, teria que ver, por que?
+[2017-12-03 22:32:19] Pq eu to lendo uma thread onde o cara tentando compilar directfb 1.6.0 pro RPi e passou desse erro. Ele reconhece o chip da broadcom. O problema dele parece estar relacionado com o fusion.
+[2017-12-03 22:32:43] https://www.raspberrypi.org/forums/viewtopic.php?t=11772&p=144694
+[2017-12-03 22:37:18] Pela info na tela vc está com a v1.8.0
+[2017-12-03 22:37:50] Eu suspeito q isso nao deve ter relação com o problema.
+[2017-12-03 22:39:47] Só resta a esperança q nas configs do cara tenha alguma pista do q pode estar faltando nas suas.
+[2017-12-03 22:52:18] Isso aqui acho q pode ser útil: http://www.lanedo.com/cross-compiling-directfb-for-an-embedded-device/
+[2017-12-03 22:52:43] Tá bem estilo tuto

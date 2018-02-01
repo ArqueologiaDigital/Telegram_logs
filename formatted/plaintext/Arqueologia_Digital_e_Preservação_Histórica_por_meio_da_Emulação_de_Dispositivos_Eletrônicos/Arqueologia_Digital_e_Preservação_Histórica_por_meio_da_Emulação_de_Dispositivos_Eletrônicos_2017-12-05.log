@@ -1,0 +1,4 @@
+[2017-12-05 03:51:57] depende do código do mame, se só gerar RGB, provavelmente é trivial
+[2017-12-05 03:54:20] se depende de overlays, como por exemplo para YUV, então vai ficar bastante mais difícil
+[2017-12-05 03:54:44] ou talvez não, depende se tem un driver interno para isso
+[2017-12-05 03:56:21] mas eu acho que isso tampouco é suportado na SDL para fbdev...

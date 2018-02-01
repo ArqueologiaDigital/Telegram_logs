@@ -1,0 +1,31 @@
+[2017-11-15 19:23:50] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725448_69531.jpg
+[2017-11-15 19:23:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725085_68937.jpg
+[2017-11-15 19:23:54] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727780_48775.jpg
+[2017-11-15 19:23:55] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512411_40381.jpg
+[2017-11-15 19:40:02] Não se esqueça de me mandar o dump da EPROM
+[2017-11-15 19:52:19] acabei de mandar
+[2017-11-15 19:52:39] confirma pra mim que recebeu, por favor
+[2017-11-15 19:52:47] mandei pro werner e pro prof fernando tambem
+[2017-11-15 19:54:38] Já vi aqui
+[2017-11-15 19:54:52] legal
+[2017-11-15 19:54:57] Chegou. Amanhã vou tentar analisar.
+[2017-11-15 19:55:42] DQ, depois que vc foi embora nõs tentamos mapear de onde vem o sinal de chip select do 8251, por exemplo, e vimos que vem de uma daquelas duas PROMs
+[2017-11-15 19:56:02] e o enderecamento das PROMs vem dos bits altos da CPU
+[2017-11-15 19:56:37] bits a15, a14 e a13 do 8085 ligados aos enderecos a4, a3 e a2 de uma das PROMs
+[2017-11-15 19:57:02] os enderecos a1 e a0 das PROMs entretanto nao vem dos bits a12 e a11 da CPU
+[2017-11-15 19:57:10] Faz muito sentido.
+[2017-11-15 19:57:30] um desses dois (nao lembro qual) vem dum pino de serial output do 8085
+[2017-11-15 19:58:03] entao parece ser uma forma de trocar a tabela da PROM que define os endereos dos chips auxiliares no mapa de memoria
+[2017-11-15 19:58:11] nao sei por que fariam isso...
+[2017-11-15 19:58:49] mas uma coisa parece clara: o conteudo das PROMs define os endereos dos chips auxiliares
+[2017-11-15 19:58:53] Talvez para permitir colocar mais Ram.
+[2017-11-15 19:59:13] olha so... faz sentido
+[2017-11-15 19:59:58] mais ou menos... ainda eh um pouco confuso pra mim
+[2017-11-15 20:00:24] talvez nao seja isso DQ
+[2017-11-15 20:05:09] Precisamos encontrar o bloco d código onde é definida a máscara SIM
+[2017-11-15 20:05:52] Agora vou comer 🌮🌮🌮
+[2017-11-15 20:06:23] vou jantar. te mais tarde pessoal
+[2017-11-15 23:56:04] Intel 8275: http://www.cpu-galaxy.at/cpu/ram%20rom%20eprom/other_intel_chips/other_intel-Dateien/8275_Datasheet.pdf
+[2017-11-15 23:57:44] Intel 8276: http://www.eolpartfinder.com/eolpartdetail.php?q=P8276&Brand=INTEL+CORP
+[2017-11-15 23:59:44] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804724017_69160.jpg
+[2017-11-15 23:59:45] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723702_70163.jpg

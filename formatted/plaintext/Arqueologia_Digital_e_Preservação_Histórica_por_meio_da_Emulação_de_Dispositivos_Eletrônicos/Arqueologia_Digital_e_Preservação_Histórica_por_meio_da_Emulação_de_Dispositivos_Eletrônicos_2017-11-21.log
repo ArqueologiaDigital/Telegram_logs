@@ -1,0 +1,88 @@
+[2017-11-21 16:04:24] Guilherme Kenzo joined with an invite link
+[2017-11-21 16:06:03] Oi pessoal! Conversei com o Juca na roadsec e fiquei interessado em participar do grupo
+[2017-11-21 16:08:13] Especialmente em dar uma perspectiva mais acadêmica para as entrevistas
+[2017-11-21 16:08:26] Vocês têm interesse nisso?
+[2017-11-21 16:21:09] SIM!!!!
+[2017-11-21 16:21:11] :-D
+[2017-11-21 16:22:11] como prefere fazer ?
+[2017-11-21 16:22:19] quer marcar um dia para um bate papo pessoal ?
+[2017-11-21 16:22:28] pra bolar a metodologia
+[2017-11-21 16:22:55] eu acho que o assunto é extenso demais pra nessa etapa inicial ser discutido via chat
+[2017-11-21 16:22:59] o que acha?
+[2017-11-21 16:34:42] Só para atualizar: o disassembly do código do Lepus está indo bem. Ainda estou confuso com algumas configurações nas dips e uns flags (como a memória de dados era limitada, colocamos vários flags em um mesmo byte, o que deixa o código cheio de manipulações de bits).  Falta ainda olhar a parte de teclado.
+[2017-11-21 16:49:54] ;-)
+[2017-11-21 16:52:25] Pode ser! No garoa mesmo?
+[2017-11-21 16:53:56] Show de bola, DQ. Só vc pra "quebrar" esse assembly pra nós.
+[2017-11-21 16:56:05] Pode ser sim! Vamos marcar uma data ?
+[2017-11-21 16:58:49] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722997_77591.jpg
+[2017-11-21 17:06:55] No sábado a tarde (~14) fica tranquilo pra mim, vc pode?
+[2017-11-21 17:08:31] Já tô pegando alguns materiais de metodologia,
+. Quando achar algo legal, compartilho aqui
+[2017-11-21 17:12:10] nesse sabado agora eu estarei viajando
+[2017-11-21 17:12:20] mas no sábado seguinte, pode ser, eu acho
+[2017-11-21 17:37:42] Ok! Só preciso confirmar se estarei aqui em sp
+[2017-11-21 17:38:07] Essa semana vc pode algum dia a noite? (Depois das 8)
+[2017-11-21 17:56:50] Este display aceita que tipo de entrada?
+[2017-11-21 18:00:20] Ele aceita 2 entradas video composto. É para instalar em automóveis, onde vc instala uma câmera de ré e conecta na entrada AV1, e a AV2 vc pode ligar um DVD ou media player.
+[2017-11-21 18:01:07] Tem até mais baratos q esse, mas pelo tamanho (5") e tensão de trabalho, foi o melhor em custo x benefício
+[2017-11-21 18:01:51] os de 4" estão saindo em média R$46~66 - mas pra esse projeto eu achei pequenos demais.
+[2017-11-21 18:02:10] Legal, eu tenho usado como monitor de bancada um de 7" com entradas para vídeo composto, VGA e HDMI. É mais caro mas mais versátil para ficar na bancada.
+[2017-11-21 18:02:42] Ah sim, para esse propósito com certeza vale. Tem um bem interessante que me deparei qdo pesquisava... deixe eu achar ele
+[2017-11-21 18:04:34] https://www.banggood.com/ESCAM-T08-8-inch-TFT-LCD-1024x768-Monitor-with-VGA-HDMI-AV-BNC-USB-for-PC-CCTV-Security-Camera-p-1134366.html?rmmds=search&cur_warehouse=CN
+[2017-11-21 18:04:45] Esse tem todas as entradas possíveis.
+[2017-11-21 18:05:02] Um tanto mais salgado o preço. Mas penso q ainda compensa.
+[2017-11-21 18:06:09] O meu, como pretendo ligá-lo na saída de vídeo do meu CP-400, é adequado.
+[2017-11-21 18:55:57] talvez 5a feira
+[2017-11-21 19:06:12] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726663_53917.jpg
+[2017-11-21 19:06:27] (8bit Workshop‏) Midway's Wheels II (1975) also had a primitive CPU of sorts, using the 74181 ALU.
+[2017-11-21 19:06:58] Juca pirando em 3... 2... 1...
+[2017-11-21 19:12:43] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727491_57394.jpg
+[2017-11-21 19:13:14] engraçado... o circuito é MUITO similar ao que tenho na parede na minha frente agora mesmo
+[2017-11-21 19:13:30] Atari GranTrak10
+[2017-11-21 19:13:34] sério, to tentando enxergar...
+[2017-11-21 19:13:40] perae deixa eu dar um zoom melhor
+[2017-11-21 19:14:40] minto! É similar aos diagramas didádicos que eu lembro de cabeça do service manual do grantrak10 (que é o circuito que tenho colado na parede na minha frente)
+[2017-11-21 19:14:45] está difícil identificar os componentes do esquema da GranTrak10
+[2017-11-21 19:15:31] cara, pode ser a própria.
+[2017-11-21 19:15:47] Ele não menciona o nome do jogo, mas diz "driving game"
+[2017-11-21 19:16:37] e nesse screenshot, ele só tem desenhado um canal analógico. A GranTrak10 tem 2, certo? Faz sentido.
+[2017-11-21 19:17:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513915_45677.jpg
+[2017-11-21 19:17:10] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728115_55434.jpg
+[2017-11-21 19:17:56] acho que são jogos diferentes
+[2017-11-21 19:18:04] mas provavelmente competiram na mesma época
+[2017-11-21 19:20:28] Essa história aqui é sensacional: https://edfries.wordpress.com/2017/06/14/fixing-gran-trak-10/
+[2017-11-21 19:21:52] Me perdi; é verdade, esse era da Midway.
+[2017-11-21 19:22:09] Tava aqui olhando o manual da GT-10
+[2017-11-21 19:22:16] https://www.arcade-museum.com/manuals-videogames/G/GranTrak10.pdf
+[2017-11-21 19:22:57] sim, esse é o service manual a que eu me referia
+[2017-11-21 19:23:30] transcrevi no kicad uns 40% do circuito: https://github.com/ArqueologiaDigital/GranTrak10
+[2017-11-21 19:23:46] É que eu fui fazendo lentamente para ir estudando o funcionamento
+[2017-11-21 19:24:37] Okay, se puder na quinta, só mandar uma msg. Qqr coisa deixamos pra outra semana mesmo :)
+[2017-11-21 19:25:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728556_55941.jpg
+[2017-11-21 19:25:55] Vc provavelmente já conhece esse tbm: http://uk-microsites.ign.com/the-history-of-racing-games/
+[2017-11-21 19:29:41] Sim, eu posso. Werner, quer vir bater papo com a gente sobre metodologia de entrevistas ? E aí talvez podemos emendar um bate-papo sobre o layout do site.
+[2017-11-21 19:33:49] Podemos sim.
+[2017-11-21 19:34:12] (Aí o almoço de amanhã fica pra depois de amanhã 😉  )
+[2017-11-21 19:34:49] como for melhor pra voce
+[2017-11-21 19:35:05] mas nosso encontro com o Kenzo é só de noite.
+[2017-11-21 19:35:16] ou se quiser, almoçamos amanhã com o Armando, e tbm nos encontraremos na quinta
+[2017-11-21 19:35:22] isso
+[2017-11-21 19:35:27] aí fica perfeito
+[2017-11-21 19:35:34] Desculpe, minha cabeça extrapolou o numero de threads simultaneas
+[2017-11-21 19:36:13] preciso confirmar se tá de pé ainda o almoço com armando amanhã
+[2017-11-21 19:36:21] to aguardando ele responder
+[2017-11-21 19:36:23] Estou olhando o esquema da GT-10, caçando pendrives com espaço pra gravar um programa da Vivo, e falando com duas mulheres ao mesmo tempo
+[2017-11-21 19:36:28] ok
+[2017-11-21 19:36:48] e eu estou trabalhando hahaha
+[2017-11-21 19:36:51] rss
+[2017-11-21 19:37:09] é sério! Dando suporte pra um dos usuários do meu software
+[2017-11-21 19:37:24] (de um dos meus softwares)
+[2017-11-21 19:38:07] o das fontes?
+[2017-11-21 19:38:49] Perfeito então!
+[2017-11-21 19:39:19] Sim, um deles.
+[2017-11-21 19:39:48] Fechou! Garoa Hacker Clube, 20h, 23/NOV
+[2017-11-21 19:40:01] 👍🏻
+[2017-11-21 19:40:25] E o de amanhã fica TBC
+[2017-11-21 19:40:58] isso
+[2017-11-21 20:33:21] https://thec64.com/
+[2017-11-21 20:33:34] podiam fazer uma versão do CoCo...

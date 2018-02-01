@@ -1,0 +1,341 @@
+[2017-12-01 00:35:14] Estou interessado em estudar o assembly do Z80 que controla os motores dessa máquina Galaxy Force 2 Super Deluxe...
+[2017-12-01 00:35:33] A ROM tá lá no MAME, mas o hardware dos motores não é emulado ainda.
+[2017-12-01 00:35:42] https://forum.fiozera.com.br/t/replicas-funcionais-de-arcades-eletro-mecanicos-com-mame-e-rpi/25
+[2017-12-01 00:37:48] o assembly da CPU de motores começa bem simples, desabilitando interrupções, setando o interrupt mode 1 do Z80 e inicializando a pilha (setando o SP: stack-pointer) no topo dos 64k de endereçamento de memória da CPU (em 0xFFFF).
+[2017-12-01 00:37:58] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722574_85028.jpg
+[2017-12-01 00:38:49] Não sei quanto tem de RAM para essa CPU de motores, mas certamente a RAM fica na parte alta da memória, por conta dessa inicialização do stack pointer aí.
+[2017-12-01 00:40:28] O jogo roda na placa SEGA Y-Board com uma placa adicional para o controle dos motores (que é onde fica essa CPU Z80 adicional)
+[2017-12-01 00:40:58] nos fontes do MAME fica em src/mame/drivers/segaybd.cpp
+[2017-12-01 00:41:05] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725625_83881.jpg
+[2017-12-01 00:41:53] http://www.system16.com/hardware.php?id=699
+[2017-12-01 00:44:28] A diferença na emulação da Galaxy Force 2 normal (gabinete upright) em comparação à versão "Super Deluxe" (com cockpit giratório) está na declaração do hardware contendo a CPU extra pra controle dos motores:
+[2017-12-01 00:44:36] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806124767_1427.jpg
+[2017-12-01 00:45:27] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514374_53840.jpg
+[2017-12-01 00:47:11] É provavelmente aí que teremos que adicionar o mapeamento de I/O ou de memória para comunicação com a placa principal e também para os sinais de controle dos motores. Por enquanto tá essa declaração genérica aí. Sem nada mapeado em I/O e com um mapa de memória chamado motor_map
+[2017-12-01 00:47:44] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726433_62310.jpg
+[2017-12-01 00:49:13] que por sua vez tem 32k para a ROM do firmware da CPU de controle de motores e o resto todo tem 32k de SRAM. Esses 32K são um chute, por que pode ser que seja menos RAM que isso, mas vejam que ao menos a RAM está mapeada até o topo da memória, como eu comentei agora há pouco ao ver a inicialização do stack-pointer em 0xFFFF
+[2017-12-01 00:51:04] Esse website explica de forma didática o sistema de interrupções do Z80: http://www.z80.info/1653.htm
+[2017-12-01 00:51:47] Lá vemos que: "Interrupt Mode 1 always calls the subroutine beginning at address 38h. This mode requires that the interrupt handler is able to determine which interrupting device generated the interrupt and be able to take the appropriate action. Normally, the code beginning at address 38h is a register save sequence followed by a JP instruction."
+[2017-12-01 00:54:11] No caso do GF2SuperDeluxe, a rotina de tratamento de interrupção posicionada no endereço 0x38 é um jump para 0x1B9F
+[2017-12-01 00:54:18] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725824_83507.jpg
+[2017-12-01 00:56:31] Mas por enquanto não é pra lá que vamos olhar, por que de início as interrupções estão desabilitadas. Deve ter algum pedacinho de inicialização da placa de motores antes de liberar as interrupções.
+[2017-12-01 00:57:13] Olhando aqui, a inicialização prossegue a partir do endereço 0x0100
+[2017-12-01 01:02:02] E lá começa a farra!
+[2017-12-01 01:02:10] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727061_61096.jpg
+[2017-12-01 01:04:29] Vejo 3 grupos de endereços especiais aí:
+(A) 0x8000 e 0x8003
+(B) 0x9000 até 0x9003
+(C) 0x9400 até 0x9403
+[2017-12-01 01:05:44] Suspeito que (A) possa ser pra se comunicar com a PCB principal, (B) seja pra controlar um motor e (C) para o segundo motor. Mas eu estou só chutando. Vou ter ainda que verificar se a teoria faz sentido.
+[2017-12-01 01:06:33] os 2 motores a que me refiro são o de rotação do cockpit (faz quase 360 graus de giro) e o de inclinação do assento pra trás e pra frente.
+[2017-12-01 01:06:57] http://www.system16.com/cabinets/galaxyforcedlx.jpg
+[2017-12-01 01:07:37] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806124183_1417.jpg
+[2017-12-01 01:08:55] Eu to supondo que (B) e (C) sejam para controle dos motores por que a mesma sequência de ajustes iniciais é feita respectivamente em cada um dos endereços dos 2 blocos.
+[2017-12-01 01:12:55] 9x03 <= 24
+9x00 <= 01
+9x03 <= 5A
+9x01 <= 01
+9x03 <= 94
+9x02 <= 20
+[2017-12-01 01:13:59] curioso o padrão da sequencia de endereços também...
+[2017-12-01 01:14:14] 3, 0
+3, 1
+3, 2
+[2017-12-01 01:14:16] calma q eu ainda estou la atras
+[2017-12-01 01:14:43] a-há! Alguém fisgou a isca!
+[2017-12-01 01:15:03] bora lá!
+[2017-12-01 01:15:15] vou tomar um banho e já volto
+[2017-12-01 01:15:18] vai fritando aí
+[2017-12-01 01:15:31] 👍🏻
+[2017-12-01 01:18:53] (e se tiver condições, pegue as ROMs do Galaxy Force 2 Super Deluxe em algum lugar na internet e compile o MAME pra rodar o driver de emulação em modo debug também, assim você tem autonomia de vasculhar o código também por conta própria)
+[2017-12-01 01:19:43] romset = gforce2sd
+[2017-12-01 01:21:22] Na vdd tem uma quebra nessa sequencia so
+[2017-12-01 01:21:25] Ai
+[2017-12-01 01:23:19] No 9400 é carregado $80 ao invés de carregar $00
+[2017-12-01 01:24:18] Eu vou fazer isso amanhã, pode ser? Pq agora já desliguei td, já tomei banho... To meio em ponto morto.
+[2017-12-01 01:25:49] Mas to seguindo o raciocínio até agora. Tenho algumas questões básicas sobre como declarar hardware e mapeamento de memória no MAME
+[2017-12-01 01:26:15] Essas coisas q já são feijão com arroz pra vc.
+[2017-12-01 01:37:06] ok
+[2017-12-01 01:37:12] voltei do banho com idéias
+[2017-12-01 01:37:57] a CPU Z80 tem barramento de dados de 8 bits. Mas a CPU Motorola 68000 que tem na placa principal tem barramento de dados de 16bits
+[2017-12-01 01:38:24] acho que os 3 grupos de endereções são canais de comunicação com o M68k da placa principal
+[2017-12-01 01:38:56] e o offset 3 de cada grupo devem ser latches de 8 bits para guardar a parte baixa (ou alta) de um valor de 16 bits
+[2017-12-01 01:39:43] aí a escrita nos offsets 0, 1 ou 2 complementa com mais 8 bits formando o número completo a ser comunicado ao barramento de 16 bits do motorola 68k
+[2017-12-01 01:40:32] suspeito que o grupo (a) seja relacionado aos sensores (fim de curso) ou para reportar algum status geral da placa controladora de motores
+[2017-12-01 01:40:46] e que os grupos (b) e (c) sejam mesmo pros 2 eixos de movimentação
+[2017-12-01 01:42:13] aí as escritas 8003 <= 89, 8000 <= 00 significariam Reg Status_0 = 0x0089
+[2017-12-01 01:44:21] E 9400 <= $80?
+[2017-12-01 01:44:30] e as escritas do bloco (b) (endereços de 9000 até 9003) significariam: 
+Reg. X0 = 0x0124
+Reg. X1 = 0x015A
+Reg. X2 = 0x2094
+[2017-12-01 01:46:40] e as escritas do bloco (c) (endereços de 9400 até 9403) significariam: 
+Reg. Y0 = 0x8024
+Reg. Y1 = 0x015A
+Reg. Y2 = 0x2094
+[2017-12-01 01:46:58] O significado desses valores eu ainda não sei.
+[2017-12-01 01:47:26] Mas me parece que há uma estrutura razoável aqui que dá pra inferir da sequencia de endereços de escrita
+[2017-12-01 01:47:34] De onde vc tirou esses Xn e Yn?
+[2017-12-01 01:47:42] nomenclatura inventada minha
+[2017-12-01 01:47:53] eixo X e eixo Y de rotação do cockpit
+[2017-12-01 01:48:13] Pra q vc imagina ter 3 posições de memória pra cada eixo?
+[2017-12-01 01:48:30] por que é a quantidade de escritas que estão sendo feitas
+[2017-12-01 01:48:40] 3 pares de escritas dá 3 números de 16 bits
+[2017-12-01 01:49:32] e esses registradores são identificados pelos offsets (9x00, 9x01 e 9x02)
+[2017-12-01 01:49:39] Mas vc não faz ideia, p. ex., se isso é algum comando de motor, ou inicializacao de algum shift register?
+[2017-12-01 01:49:57] nao faço idéia do que sejam os valores
+[2017-12-01 01:50:07] Tem o esquema dessa placa?
+[2017-12-01 01:50:27] Se alguém já emulou, deve ter
+[2017-12-01 01:50:38] mas a sequencia de escritas tem um jeitão de ser um protocoloque faz latch de uma parte de 8 bits, e depois concatena com uma segunda parte
+[2017-12-01 01:50:55] tem, mas é horrível de ler
+[2017-12-01 01:51:05] todo rabiscado num xerox bem porco
+[2017-12-01 01:51:13] parece até um fax hahaha
+[2017-12-01 01:51:27] 🤔
+[2017-12-01 01:51:29] e o circuito da placa de motores está omitido
+[2017-12-01 01:51:38] acho que só tem o circuito principal
+[2017-12-01 01:51:40] Eita porra
+[2017-12-01 01:51:58] (posso estar enganado, mas já fui atrás disso e não achei nada que fizesse sentido)
+[2017-12-01 01:52:17] to indo dormir agora, continuo amanhã também
+[2017-12-01 01:52:21] té mais
+[2017-12-01 01:52:25] Pq ajudaria a entender..
+[2017-12-01 01:52:31] Te maus
+[2017-12-01 01:52:39] Mais
+[2017-12-01 01:53:05] Happy Hacking!
+[2017-12-01 01:53:23] 👍🏻
+[2017-12-01 01:53:27] 🙊
+[2017-12-01 09:48:00] Voltei !!!
+[2017-12-01 10:24:17] https://www.youtube.com/watch?v=2BIx2x-Q2fE
+[2017-12-01 11:52:21] Amanhã vai ter demoparty no Garoa !
+[2017-12-01 11:52:31] Acabei de receber a demo dos argentinos
+[2017-12-01 11:52:41] já validei que ela funciona bem no emulador
+[2017-12-01 11:52:50] então tá garantido que vamos conseguir exibir
+[2017-12-01 11:53:06] mas eu tava pensando em tentar rodar ela no meu commodore 64 também
+[2017-12-01 11:53:24] pra isso eu preciso ver se rola carregar usando o emulador de floppy via arduino
+[2017-12-01 11:53:39] to com o setup todo aqui pronto, exceto pela falta de um cabo FTDI
+[2017-12-01 11:53:58] se eu conseguir arrumar um cabo FTDI eu posso testar rodar a demo no hardware real
+[2017-12-01 11:56:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806118971_1543.jpg
+[2017-12-01 11:56:49] Não vou mostrar ainda o resto da descrição pra não dar spoiler :-)
+[2017-12-01 11:57:14] 👍
+[2017-12-01 15:31:02] E aí, Werner? Quer continuar a análise ?
+[2017-12-01 15:37:53] Sim, eu hj tive uma manhã corrida. Preciso de um tempinho pra pegar as ROMs e compilar o código
+[2017-12-01 15:49:23] qual é o nome do driver do mame pra galaxy force 2?
+[2017-12-01 15:49:32] nao encontro o cpp...
+[2017-12-01 16:07:23] É esse, @fsanches? src/mame/drivers/segaybd.cpp
+[2017-12-01 16:09:14] yep
+[2017-12-01 16:10:00] pra achar um driver eu costumo entrar no diretório src/mame/drivers e usar o comando git grep "Galaxy Force"
+[2017-12-01 16:11:08] Eu fiz diferente
+[2017-12-01 16:11:19] Fui no github e dei um search
+[2017-12-01 16:11:21] https://github.com/mamedev/mame/search?utf8=✓&q=galaxy+force&type=
+[2017-12-01 16:12:55] Pra vc entrar em debug no mame, qual é a chave q vc insere na linha de comando?
+[2017-12-01 16:13:48] -debug
+[2017-12-01 16:13:56] só isso? eita
+[2017-12-01 16:14:16] eu costumo usar a combinação -window -debug -oslog
+[2017-12-01 16:14:38] o q faz esse combo? Fatality??
+[2017-12-01 16:14:43] pra rodar janelado, abrir o debugger e alertar no terminar de texto sobre escritas ou leituras não mapeadas
+[2017-12-01 16:14:53] 😆
+[2017-12-01 16:15:17] ah, esse último. interessante.
+[2017-12-01 16:15:22] deixa eu ir la
+[2017-12-01 16:17:41] compilando ainda...
+[2017-12-01 16:48:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727056_62138.jpg
+[2017-12-01 16:50:24] beleza!
+[2017-12-01 16:50:39] seguinte... essa máquina tem 3 CPUs Motorola 68000
+[2017-12-01 16:50:46] e 1 CPU Z80
+[2017-12-01 16:51:00] E a placa de controle de motores tem mais uma CPU Z80
+[2017-12-01 16:51:07] kralho... 3 x 16b
+[2017-12-01 16:51:21] 4 cpus na maincpu?
+[2017-12-01 16:51:38] isso
+[2017-12-01 16:51:47] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514833_53174.jpg
+[2017-12-01 16:52:19] na placa principal, o Z80 tem a sua função clássica de controlar o sistema de som
+[2017-12-01 16:52:22] é, tava conferindo lá no driver, é isso msm
+[2017-12-01 16:52:25] pqpqpqp
+[2017-12-01 16:52:41] um dos 68k chamado "maincpu" tem a lógica principal do jogo
+[2017-12-01 16:53:10] vou rapidao na padoca comprar sonho e pao, prossegue ae q na volta eu pego d onde parei
+[2017-12-01 16:53:14] os outros dois 68k "subx" e "suby" controlam o sistema de sprites gráficos se não me engano
+[2017-12-01 16:53:32] 👍
+[2017-12-01 16:54:47] tem uma descrição do hardware nessa página: http://www.system16.com/hardware.php?id=699
+[2017-12-01 16:56:51] Se eu entendi direito, todas as operações de I/O são feitas pelo chip SEGA 315-5296
+[2017-12-01 16:57:55] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514835_54347.jpg
+[2017-12-01 16:58:08] que tá mapeado na maincpu
+[2017-12-01 16:58:48] as 3 CPUs 68K conversam por meio desse bloco de memória RAM compartilhada "shareram"
+[2017-12-01 17:00:37] E essas aqui são as coisas que estão penduradas no chip de I/O:
+[2017-12-01 17:00:43] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804729643_63317.jpg
+[2017-12-01 17:01:39] esses outputs aí são callbacks que cada uma das máquinas configura diferente
+[2017-12-01 17:02:54] na verdade não... desculpa. Isso aí são métodos genéricos que chamam um callback:
+[2017-12-01 17:03:55] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806122811_1598.jpg
+[2017-12-01 17:04:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806120174_1654.jpg
+[2017-12-01 17:05:06] no caso do Galaxy Force 2 Super Deluxe, esses callbacks de output são inicializados aqui:
+[2017-12-01 17:05:13] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726170_62714.jpg
+[2017-12-01 17:06:02] Então a implementação específica da forma como a máquina Galaxy Force 2 Super Deluxe lida com esses outputs está aqui:
+[2017-12-01 17:06:56] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728326_63350.jpg
+[2017-12-01 17:08:20] Esse comentário aí fui eu que escrevi meses atrás quando descobri empiricamente o significado de cada um dos inputs dos sensores de fim de curso e os declarei no driver como inputs mapeados em teclas do emulador
+[2017-12-01 17:09:55] ooops! "alguns meses atrás" significa uns 3 anos já!
+[2017-12-01 17:09:56] https://github.com/mamedev/mame/pull/28
+[2017-12-01 17:11:26] fui eu também que declarei o Z80 da CPU de motores, pois antes tinha só a ROM lá, mas sem instanciar a CPU.
+[2017-12-01 17:11:28] https://github.com/mamedev/mame/pull/216
+[2017-12-01 17:19:00] Está claro até aqui?
+[2017-12-01 17:35:15] Deixa eu entender algumas coisas
+[2017-12-01 17:35:56] outputn_w = output_cbn?
+[2017-12-01 17:36:52] não é igual. Mas uma coisa leva à outra
+[2017-12-01 17:37:36] Essas duas saídas (port D e port H) são chaves de fim de curso?
+[2017-12-01 17:37:47] quando o método output2_w é executado, ele verifica se o callback m_output_cb2 é não nulo, se se for o caso, o executa
+[2017-12-01 17:38:16] entendi
+[2017-12-01 17:38:46] Ainda preciso me acostumar pois praticamente td no MAME é baseado em chamadas pra algum macro
+[2017-12-01 17:38:48] Não. Aque nessa imagem você vê a configuração das portas do chip de I/O. Veja que a porta C é que le os inputs dos sensores de fim de curso
+[2017-12-01 17:38:58] Quase não vejo sintaxe C++, rss
+[2017-12-01 17:39:13] Isso é da minha cabeça... questão de me familiarizar
+[2017-12-01 17:39:44] mas no fundo é tudo C++
+[2017-12-01 17:40:05] as macros são só pra automatizar tarefas repetitivas
+[2017-12-01 17:40:14] Eu sei. Só q aí no MAME tem muita coisa debaixo de macros e macros
+[2017-12-01 17:40:17] sim sim sim
+[2017-12-01 17:40:30] estou falando q preciso conhecer melhor...
+[2017-12-01 17:41:01] Isso vai de encontro ao q eu já tinha te comentado, aprender a usar a estrutura toda q o MAME tem pra programar
+[2017-12-01 17:41:59] Então, output1_w e output2_w não tem relação alguma com limitsw. Estou curioso pra saber que hardware tem aí
+[2017-12-01 17:42:31] Eu ainda não li a página descritiva dessa placa, q vc passou no link aí... tá aberto aqui pra eu ler depois com calma
+[2017-12-01 17:59:43] Então, output1 e output2 são funções callback chamadas após a execução de WRITE8. O que seria o argumento data que é passado em seguida?
+[2017-12-01 18:32:56] toda implementação de write-handler tem, implicitamente data e offset que são o dado e o offset do endereço da escrita
+[2017-12-01 18:34:22] ok
+[2017-12-01 18:35:01] Tentando chegar a uma "visão macro" (não relacionar com macros, que falei antes), o que temos em output1 e 2?
+[2017-12-01 18:35:49] Me parece q em misc_output_w temos video, é isso?
+[2017-12-01 18:36:57] e em m_output_cb2 parece ser relacionado a som
+[2017-12-01 18:39:22] pois é... a implementação desse driver está incompleta (pois ainda não tem toda a emulação da parte dos motores e sensores de fim de curso)
+[2017-12-01 18:39:38] então suspeito que algumas coisas relacionadas aos motores possam estar mapeadas nesses outputs aí
+[2017-12-01 18:39:42] mas não tenho certeza
+[2017-12-01 18:39:52] É iss q estamos tentando descobrir, certo?
+[2017-12-01 18:40:01] é necessário investigar mais.
+[2017-12-01 18:40:02] sim
+[2017-12-01 18:40:24] Em algum dos seus screenshots parece q vi alguma coisa ligada a LAMP em output1, se não me engano
+[2017-12-01 18:41:01] tem sim
+[2017-12-01 18:41:32] leia aí no seu computador o código em src/mame/drivers/segaybd.cpp
+[2017-12-01 18:41:40] eu to trampando agora
+[2017-12-01 18:41:56] mais tarde posso olhar essas coisas com mais detalhes
+[2017-12-01 18:42:24] talvez amanhã em algum momento se nao tiver outras coisas da demoparty rolando
+[2017-12-01 18:43:01] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117224_1770.jpg
+[2017-12-01 18:43:04] Aqui.
+[2017-12-01 18:43:35] isso
+[2017-12-01 18:43:50] é o pisca pisca da luz do botão de start
+[2017-12-01 18:44:21] 👍
+[2017-12-01 18:44:30] pretendo ligar um led num GPIO do RPi pra piscar controlado por esse sinal emitido pelo emulador
+[2017-12-01 18:45:13] Acho q num RPi zero vc consegue emular a maquina inteira
+[2017-12-01 18:45:45] inclusive com servos fazendo o papel dos motores, depois q decodificar como essa parte funciona
+[2017-12-01 18:46:00] sim, essa é a idéia mesmo
+[2017-12-01 18:46:24] fazer motores moverem uma miniatura em função dos sinais emitidos pelo emulador
+[2017-12-01 18:46:40] eu descrivi isso lá naquele post do fiozera: https://forum.fiozera.com.br/t/replicas-funcionais-de-arcades-eletro-mecanicos-com-mame-e-rpi/25
+[2017-12-01 18:46:41] exatamente e com um lcd de 5" ou coisa parecida
+[2017-12-01 18:46:51] Eu li - isso me inspirou
+[2017-12-01 18:47:22] só que tem essa tretinha de desvendar o hardware dos motores antes
+[2017-12-01 18:47:53] e depois a treta da montagem de uma réplica bonita (nao basta ser funcional)
+[2017-12-01 18:47:59] É f*** sem esquema. Com esquema teria sido moleza
+[2017-12-01 18:48:14] Ah essa treta eu quero pegar.
+[2017-12-01 18:48:38] Fazer uma maquininha com servos mg90 comandando o cockpit...
+[2017-12-01 18:48:42] :-)
+[2017-12-01 18:48:52] a gente continua abraçando o mundo né? hahaha
+[2017-12-01 18:48:59] sonhar não custa
+[2017-12-01 18:49:20] Mas seria interessante manter o foco em algum projeto até a conclusão.
+[2017-12-01 19:46:20] hoje eu fiz uma loucura: instalei um debian num RPi 3 a partir de um sdcard com uma imagem inicial ridícula de menos de 50Mb. Instalei sudo, python, build-essential, git. Fiz checkout do MAME e mandei compilar.
+[2017-12-01 19:46:38] vamo vê... tá rolando lá na sala
+[2017-12-01 19:47:10] deve demorar uma eternidade
+[2017-12-01 19:47:25] nossa!! queria ser teu vizinho, ia correndo aí ver isso
+[2017-12-01 19:47:25] mas mandei compilar só o driver da SEGA Y-Board
+[2017-12-01 19:47:37] sim sim - pra testar
+[2017-12-01 19:47:47] e vai rolar, ctz
+[2017-12-01 19:47:57] ainda mais num Pi3
+[2017-12-01 19:48:37] Tava vendo isso aqui: https://www.axidraw.com/
+[2017-12-01 19:48:46] Já tinha visto isso?
+[2017-12-01 19:50:25] esse não. Mas já tinha visto coisas similares
+[2017-12-01 19:53:16] Nossa, que vídeo incrível !!!
+[2017-12-01 19:53:23] Tem que jogar isso no grupo do Garoa !
+[2017-12-01 19:55:48] eu tbm curti
+[2017-12-01 19:55:54] menos o preço...
+[2017-12-01 21:57:06] Y K, migrei suas mensagens sobre o AxiDraw pra o grupo do Garoa. Vamos manter o papo aqui mais focado em emulação, arcades, retrocomputação e preservação histórica de dispositivos de hardware, ok?
+[2017-12-01 21:58:36] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728026_63049.jpg
+[2017-12-01 21:58:38] xiii....
+[2017-12-01 21:58:49] o RPi não deu conta de compilar o MAME...
+[2017-12-01 21:59:13] memória...
+[2017-12-01 21:59:23] espera um pouco
+[2017-12-01 22:01:04] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806119901_1799.jpg
+[2017-12-01 22:02:21] Esses parâmetros vc encontra em /boot/config.txt
+[2017-12-01 22:04:57] ok, vou tentar
+[2017-12-01 22:05:19] 👍
+[2017-12-01 22:05:51] Tem outros truques pra vc deixar ele mais rápido tbm aqui: https://haydenjames.io/raspberry-pi-3-overclock/
+[2017-12-01 22:06:26] Mas seria bom vc ter dissipadores de calor instalados e/ou um fan
+[2017-12-01 22:06:44] tenho dissipadores já
+[2017-12-01 22:06:47] Caso não tenha nada nos chips, não recomendo fazer overclock na cpu
+[2017-12-01 22:06:58] blz, vc pode então tentar brincar com isso tbm
+[2017-12-01 22:07:04] o problema agora nao é velocidade
+[2017-12-01 22:07:09] o problema é memória
+[2017-12-01 22:07:09] sim sim
+[2017-12-01 22:07:16] acho que nao vai dar de novo
+[2017-12-01 22:07:21] pq?
+[2017-12-01 22:07:28] mudou muito pouco a quantidade de memoria disponivel
+[2017-12-01 22:07:32] já tava com bastante
+[2017-12-01 22:07:55] Estava em qto?
+[2017-12-01 22:08:02] agora tem só uns 48Mbytes a mais disponiveis
+[2017-12-01 22:08:17] tava com 920M livres e agora ta com 968M livres
+[2017-12-01 22:08:17] vc colocou o valor em qto?
+[2017-12-01 22:08:22] 16
+[2017-12-01 22:08:49] bom... às vezes...
+[2017-12-01 22:08:50] antes nao tinha nada escrito entao acho que usou um valor padrao que suponho ser 64 (16+48=64)
+[2017-12-01 22:08:51] vai q..
+[2017-12-01 22:09:03] vai que tá no limite e rola né?
+[2017-12-01 22:09:05] duvido
+[2017-12-01 22:09:13] sei lá... tenta a sorte ae
+[2017-12-01 22:09:14] quem come 920 come 968 hahaha
+[2017-12-01 22:09:43] a outra saída seria adicionar swap de alguma forma, mas é péssimo fazer isso em sdcard
+[2017-12-01 22:10:05] deixa ver aqui
+[2017-12-01 22:10:11] e por fim a saida final seria compilação cruzada mesmo
+[2017-12-01 22:10:19] do laptop x86 pro rpi arm
+[2017-12-01 22:10:32] pronto, nao rolou de novo...
+[2017-12-01 22:11:24] lá vamos nós! https://hackaday.com/2016/02/03/code-craft-cross-compiling-for-the-raspberry-pi/
+[2017-12-01 22:13:02] https://youtu.be/IBNZLREqBxg
+[2017-12-01 22:22:53] que legal isso!
+[2017-12-01 22:23:08] 👍
+[2017-12-01 22:23:12] configurei aqui 1 gigabyte extra de SWAP com esse módulo ZRAM
+[2017-12-01 22:23:21] funcionou. Agora vou tentar compilar novamente
+[2017-12-01 22:23:21] 😏
+[2017-12-01 22:23:27] manda!
+[2017-12-01 22:23:54] É pq infelizmente, não tem como fisicamente expandir a RAM dele, pois é td SoC
+[2017-12-01 22:24:19] Só se lançarem uma nova versão de RPi com mais RAM
+[2017-12-01 22:28:45] supostamente daria para adicionar um "shield" com mais RAM, mas teria um gargalo de performance dependendo de qual protocolo fosse usado. Mas em teoria daria pra escrever um módulo de kernel análogo a esse ZRAM, só que com lógica de "swap em RAM remota"
+[2017-12-01 22:29:27] opa! passou!
+[2017-12-01 22:29:40] compilou o luaengine.cpp que era o que tava encrencando até então :-)
+[2017-12-01 22:30:49] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117653_2046.jpg
+[2017-12-01 22:31:06] show!
+[2017-12-01 22:31:10] hehe
+[2017-12-01 22:31:19] muito bom :-)
+[2017-12-01 22:31:35] Mais tarde, dependendo do q vc for querer usar, pode reverter pra dar mais RAM à GPU
+[2017-12-01 22:32:14] é... o truque mesmo foi o swap usando compressão de RAM
+[2017-12-01 22:32:31] Se bem q com o ZRAM eu acredito q ele usa compressão, então não penso q vai comprometer
+[2017-12-01 22:32:57] pra falar a vdd, não sei ao certo.
+[2017-12-01 22:33:00] se eu entendi bem, ele pega conteúdo da RAM e comprime e armazena de volta na RAM
+[2017-12-01 22:33:20] é. foi isso q eu entendi.
+[2017-12-01 22:33:31] liberando o espaço dos dados crus e usando um espaço menos com os dados compressos
+[2017-12-01 22:33:49] então ele faz swap da RAM com a própria RAM. Muito inteligente isso!
+[2017-12-01 22:33:50] ele usa os cores da CPU pra trabalhar na compressão.
+[2017-12-01 22:33:56] tbm achei
+[2017-12-01 22:34:27] o ajuste de split da CPU/GPU é independente disso
+[2017-12-01 22:34:33] exatamente
+[2017-12-01 22:34:45] vc pode mexer nele à vontade, deixando o ZRAM no boot
+[2017-12-01 22:35:13] set and forget
+[2017-12-01 22:35:29] mto show isso aí!
+[2017-12-01 22:35:29] sim, foi o que fiz
+[2017-12-01 22:35:46] é nóis né mano?
+[2017-12-01 22:35:50] nada para a gente
+[2017-12-01 22:35:53] hehehe
+[2017-12-01 22:36:09] calma... a alegria costuma durar pouco
+[2017-12-01 22:36:13] rsss
+[2017-12-01 22:36:25] quero ver na hora de linkar... ai ai aiiii...
+[2017-12-01 22:36:59] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514596_54000.jpg
+[2017-12-01 22:37:14] uma dúvida que eu tenho é se vai precisar instalar o X ou não
+[2017-12-01 22:37:20] o MAME usa a lib SDL
+[2017-12-01 22:37:28] supostamente ela deve abrir um framebuffer e boa...
+[2017-12-01 22:37:55] isso eu já não sei
+[2017-12-01 22:38:06] ah! tem uma dependencia chata aqui com a lib Qt5 que é usada para montar as janelas do debugger
+[2017-12-01 22:38:30] eu não vou usar o debugger no RPi, mas acho que o MAME não tem compilação condicional dessa parte
+[2017-12-01 22:38:48] não sei não, mas acho que não dá pra desabilitar obuild do debugger
+[2017-12-01 22:40:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725985_83876.jpg
+[2017-12-01 22:40:12] Isso ajuda?
+[2017-12-01 22:40:36] ah, boa
+[2017-12-01 22:40:48] vou torcer aqui pro processo de detecção ser automatico
+[2017-12-01 22:40:59] http://mamedev.org/tools/
+[2017-12-01 22:44:08] Aqui tem umas dicas bem específicas pra compilar o MAME inteiro no RPi2 (inclusive algumas configs de swapfile): https://nowhereman999.wordpress.com/2016/02/29/compile-mame-0-171-on-a-raspberry-pi-2/
+[2017-12-01 22:49:17] legal!

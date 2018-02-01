@@ -1,0 +1,134 @@
+[2018-01-17 02:36:38] Pascal Compiler pour 300 dólares vinha como?
+[2018-01-17 06:34:41] Como todo software profissional da época: disquetes 5 1/4 dentro do fichário do manual. A primeira versão do SISNE (SIstema operacional do NExus) foi feita com este compilador (e doses adequadas de assembler)
+[2018-01-17 08:45:11] o nexus rodava SISNE ?
+[2018-01-17 08:45:25] tanto o nexus 1600 quanto o nexus 2600 ?
+[2018-01-17 08:45:49] Esse que temos no laboratório da USP está com IBM PC DOS 3.3
+[2018-01-17 09:19:23] O SISNE era o sistema oficial, mas muita gente rodava o PC DOS (pirateado) ou MS DOS (pirateado ou legal).
+[2018-01-17 09:23:17] Entre outros motivos do nome está a ligação com o Patinho Feio.
+[2018-01-17 09:32:01] qual é a ligação com o Patinho?
+[2018-01-17 09:33:06] O Edson Fregni.
+[2018-01-17 09:33:13] ah
+[2018-01-17 09:33:16] :-D
+[2018-01-17 09:33:58] Se não me engano, na época do desenvolvimento do Nexus o Patinho Feio (ou o que sobrou dele) ficava em exposição na entrada do prédio.
+[2018-01-17 13:15:23] Pensando em um jeito de transferir os dados do nexus pra um pc moderno (pra gente n ter que sofrer com um hd morrendo antes que a gente consiga ver tudo que tem la dentro), eu achei essa thread, http://www.vcfed.org/forum/showthread.php?49915-IBM-PC-XT-and-3-5-quot-floppy-support. Quais sao as chances do meu emuladorzinho gotek funcionar?
+[2018-01-17 13:15:43] Eu assumi que n ia pq ele n formata 360k
+[2018-01-17 13:28:47] acho que o HD é relativamente pequeno. Talvez faça sentido a gente desenvolver um programinha simples que leia os setores do disco rígido e envie via porta serial
+[2018-01-17 13:29:34] podemos desenvolver o programa num computador moderno, gerar um binário de 8088 e transferir pro nexus via disquete
+[2018-01-17 13:35:20] Alllright
+[2018-01-17 13:47:02] Eu tenho um programa de comunicação para DOS, precisa ver se o disco de 5 1/4 ainda está bom.
+[2018-01-17 13:48:00] Outro jeito é digitar um programinha simples no debug.
+[2018-01-17 13:48:21] 30 anos atrás eu faria isto sem suar.
+[2018-01-17 14:58:23] hehehe
+[2018-01-17 14:59:02] eu preciso estudar os detalhes de leitura de disco e de setup da serial em asm...
+[2018-01-17 15:22:28] eu tentei fazer o dump das duas ROMs do nexus 2600 usando o debug.com
+[2018-01-17 15:23:05] deixei os arquivos resultantes no disco ridigo do nexus e hoje o Affonso me passou os arquivos
+[2018-01-17 15:23:34] ele transferiu do nexus prum PC moderno usando disquetes 5 1/4 e uma interface GOTEK que emula um drive de disquetes usando um pendrive USB
+[2018-01-17 15:24:14] é uma versão moderna e um pouquinho mais complicada que o clássico protocolo de comunicação DPL/DPC
+[2018-01-17 15:24:31] "Disquete Pra Lá / Disquete Pra Cá"
+[2018-01-17 15:29:52] (A tentativa de melhorar o classico protocolo de comunicação envolvendo a conexão do gotek direto do nexus que eu acabei de tentar, não funcionou, tenho que ver direito como faz, da seek error na hora de acessar o a:)
+[2018-01-17 15:39:52] Eu sei que tinha um pessoal desenvolvendo firmware alternativo pra GOTEK
+[2018-01-17 15:39:57] só não sei se é software livre
+[2018-01-17 15:40:13] se for, podemos sujar as mãos :-)
+[2018-01-17 15:41:03] se não for, sobra a possibilidade de mergulhar no brejo e voltar com um firmware novo escrito do zero daqui uns 2 meses
+[2018-01-17 15:41:32] ou partir pra outro caminho
+[2018-01-17 16:48:30] Eu tava vendo pela internet aí de uns caras que instalaram o firmware desse otro negocio aqui http://hxc2001.free.fr/floppy_drive_emulator/
+[2018-01-17 16:48:45] Vo ver se eu acho o artigo especifico
+[2018-01-17 16:49:15] https://www.vogons.org/viewtopic.php?f=46&t=43416
+[2018-01-17 16:50:27] (E só pq achei legalzão, um drive caddie de cd da IBM, scsi, liga, n testei com uma placa scsi ainda)
+[2018-01-17 16:50:42] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727147_92468.jpg
+[2018-01-17 21:07:28] Oookay, alguns problemas
+[2018-01-17 21:07:47] lá vamos nós... :-)
+[2018-01-17 21:07:51] O nexus quando liga, fica incessantemente tocando o speaker
+[2018-01-17 21:08:04] O hd n esta mais sendo reconhecido :(
+[2018-01-17 21:08:25] Nao boota mais pelo disquete de boot de dos 3.3 que eu tinha feito mais cedo
+[2018-01-17 21:08:27] wooops
+[2018-01-17 21:08:43] (Ele bootava hoje mais cedo pelo mesmo disco)
+[2018-01-17 21:08:48] chegou a bootar alguma vez?
+[2018-01-17 21:08:49] ah ok
+[2018-01-17 21:09:03] A tela estava tremendo um pouco
+[2018-01-17 21:09:08] Mais agora n ta mais
+[2018-01-17 21:09:15] N sei se isso é um indicador
+[2018-01-17 21:09:38] Mas o primeiro problema de tudo foi que uma das teclas do teclado tava sendo pressionada sem pedir
+[2018-01-17 21:10:04] A uns 40 minutos, um pessoal passou aqui e eu demonstrei o nexus pra eles
+[2018-01-17 21:10:25] E as vezes, sem pressionar nada, aparecia ^Z na tela
+[2018-01-17 21:10:34] "pessoal" o que? Visita ao museu?
+[2018-01-17 21:10:46] ou pesquisadores do laboratório ?
+[2018-01-17 21:10:50] Yeah, uns alunos de mestrado eu acho
+[2018-01-17 21:10:55] A tereza que trouxe
+[2018-01-17 21:10:57] legal
+[2018-01-17 21:11:04] Anyway
+[2018-01-17 21:11:14] Eu abri o teclado
+[2018-01-17 21:11:25] Foi a primeira coisa que comecou a morrer
+[2018-01-17 21:11:37] Entao ta sendo onde eu to comecando a procurar
+[2018-01-17 21:11:47] (Ah, o boot parece estar mais lento tbem)
+[2018-01-17 21:11:53] ah, que coisa! Esquecemos de fazer a leitura da ROM do teclado
+[2018-01-17 21:12:02] e aí, tirou fotos do teclado por dentro?
+[2018-01-17 21:12:10] Incoming
+[2018-01-17 21:12:14] tem mesmo uma ROM lá?
+[2018-01-17 21:12:22] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728576_91170.jpg
+[2018-01-17 21:12:28] e também um microcontrolador
+[2018-01-17 21:12:35] possivelmente as duas coisas num só chip
+[2018-01-17 21:12:45] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723493_117067.jpg
+[2018-01-17 21:13:00] Descobri o que estava travando tantas teclas
+[2018-01-17 21:13:13] ah! que legal! Precisamos extrair essa ROM aí!
+[2018-01-17 21:13:28] Alguem, quando remontou, nao prestou atencao e meio que empurrou uma parte do teclado pro lado
+[2018-01-17 21:13:37] Ai emperrou todas as teclas do lado direito
+[2018-01-17 21:13:53] Sim
+[2018-01-17 21:14:17] Eu vou ver se eu religo e o beep incessante para
+[2018-01-17 21:14:50] (Uma das tentativas de boots falhas apareceu FF TEC, que imaginamos ser uma falha de teclado)
+[2018-01-17 21:14:59] Chequei todas as conexoes
+[2018-01-17 21:25:56] Oookay, problema identificado, o teclado ta com mal contato no cabo
+[2018-01-17 21:26:30] (Ainda n consegui bootar pelo disquete, mas o hd funciona)
+[2018-01-17 21:26:53] Suspeito que o malvado seja este conector
+[2018-01-17 21:27:07] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804724115_115845.jpg
+[2018-01-17 21:28:04] (O hd foi cagada minha, só foi ao mesmo tempo de um otro problema
+[2018-01-17 21:34:08] maravilha!
+[2018-01-17 21:49:09] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728908_90812.jpg
+[2018-01-17 21:49:21] Era pra isso que eu queria ligar ele
+[2018-01-17 21:50:32] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806118195_26269.jpg
+[2018-01-17 21:50:37] N sabia se ia rodar
+[2018-01-17 21:57:18] :-) Muito bom !
+[2018-01-17 21:57:28] (-: Bom demais !
+[2018-01-17 22:03:11] Aquela caixa preta no canto inferior direito da 1a foto do teclado é o relê que eu tanto falava (para fazer click do teclado)?
+[2018-01-17 22:03:39] acho que é, por que na primeira vez que ligamos eu ouvi click-click-click
+[2018-01-17 22:03:48] MAS... depois nunca mais clicou
+[2018-01-17 22:03:53] aí achei que eu estava enganado
+[2018-01-17 22:04:05] talvez esteja com mal funcionamento
+[2018-01-17 22:04:30] Acredito ser o rele
+[2018-01-17 22:04:45] DQ, vc sabe dizer se o relé dava click por conta própria (sem o 8088 do nexus precisar pedir)?
+[2018-01-17 22:04:57] Um dos disquetes que eu tenho é o Space Quest I original. Outro é o Hitchhikers Guide to the Galaxy. Acho que são os jogos originais mais antigos que eu tenho
+[2018-01-17 22:04:57] o próprio fw do teclado faz os clicks?
+[2018-01-17 22:05:05] ou nem software tem nisso dos clicks ?
+[2018-01-17 22:05:33] Que eu me lembre é o fw do teclado.
+[2018-01-17 22:05:58] Depois de eu dar minha mechida o rele clicou bastante
+[2018-01-17 22:06:13] Mas agora parou
+[2018-01-17 22:06:21] Tem uma tecla do lado da barra de espaço que acho que é para ligar/desligar o click.
+[2018-01-17 22:06:34] Pode ser que o relê tenha engripado depois de todo este tempo.
+[2018-01-17 22:07:40] Uma coisa divertida que a infraestrutura do MAME permite é adicionar samples de áudio como recursos do driver de emulação (assim como as ROMs, porém os samples são opcionais). Aí o código do emulador pode mandar tocar os samples em determinadas circunstâncias. Por exemplo, daria pra ter um sample de um click do relé e fazer o emulador tocar quando o firmware do teclado sinalizar em algum pino de I/O.
+[2018-01-17 22:09:21] sabe dizer o que é a tecla da extrema direita na linha superior do teclado? É uma que tem LED liga/desliga embutido na tecla.
+[2018-01-17 22:09:32] Essa tecla está sem a capinha e não sabemos o que ela é.
+[2018-01-17 22:10:02] Tem uma outra faltando, mas já identificamos que é o sinal de soma. Mas essa do canto superior direito a gente ainda não sabe qual é.
+[2018-01-17 22:10:25] Um curiosidade sobre o KQ1 (e SQ1 e outros softwares da Sierra usando o SCI) rodando em placa CGA: ligando à TV tem 16 cores mas com um monitor RGB só 4. A placa de vídeo do Nexus só suporta RGB daí a imagem esquisita.
+[2018-01-17 22:11:35] O 8-bit guy fez um vídeo sobre truques de cores em saída de video composto em alguns PCs com CGA
+[2018-01-17 22:12:05] Eu acho que é esse: https://www.youtube.com/watch?v=niKblgZupOc
+[2018-01-17 22:12:06] Eu estava tentando rodar o SQ1 em modo CGA no DOSBox, mas não deu muito certo.
+[2018-01-17 22:13:12] Eu desconfio que a tecla que falta a capa é o Scroll Lock.
+[2018-01-17 22:23:21] Eu acho que nunca tinha visto uma CGA ligada pelas saída de vídeo composto. Só descobri isto quando vi o SQ1 no DOSBox e fui investigar.
+[2018-01-17 22:24:09] o SQ1 faz uso desse truque de conseguir mais cores pela saída de video composto da CGA ?
+[2018-01-17 22:24:23] E sabe dizer se algum emulador implementa esse modo?
+[2018-01-17 22:25:38] sei que o MAME implementa o vídeo do Apple II que faz uso dessas questões de temporização do canhão. Para CGA com video composto teoricamente deveria ser simples implementar a emulação também, mas não sei se alguém já se preocupou em fazer isso.
+[2018-01-17 22:44:07] Tem como mudar o graphics mode do kq1, aí fica uma imagem bem melhor no monitor monocromatico
+[2018-01-17 22:44:20] Mas eu esqueci de tirar foto 😅
+[2018-01-17 22:44:44] tudo bem... amanhã vc faz de novo e fotografa
+[2018-01-17 22:44:52] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_328774854541050158.webp
+[2018-01-17 22:45:43] 😀😀
+[2018-01-17 22:46:04] Descobri pq zork se recusava a funcionar tbem
+[2018-01-17 22:46:12] tava faltando um arquivo
+[2018-01-17 22:46:15] Uma pasta n foi copiada
+[2018-01-17 22:46:17] o arquivo de dados
+[2018-01-17 22:46:42] Dentro da pasta que n foi copiada, tava o zork1.dat
+[2018-01-17 22:46:43] eu fiquei pensando nisso depois que voltei pra casa e concluí que devia ser algo desse tipo
+[2018-01-17 22:47:58] Amanha eu copio direito e vejo se funfa
+[2018-01-17 22:52:57] Os jogos antigos da Sierra usam  o truque do vídeo composto. O Dosbox emula o modo vídeo composto. O que ele não emula é o modo RGB, pois o alvo dele é jogos. No KQ1 você escolhe o modo na primeira tela.
+[2018-01-17 22:55:11] Eu ia falar do arquivo do Zork, mas esqueci. Eu estava jogando em dezembro, preciso retomar. Mas é jogo só texto, não tem nada especial no Nexus.
+[2018-01-17 22:55:43] O Sebastião também tem uns discos antigos, vai procurar.

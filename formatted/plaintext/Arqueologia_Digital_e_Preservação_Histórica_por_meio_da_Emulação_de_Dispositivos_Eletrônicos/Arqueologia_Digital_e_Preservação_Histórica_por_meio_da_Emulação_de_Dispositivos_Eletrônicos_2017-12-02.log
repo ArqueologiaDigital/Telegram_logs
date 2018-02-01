@@ -1,0 +1,58 @@
+[2017-12-02 00:33:25] compilô !
+[2017-12-02 00:33:34] bora tentá rodá
+[2017-12-02 00:34:04] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512376_54029.jpg
+[2017-12-02 00:34:24] :-(
+[2017-12-02 00:49:09] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514990_53702.jpg
+[2017-12-02 00:49:11] tenta isso
+[2017-12-02 00:49:46] credo!
+[2017-12-02 00:51:24] passou longe?
+[2017-12-02 00:52:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722306_85744.jpg
+[2017-12-02 00:54:53] Aqui tem alguns outros palpites. Mas não sei se qemu tem relação com isso: https://askubuntu.com/questions/854335/ubuntu-server-and-qemu-could-not-initialize-sdl
+[2017-12-02 00:57:38] todo mundo q eu vejo reclamando desse erro parece q a solução é rodar qemu -curses ou qemu -nographic
+[2017-12-02 00:58:02] ou é problema devido a estar em modo console
+[2017-12-02 00:58:13] vc está em modo gráfico?
+[2017-12-02 01:01:48] instalei o Xorg-server agora
+[2017-12-02 01:02:02] e consegui rodar, só que trava na tela do menu de seleção de jogos
+[2017-12-02 01:02:07] o teclado nao responde
+[2017-12-02 01:02:16] nao sei se é X malconfigurado
+[2017-12-02 01:02:23] ou se o MAME trava depois que abre
+[2017-12-02 01:02:37] ou se tá tão lento a ponto de eu não conseguir usar
+[2017-12-02 01:02:54] travou geral. Tiver que dar sudo reboot via SSH
+[2017-12-02 01:03:35] 😕
+[2017-12-02 01:03:46] O Pi roda emuladores numa boa
+[2017-12-02 01:04:25] Isto é, se vc rodar aquelas distros prontas e otimizadas, tipo o RetroPie
+[2017-12-02 01:05:59] https://www.raspbian.org/
+[2017-12-02 01:06:40] Talvez se vc instalasse esse num sd separado, e tentasse rodar o executável embaixo dessa distro.
+[2017-12-02 01:08:28] ou muda o memory split pra um valor maior
+[2017-12-02 01:08:57] vamos ver... tentei de novo aqui e parece que ta melhorando
+[2017-12-02 01:09:00] pode ser q esteja travando por requerer mais memória de video do q o sistema está configurado para liberar
+[2017-12-02 01:09:03] vou copiar as ROMs aqui
+[2017-12-02 01:09:14] um passo por vez
+[2017-12-02 01:09:35] Tente essa minha última sugestão antes
+[2017-12-02 01:10:44] copiei as ROMs
+[2017-12-02 01:10:50] vou tentar rodar lá e já volto
+[2017-12-02 02:50:32] olha aqui um tarefa pendente de mulação de hardware nacional:
+[2017-12-02 02:50:40] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512381_54039.jpg
+[2017-12-02 02:52:05] Scopus Spectrum ED,1985
+[2017-12-02 08:38:47] Check out James Gilleard (@jgilleard): https://twitter.com/jgilleard?s=09
+[2017-12-02 08:39:15] Confiram este ilustrador e suas brincadeiras com trilhas sonoras de games...
+[2017-12-02 08:41:55] No feed do Twitter dele....
+[2017-12-02 08:42:07] (link de cima)
+[2017-12-02 11:47:54] Quem vem para a Demoparty no Garoa hoje ?
+[2017-12-02 11:48:06] Pretendo em algum momento fazer uma mini-oficina de emulação
+[2017-12-02 12:02:32] vou tentar ir mais tarde!
+[2017-12-02 12:02:48] legal
+[2017-12-02 16:06:28] Conseguiu rodar o mame no RPi ontem?
+[2017-12-02 16:07:10] to tentando ainda
+[2017-12-02 16:07:10] agora mesmo
+[2017-12-02 16:07:30] tive que recompilar a lib SDL2 por que a versão que tem no raspbian stretch não vem com suporte a aceleração por hardware
+[2017-12-02 16:08:09] e agora estou tentando botar pra funcionar o MAME no framebuffer (pra nao usar o X)
+[2017-12-02 16:08:11] mas o site do projeto directfb foi vandalizado
+[2017-12-02 16:09:14] ?
+[2017-12-02 16:13:58] https://github.com/DirectFB
+[2017-12-02 16:15:29] Jan 30, 2014
+[2017-12-02 16:20:45] https://github.com/deniskropp/DirectFB/issues/3
+[2017-12-02 16:21:13] Não sei se terá alguma atualização aí. Acho q não.
+[2017-12-02 16:21:57] Acho q foi completamente abandonado. Não é possível pegar os fontes q tem e tentar compilar pra plataforma Arm?
+[2017-12-02 16:35:01] sim, é possível tentar
+[2017-12-02 16:35:33] Eu acho q seria o único jeito.

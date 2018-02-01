@@ -1,0 +1,73 @@
+[2018-01-25 01:55:36] Yeah, não, ele escreve pra essa porta toda hora, e varios valores diferentes, acho que A foi o maior que eu encontrei
+[2018-01-25 01:57:43] Mas eu encontrei o ponto que a bios para de executar comandos normalmente,no adress FE1AA ele faz um call 0F0C55h, pula pra esse ponto na memória, e n tem nada lá, e a execução do bagulho quebra
+[2018-01-25 01:59:07] E logo antes de fazer essa call é quando ele envia esse valor de A pra porta D550
+[2018-01-25 01:59:48] Deve estar relacionado, sei la.
+[2018-01-25 02:00:34] Minha experiencia com assembly é bem limitada, entao to meio que boiand
+[2018-01-25 05:10:54] é... em algum lugar o código quebra, fica doidão
+[2018-01-25 05:11:23] teria que ver quais foram os testes usados para os últimos pulos condicionais antes da coisa toda despirocar
+[2018-01-25 05:11:50] é dificil dizer o quão antes disso aí está o real problema
+[2018-01-25 05:12:12] por que poder rolar uma longa sequencia de efeitos colaterais depois de uma instrução emulada incorretamente
+[2018-01-25 07:58:58] @DQuadros  O Nexus 2600 que está lá na Poli está ligado a um monitor de fósforo verde. A placa de vídeo dele suponho que seja uma CGA. Isso significa que na época havia disponível no mercado computadores Nexus 2600 com monitor colorido ?
+[2018-01-25 08:03:58] Eu fico chocado quando ouço esse tipo de história: "The Hercules Graphics Card was developed in 1982 by Van Suwannukul, founder of Hercules Computer Technology. The system was created by Suwannukul initially so that he could work on his doctoral thesis on an IBM PC using the Thai alphabet, as Thai was his native language."
+[2018-01-25 08:09:36] https://media1.tenor.com/images/f388fe0edf4459e605c97f26b325cca4/tenor.gif?itemid=9387371
+[2018-01-25 08:16:27] Sim, mas na época monitores coloridos eram um luxo.
+[2018-01-25 08:16:59] Mas o circuito da placa de vídeo do 2600 suporta cores
+[2018-01-25 08:17:10] apesar de raramente usarem monitores coloridos na época
+[2018-01-25 08:17:13] correto?
+[2018-01-25 08:17:58] Sim, você pode ligar nele um monitor cga colorido (um bicho bastante raro)
+[2018-01-25 08:18:30] o 2600 era vendido já com a placa CGA instalada?
+[2018-01-25 08:18:44] ou comprava-se essas placas à parte de acordo com a necessidade do cliente?
+[2018-01-25 08:19:33] bastante raro hoje em dia? Ou bastante raro no Brasil de 1982 ?
+[2018-01-25 08:21:03] Não sei se vendiam sem a placa de vídeo. O monitor cga colorido era raro no Brasil de 82 e hoje em dia.
+[2018-01-25 08:23:12] :-)
+[2018-01-25 08:23:44] Acabei de conferir aqui. Tenho aqui em casa um monitor monocromático da SAMSUNG, modelo MA2671
+[2018-01-25 08:23:53] ftp://bitsavers.informatik.uni-stuttgart.de/pdf/samsung/monitors/08146-300-030_MA267_MA467_MDA_Mono_Monitor_Service_Mar90.pdf
+[2018-01-25 08:23:56] MDA
+[2018-01-25 08:25:04] MDA não fez muito sucesso, todo mundo queria gráficos.
+[2018-01-25 08:26:21] mas ouvi dizer que era bom para aplicações comerciais pois a qualidade da imagem era melhor para leitura de texto, planlhas, etc
+[2018-01-25 08:27:21] Achei muito legal esse detalhe da cor marrom dos monitores CGA
+[2018-01-25 08:27:23] http://www.oldskool.org/pc/cgacal
+[2018-01-25 11:17:51] https://archive.org/details/byte-magazine-1982-01
+[2018-01-25 11:18:40] Eu *acho* que coloquei na biblioteca do Garoa esta revista e os números dedicados ao PC IBM nos anos seguintes.
+[2018-01-25 11:36:23] Esta eu não lembrava: a IBM inicialmente não lançou um monitor colorido.
+[2018-01-25 11:57:37] O monitor colorido da IBM foi lançado junto com o PC XT. Custava $680, praticamente o dobro do monocromático ($345).  Fonte: Byte magazine nov/83
+[2018-01-25 11:58:28] Tem um monitor cga supostamente colorido la no museu
+[2018-01-25 11:58:33] Mas ele n liga
+[2018-01-25 12:00:00] Esta era a conversa do pessoal de marketing da IBM. Mas mesmo nas empresas o pessoal gostava de ver gráficos, mesmo à custa de texto pior.
+[2018-01-25 12:08:23] É curioso que a Wikipedia também fala que a MDA vendia mais que a CGA e usa como referência uma entrevista com o presidente da divisão da IBM que fazia o PC, na mesma byte de nov/83. O que diz a entrevista:
+[2018-01-25 12:08:30] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727025_96353.jpg
+[2018-01-25 14:27:14] Na Wikipedia consta que o 5153 (o monitor CGA) foi lançado em 81, o que coloca ele no mesmo ano do PC
+[2018-01-25 14:28:36] Mas, pra texto, o CGA era uma merda sem tamanho perto do MDA.
+[2018-01-25 14:28:57] E o monitor monocromático funcionava também com a Hercules.
+[2018-01-25 14:30:10] Eu, por um tempo, tive uma Hercules "turbo" , que emulava os 16 tons de cinza da CGA em modo texto com a fonta da MDA
+[2018-01-25 14:30:33] Mas a fonte da MDA (que depois foi usada na EGA e VGA) era a coisa mais horrível que a IBM fez.
+[2018-01-25 14:34:38] Na CGA ela precisava ter os verticais em 2 pixels por causa da saída NTSC, mas na MDA eles podiam ter usado as fontes de terminal que eles já usavam em outras máquinas, como o Datamaster ou o 5100/5110/5120
+[2018-01-25 14:40:01] Acho que a Wikipedia está errada. As revistas Bytes da época são fontes mais confiáveis. A CGA era uma merda pelo desejo de suportar a ligação a TV e pela restrição ao acesso à memória de vídeo no modo 80x25.
+[2018-01-25 14:41:48] Mas, mesmo em 81, estava claro que o futuro eram os gráficos.
+[2018-01-25 14:42:16] Mesmo os gráficos da CGA sendo toscos.
+[2018-01-25 15:04:33] No primeiro anúncio que eu vi eles já falam em gráficos
+[2018-01-25 15:04:56] Pode ser que a CGA não tenha vendido bem no começo, mas eu tenho certeza de que estava disponível.
+[2018-01-25 15:08:10] A placa CGA foi lançada em 81 junto com o PC, o monitor CGA só foi lançado em 83 junto com o XT.
+[2018-01-25 15:08:33] Isso não parece coisa da IBM
+[2018-01-25 15:09:37] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513136_83110.jpg
+[2018-01-25 15:10:18] A teoria é de que por 2 anos a IBM colocou no mercado um produto (placa CGA) com algumas funcionalidades (saída colorida) inacessíveis?!
+[2018-01-25 15:11:22] Em termos, você podia ligar numa TV.
+[2018-01-25 15:11:29] Inacessiveis por conta da falta de um produto complementar que fosse compativel (monitor CGA colorido) ?
+[2018-01-25 15:11:46] Ah, verdade !
+[2018-01-25 15:12:08] http://www-01.ibm.com/common/ssi/ShowDoc.wss?docURL=/common/ssi/rep_ca/2/897/ENUS183-002/index.html&lang=en&request_locale=en
+[2018-01-25 15:12:16] É.. 5153 model 1 é de 1983
+[2018-01-25 15:12:23] O texto acima é da Byte de nov/83. Olha a pérola na Byte de janeiro de 82:
+[2018-01-25 15:12:27] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806123813_30555.jpg
+[2018-01-25 15:14:28] A verdade é que a IBM não sabia no que estava entrando... Dêem uma lida nestas duas revistas (estão no Internet Archive) e tentem imaginar como eram as coisas nesta época.
+[2018-01-25 15:14:43] A própria wikipedia menciona o lance da inexistência de um monitor RGBI em 1981: https://en.wikipedia.org/wiki/Color_Graphics_Adapter#RGBI_monitor_availability
+[2018-01-25 15:16:38] O monitor da matéria da BYTE é um Amdek
+[2018-01-25 15:21:27] Eu lembro quando a Scopus obteve um IBM XT com monitor IBM colorido para testes de compatibilidade. Tinha disputa na hora do almoço para ver quem ia fazer testes com jogos... Eu tenho um disquete com o software preferido para isto, Sailing. Não sei se vai funcionar. Tinha uma proteção contra cópias e não rodava a 8MHz.
+[2018-01-25 15:23:05] Putz, olha ele aqui
+[2018-01-25 15:23:06] https://www.youtube.com/watch?v=zO7vTsZEvuY
+[2018-01-25 15:24:20] Legal!
+[2018-01-25 15:24:49] Qual o problema desse programa com os 8MHz ?
+[2018-01-25 15:26:46] Se lembro direito, dava problema com a proteção.
+[2018-01-25 15:28:10] Como muitos jogos da época, ele tinha uma trilha ou setor gravado de forma não padrão (para "não ser copiável"). Para ler este setor precisava acessar direto o hardware.
+[2018-01-25 15:28:35] Mas faz muito tempo que eu olhei isto.
+[2018-01-25 15:29:02] Fiquei surpreso de achar o disco.
+[2018-01-25 22:14:53] https://twitter.com/sigfpe/status/956679822293413888

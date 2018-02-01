@@ -1,0 +1,205 @@
+[2017-11-06 18:21:02] 👍 vou abrir ele aqui
+[2017-11-06 18:22:41] Acabei de atualizar esse grupo para "super grupo" de modo a poder usar algumas funcionalidades extras como, por exemplo, a habilidade de setar uma mensagem fixa
+[2017-11-06 18:23:12] 👍
+[2017-11-06 18:23:46] Este é um grupo de estudos focado em articular uma força-tarefa para a preservação de hardware histórico. O resgate histórico do Patinho Feio será um dos nossos principais projetos (via emulação, digitalização de documentos, construção de réplicas-funcionais, etc) mas há abertura para a discussão de outros projetos de emulação e de preservação histórica de hardware sempre que houver interesse.
+
+Este grupo tem seu histórico registrado publicamente em: https://garoa.github.io/Telegram_logs_Garoa_Hacker_Clube_Publico/formatted/html/index.html
+[2017-11-06 18:24:45] esse texto vai ficar fixo no grupo?
+[2017-11-06 18:25:05] talvez. Se eu conseguir entender como faz
+[2017-11-06 18:25:11] não tô achando aqui a opção
+[2017-11-06 18:25:53] pinned the message
+[2017-11-06 18:26:09] Pronto, feito!
+[2017-11-06 18:26:23] Podemos editar a mensagem à vontade com o passar do tempo, é claro.
+[2017-11-06 18:28:02] como é q faz para ver a mensagem?
+[2017-11-06 18:29:52] curiosamente só consigo ver por meio do cliente desktop (talvez pelo celular também dê). Mas pela versão web do telegram não aparece nem a opção de configurar "pinned-message" nem de visualizar.
+[2017-11-06 18:30:02] talvez não implementaram isso no cliente web
+[2017-11-06 18:31:42] ummm
+[2017-11-06 18:37:25] eu só usava o cliente web. Não tinha idéia q havia um cliente desktop. Já to usando aqui
+[2017-11-06 18:38:15] agora aparece a msg fixada
+[2017-11-06 19:12:10] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728199_39924.jpg
+[2017-11-06 19:14:25] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_38846012097298894.webp
+[2017-11-06 19:14:38] To fazendo make
+[2017-11-06 19:14:46] mas vai demorar, eu só digitei make.
+[2017-11-06 19:14:53] aquele make para compilação parcial ?
+[2017-11-06 19:14:54] ah!
+[2017-11-06 19:14:58] eita...
+[2017-11-06 19:15:05] não o parcial, fiz merda
+[2017-11-06 19:15:09] lá vão umas 2 ou 3 horas
+[2017-11-06 19:15:10] agora ta fazendo geral
+[2017-11-06 19:15:14] nossa
+[2017-11-06 19:15:18] mas tá fazendo
+[2017-11-06 19:15:24] dá ctrl-C aí e faz o build parcial
+[2017-11-06 19:15:31] é mais negócio
+[2017-11-06 19:15:43] tava com medo de fazer isso se desse pau...
+[2017-11-06 19:15:50] você nem tem um ROM set completo do MAME pra rodar todos os drivers
+[2017-11-06 19:16:14] preciso baixar a ROM do CP-500
+[2017-11-06 19:17:04] ele está processando os arquivos de layouts
+[2017-11-06 19:17:20] eu lembro q vc disse q esses ele sempre pega de todos
+[2017-11-06 19:17:26] é... é meio burro nesse aspecto. Ele processa todos arquivos de layout mesmo quando pedimos um build parcial
+[2017-11-06 19:17:56] seria ótimo se alguém pudesse arrumar esse aspecto dos scripts de build
+[2017-11-06 19:23:07] Dá uma espiada nisso:
+[2017-11-06 19:23:11] Compiling 3rdparty/bgfx/src/glcontext_egl.cpp...
+In file included from ../../../../../3rdparty/bgfx/src/glcontext_egl.cpp:9:0:
+../../../../../3rdparty/bgfx/src/renderer_gl.h:43:22: fatal error: GL/gl.h: Arquivo ou diretório não encontrado
+compilation terminated.
+bgfx.make:480: recipe for target '../../../../linux_gcc/obj/x64/Release/3rdparty/bgfx/src/glcontext_egl.o' failed
+make[2]: * [../../../../linux_gcc/obj/x64/Release/3rdparty/bgfx/src/glcontext_egl.o] Error 1
+Makefile:64: recipe for target 'bgfx' failed
+make[1]: * [bgfx] Error 2
+makefile:1243: recipe for target 'linux_x64' failed
+make: *** [linux_x64] Error 2
+[2017-11-06 19:23:27] fatal error: GL/gl.h: Arquivo ou diretório não encontrado
+[2017-11-06 19:23:33] do q se trata esse GL/gl.h
+[2017-11-06 19:23:38] precisa instalar alguma lib de OpenGL
+[2017-11-06 19:23:44] não sei como é na sua distro
+[2017-11-06 19:23:57] será q é só dar um apt-get?
+[2017-11-06 19:25:33] mas talvez seja algo similar a um sudo apt-get install alguma-coisa-dev
+[2017-11-06 19:25:42] sudo apt-get install mesa-common-dev segundo esse site: https://askubuntu.com/questions/306703/compile-opengl-program-missing-gl-gl-h
+[2017-11-06 19:25:57] tava lendo esse mesmo post
+[2017-11-06 19:26:15] ele pede pra usar apt-file mas esse comando não existe
+[2017-11-06 19:26:30] sudo apt-get install mesa-common-dev
+[2017-11-06 19:26:35] vou tentar instalar esse treco aí (mesa)
+[2017-11-06 19:26:45] não preciso sudo, eu sou root
+[2017-11-06 19:27:01] https://en.wikipedia.org/wiki/Mesa_(computer_graphics)
+[2017-11-06 19:27:30] ummm.
+[2017-11-06 19:27:30] Eu nunca uso o sistema como root. É muito fácil fazer besteira e não ter volta.
+[2017-11-06 19:27:34] faz todo sentido
+[2017-11-06 19:28:04] essa distro já veio configurada com o usuário root. Eu posso criar outro, não root
+[2017-11-06 19:28:18] seria bom. Para a sua própria segurança 😉
+[2017-11-06 19:52:03] agora é o sdl
+[2017-11-06 20:01:22] 😉
+[2017-11-06 20:09:31] Pode me dar um help com esse erro:
+[2017-11-06 20:09:33] Os pacotes a seguir têm dependências desencontradas:
+ libpam-systemd : Depende: systemd (= 235-2) mas 228-4 está para ser instalado
+ udev : Quebra: systemd (< 233-4) mas 228-4 está para ser instalado
+E: Erro, pkgProblemResolver::Resolve gerou falhas, isto pode ser causado por pacotes mantidos (hold).
+[2017-11-06 20:09:47] eu entendi o q ele diz, mas não sei como resolver
+[2017-11-06 20:10:10] ele está para instalar uma versão inferior dessas duas dependências
+[2017-11-06 20:13:21] ele deu esse erro ao tentar o apt-get install libsdl2-dev
+[2017-11-06 20:14:30] to dando apt-get no systemd
+[2017-11-06 20:18:46] MAME não deveria ter relação nenhuma com systemd !!!!
+[2017-11-06 20:19:19] já atualizei o systemd e tbm instalei o sdl2. agora to com mais outro erro......
+[2017-11-06 20:19:41] cc1plus: fatal error: ../../../../linux_gcc/obj/x64/Release/emu.h: Arquivo ou diretório não encontrado
+[2017-11-06 20:19:44] systemd é parte básica do sistema
+[2017-11-06 20:20:01] mas ele deu esse erro de dependencia ao tentar instalar o sdl2
+[2017-11-06 20:20:13] pra instalar o sdl2 tive que atualizar o systemd
+[2017-11-06 20:20:23] e agora tem esse outro erro: cc1plus: fatal error: ../../../../linux_gcc/obj/x64/Release/emu.h: Arquivo ou diretório não encontrado
+[2017-11-06 20:20:43] Não era o MAME q estava pedindo isso
+[2017-11-06 20:20:46] era o SDL2
+[2017-11-06 20:20:47] ok
+[2017-11-06 20:21:15] tenta fazer make REGENIE=1
+[2017-11-06 20:21:33] esse parametro já está na linha de comando q vc me passou anteriormente
+[2017-11-06 20:21:36] o sistema de build do MAME não é tão esperto e às vezes precisamos mandar ele re-processar as regras de build
+[2017-11-06 20:21:46] ok
+[2017-11-06 20:22:51] adiciona a palavra clean no final desse comando pra limpar o build incompleto feito até agora e depois re-executa aquela linha longa do build-parcial
+[2017-11-06 20:23:06] sei lá... tô pensando aqui no que pode ter dado errado
+[2017-11-06 20:23:08] to atualizando o gcc...
+[2017-11-06 20:23:13] hahaha
+[2017-11-06 20:23:13] daí vou tentar isso
+[2017-11-06 20:23:13] ok
+[2017-11-06 20:23:27] sei lá né? tinha o nome gcc no meio desse path
+[2017-11-06 20:23:39] emu.h é um arquivo comum demais no MAME pra não estar achando
+[2017-11-06 20:23:51] praticamente tudo no MAME dá include no emu.h
+[2017-11-06 20:24:02] pois é, estranho
+[2017-11-06 20:25:13] make clean primeiro, depois make SUBTARGET=trs80_ SOURCES=src/mame/drivers/trs80.cpp REGENIE=1?
+[2017-11-06 20:30:43] make SUBTARGET=trs80_ SOURCES=src/mame/drivers/trs80.cpp REGENIE=1 clean
+[2017-11-06 20:46:36] que estranha essa dependência da sdl2 com o systemd...
+[2017-11-06 21:05:32] eu também achei
+[2017-11-06 21:05:51] Ismael e @wmoecke , vocês já se conhecem ?
+[2017-11-06 21:06:59] O Ismael aparentemente tem acompanhado nossas conversas aqui. Já o Werner acho que não conhece o seu trabalho, né?
+[2017-11-06 21:07:22] O Ismael frequentou o Garoa Hacker Clube por algum tempo quando ele morava no Brasil, aqui em São Paulo
+[2017-11-06 21:18:16] opa
+[2017-11-06 21:18:34] dei uma saida, retornei agora
+[2017-11-06 21:19:15] deixei instalando aqui
+[2017-11-06 21:19:58] solucionou as tretas do emu.h ?
+[2017-11-06 21:20:07] nao ainda.
+[2017-11-06 21:20:14] to aguardando o gcc acabar de atualizar
+[2017-11-06 21:20:32] qdo cheguei agora tava parado em uns textos
+[2017-11-06 21:20:37] é... se me lembro bem o MAME precisa de uma versão relativamente nova no gcc
+[2017-11-06 21:20:48] precisei pressionar espaço diversas vezes
+[2017-11-06 21:21:08] então vamos terminar de atualizar e daí eu faço o clean e tento compilar de novo
+[2017-11-06 21:21:25] é... vamos ver
+[2017-11-06 21:32:48] Eu não me lembro se conheci o @wmoecke
+[2017-11-06 21:33:05] Provavelmente não
+[2017-11-06 21:34:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512294_33222.jpg
+[2017-11-06 21:34:38] eu não lembro, só fui duas vezes ao garoa. A primeira faz dois anos
+[2017-11-06 21:34:57] Só lembro de umas poucas pessoas, dentre elas o Juca
+[2017-11-06 21:35:19] Então provavelmente não
+[2017-11-06 21:42:01] xiiiiii. O Kali travou.
+[2017-11-06 21:42:09] nunca vi acontecer isso
+[2017-11-06 21:42:18] ainda bem q é vm
+[2017-11-06 21:44:09] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722011_64314.jpg
+[2017-11-06 21:47:48] dancei. Não tem snapshot salvo.
+[2017-11-06 21:47:53] perdi a maquina.
+[2017-11-06 22:02:37] :-P
+[2017-11-06 22:02:58] que zoado, hein
+[2017-11-06 22:03:14] dual-boot demorô
+[2017-11-06 22:03:35] (no mínimo um dual boot ;-D)
+[2017-11-06 22:11:00] Dual boot?
+[2017-11-06 22:11:23] Mas a maquina era uma vm
+[2017-11-06 22:11:33] qual sistema operacional você tem no seu computador ?
+[2017-11-06 22:11:44] Windows 7
+[2017-11-06 22:11:58] a minha sugestão é instalar o GNU+Linux como sistema operacional verdadeiro no seu computador
+[2017-11-06 22:12:17] ou, ao menos, instalá-lo lado a lado com o Windows 7, em esquema de dual boot
+[2017-11-06 22:12:36] Mas aí perco td q eu tenho aqui.. Programas, documentos, etc
+[2017-11-06 22:12:47] VMs são legais, mas se elas te dão dor de cabeça como a que você teve hoje, não vale o risco
+[2017-11-06 22:12:56] Minha vida toda está nesse windows
+[2017-11-06 22:13:06] Por isso eu tenho as vms
+[2017-11-06 22:13:06] então faça um backup da sua vida
+[2017-11-06 22:13:14] 😊
+[2017-11-06 22:13:28] Cara o q zoou foi a vm
+[2017-11-06 22:13:33] Nao o windows
+[2017-11-06 22:13:35] algum dia o laptop pifa e você perde a "sua vida"
+[2017-11-06 22:14:18] Ja aconteceu isso diversas vezes 
+Já varias vezes clonei meu hd para uma outra maquina
+[2017-11-06 22:14:21] justamente, instalando o GNU+Linux direto no HD (mesmo que lado-a-lado com o Windows em esquema dual boot), você vai ter uma dor de cabeça a menos (como uma VM zoando do nada)
+[2017-11-06 22:15:56] Pensarei nisso. Se nao conseguir recuperar nem com a imagem do iso então só me resta reinstalar o kali. Daí posso pensar em fazer com dual boot...
+[2017-11-06 22:16:30] por que a outra opção é compilar o MAME no Windows. Mas eu nem sei como te ajudar nisso  :-P
+[2017-11-06 22:16:35] apesar de ser possível
+[2017-11-06 22:16:39] (em teoria)
+[2017-11-06 22:17:14] Penso em tentar isso amanhã. Tenho o gcc no windows.
+[2017-11-06 22:40:28] Não vale a pena
+[2017-11-06 22:43:44] O q não vale a pena?
+[2017-11-06 22:44:00] Windows hahaha
+[2017-11-06 22:44:10] (perdão)
+[2017-11-06 22:44:24] E compilar o mame no Windows
+[2017-11-06 22:44:27] Ah tá... bom, eu concordo. Não sou daqueles fanboy da microsoft
+[2017-11-06 22:44:54] Mas já tive esses erros catastróficos no Linux Debian e agora nesse Kali. Confesso q me dá medo.
+[2017-11-06 22:45:05] Compilar o MAME no Windows não vale a pena?
+[2017-11-06 22:45:31] Parece q qq coisa estoura a bomba e vc perde tudo do nada...
+[2017-11-06 22:45:52] eu estava só atualizando o GCC e travou com aquela tela cinza
+[2017-11-06 22:45:55] É... Na verdade eu não posso dizer que Linux é um bom sistema operacional, mas é infinitamente melhor :p
+[2017-11-06 22:46:10] o problema é essa questão da estabilidade.
+[2017-11-06 22:46:37] Me passa uma impressão de ser um sistema que tende a ser instável... de uma hora para outra, booom.
+[2017-11-06 22:47:04] Mas esse é um tema de escolha, é só instalar um sistema estável
+[2017-11-06 22:47:13] No windows tem uma coisa: Se vc instala algo q não funciona, o problema fica isolado. Não compromete todo o kernel do SO
+[2017-11-06 22:48:20] Tendo experiência no desenvolvimento dos dois, eu posso confirmar você que não, é igual ou pior
+[2017-11-06 22:49:03] Bom, vai de cada um.
+[2017-11-06 22:49:34] Eu não sinto ainda confiança pra migrar todas as minhas coisas pro Linux. Simplesmente não consigo confiar. Problema no Windows eu sei resolver.
+[2017-11-06 22:49:44] >20 anos de prática.
+[2017-11-06 22:49:52] Pode ter melhores resultados com o OpenBSD
+[2017-11-06 22:50:42] Ah, sim, do lado da experiência, leva tempo se acostumar, tal vez
+[2017-11-06 22:51:45] Na verdade o meu SO leva passado por 6 computadores, já tem mais de dez anos
+[2017-11-06 22:52:31] Geralmente sem problema
+[2017-11-06 22:52:35] mesma coisa aqui comigo, com o Windows
+[2017-11-06 22:52:51] problemas tive, mas resolvíveis. Nada que quebrasse o kernel
+[2017-11-06 22:53:01] são duas perspectivas distintas
+[2017-11-06 22:53:17] Mas como você quebra o kernel?
+[2017-11-06 22:53:47] Se você não faz desenvolvimento de drivers tá difícil
+[2017-11-06 22:54:15] não sei. Não quis dizer literalmente. Só q o negocio vai pras cucuias e pronto.
+[2017-11-06 22:54:24] não sou literado em linux.
+[2017-11-06 22:54:29] muito menos em kernel
+[2017-11-06 22:54:32] do linux
+[2017-11-06 22:54:37] ou desenvolvimento de drivers
+[2017-11-06 22:55:07] Então nunca vai ter muito problema :p
+[2017-11-06 22:55:39] mas já estou com uma bomba. tentando resolver atualizando a distro.
+[2017-11-06 22:55:46] Tente com alguma distribuição mais estável, openSUSE por exemplo
+[2017-11-06 22:56:03] blz
+[2017-11-06 22:56:43] Mesmo Debian Sid vai dar menos problemas que Kali
+[2017-11-06 22:58:03] Mas, para começar, alguma coisa assim bem "enterprise" vai ser melhor para você, provavelmente
+[2017-11-06 23:04:08] @wmoecke e se pensa seguir o conselho do @fsanches, pegue algum disco USB/eSATA e faça a instalação aí, depois se quer ficar com ele definitivo e só copiar
+[2017-11-06 23:04:52] É mais simples na hora de quebrar que o dual boot no disco interno
+[2017-11-06 23:06:23] Eu quero dizer, você não tem que se quebrar a cabeça, e pode usar o disco na VM e para boot do host também
+[2017-11-06 23:06:29] Facilmente
+[2017-11-06 23:07:40] Eu não vejo simples fazer desenvolvimento no Windows, ainda hoje tem pouco  suporte
+[2017-11-06 23:07:52] E não vai ter

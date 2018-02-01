@@ -1,0 +1,237 @@
+[2017-11-18 00:01:35] hoje eu fui na USP e dei uma arrumada geral por lá
+[2017-11-18 00:01:51] e também bati um papo legal com o professor João José Neto
+[2017-11-18 00:02:19] na sala do acervo não-exposto eu consegui organizar bem cerca de metade do material
+[2017-11-18 00:02:49] mais umas 2 ou 3 visitas e aquele espaço vai ficar bem bacana pra poder trabalhar na restauração e no estudo das máquinas
+[2017-11-18 00:15:17] Legal.
+[2017-11-18 00:16:16] o professor me disse hoje que ele acha que eu devo dar continuidade à construção do painel do Patinho Feio
+[2017-11-18 00:16:29] e eu falei de vocë, Werner
+[2017-11-18 00:16:40] mencionei que você também está empolgado com isso
+[2017-11-18 00:16:41] opa, fez minha caveira? rss
+[2017-11-18 00:16:49] Eu tbm acho q devemos fazer isso
+[2017-11-18 00:16:54] sim...
+[2017-11-18 00:17:05] Eu adoraria poder levar uma réplica funcional e mostrar a ele...
+[2017-11-18 00:17:14] talvez eu dedique um pouco de tempo amanhã para debugar o firmware do painel
+[2017-11-18 00:17:14] falar q ajudei a construir.
+[2017-11-18 00:17:19] pra fazer voltar a funcionar
+[2017-11-18 00:17:30] e talvez soldar uns switches
+[2017-11-18 00:17:35] Eu gostaria mto de fazer isso, mas preciso ligar todas as chavinhas.
+[2017-11-18 00:18:14] E montar aqueles shift registers
+[2017-11-18 00:19:22] sim
+[2017-11-18 00:19:41] o ideal seria projetar uma pcb para os shift registers
+[2017-11-18 00:19:47] sim!
+[2017-11-18 00:19:57] mas na falta disso eu tenho feito usando placa padrão
+[2017-11-18 00:20:33] Se vc me permite um comentário, eu vi a parte de trás desse painel... e me deu uma vontade grande de recomeçá-la do zero
+[2017-11-18 00:20:41] Digo, a parte elétrica.
+[2017-11-18 00:20:46] sim, eu sei
+[2017-11-18 00:21:05] Eu tenho maior gosto por soldar as coisas com o maior esmero e tentar minimizar os fios soltos
+[2017-11-18 00:21:07] dá pra recomeçar do zero com aquele que tá no Garoa
+[2017-11-18 00:21:33] É uma boa.
+[2017-11-18 00:22:45] Outra coisa q não sai da minha cabeça são aquelas placas q vc começou a projetar pra replicar todos os circuitos do PF
+[2017-11-18 00:22:57] Aquilo seria lindo.
+[2017-11-18 00:23:21] sim, será!
+[2017-11-18 00:23:40] A gente pode falar sério sobre isso. Até a parte do $$
+[2017-11-18 00:32:11] Eu sou um pouco impulsivo...
+[2017-11-18 00:33:23] vc encomendou 3 da CDE-3 e 3 da debug?
+[2017-11-18 00:33:36] precisa ser repetidas?
+[2017-11-18 00:33:49] (eu sei q a qtde minima dele é 3)
+[2017-11-18 00:34:51] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725807_70813.jpg
+[2017-11-18 00:36:08] yep!
+[2017-11-18 00:36:17] encomenda mínima de 3 unidades
+[2017-11-18 00:36:34] esse foi o motivo pelo qual não rodei esses projetos em fevereiro
+[2017-11-18 00:36:43] por que eu não queria comprar 3 unidades
+[2017-11-18 00:36:48] certo
+[2017-11-18 00:36:50] mas agora acho que faz sentido
+[2017-11-18 00:37:02] faz assim cara, eu banco os componentes
+[2017-11-18 00:37:03] um par pra mim, um pra vc e um pra deixar na Poli talvez ?\
+[2017-11-18 00:37:23] boa idéia!
+[2017-11-18 00:37:41] Seria muito bacana ter isso lá, o prof. João certamente irá se iluminar
+[2017-11-18 00:38:03] Eu faço questão de comprar os componentes pras 3
+[2017-11-18 00:38:16] tomara que não tenha erros de projeto
+[2017-11-18 00:38:24] mas eu acho que tá tudo ok
+[2017-11-18 00:38:25] Ah ta...
+[2017-11-18 00:38:28] sempre acontece
+[2017-11-18 00:38:32] lei de murphy
+[2017-11-18 00:38:43] mas agora já era... já encomendei
+[2017-11-18 00:38:46] rss
+[2017-11-18 00:38:47] vamos ver quando chegar
+[2017-11-18 00:38:52] a gente conserta
+[2017-11-18 00:39:16] placa sem trilha cortada e jumper ligando os pontos não é placa
+[2017-11-18 00:39:53] hahaha
+[2017-11-18 00:40:13] tem q mostrar q teve sangue suor e lágrimas ali...
+[2017-11-18 00:40:35] https://forum.fiozera.com.br/uploads/default/original/1X/890f44d36e3f9c23fb80b6a99983b1d89f99203d.png
+[2017-11-18 00:41:05] exato!
+[2017-11-18 00:48:10] sensação gostosa de ter gasto uma grana num projeto da hora
+[2017-11-18 00:48:23] agora é só esperar
+[2017-11-18 00:48:29] é sim. Demora?
+[2017-11-18 00:48:40] deve levar um mês, eu acho
+[2017-11-18 00:48:54] eles dizem 10 dias após fabricação
+[2017-11-18 00:49:09] e de 10 a 15 dias pra fechar um painel de encomendas de multiplos clientes
+[2017-11-18 00:49:37] eu aposto que vou ver o Falcon Heavy voando antes de ver essas PCBs do Pato
+[2017-11-18 00:49:46] rsss
+[2017-11-18 00:50:22] http://www.spacex.com/falcon-heavy
+[2017-11-18 00:52:27] lindo esse foguete
+[2017-11-18 00:53:40] https://static.curtacircuitos.com.br/projects/001252/001252.top.png
+[2017-11-18 00:54:48] https://static.curtacircuitos.com.br/projects/001801/001801.top.png
+[2017-11-18 00:56:55] essa placa vai LEDs... 52 😆
+[2017-11-18 01:01:03] me passa o BOM dessas duas placas cara... é q eu to com aquele problema aqui q o KiCAD não abre.
+[2017-11-18 01:04:26] veja se os projetos tão publicos aqui https://curtacircuitos.com.br/felipesanches
+[2017-11-18 01:04:35] vou gerar o BOM e te passo
+[2017-11-18 01:04:47] só nao vou fazer isso agora por que to indo dormir
+[2017-11-18 01:05:04] blz, eu só quero ter isso pra qdo for encomendar
+[2017-11-18 01:05:16] tem tempo
+[2017-11-18 13:44:32] https://twitter.com/FozzTexx/status/931676084722008065
+[2017-11-18 15:14:47] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804728866_52497.jpg
+[2017-11-18 15:15:58] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722956_73497.jpg
+[2017-11-18 15:16:01] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726815_50514.jpg
+[2017-11-18 15:19:00] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726472_50756.jpg
+[2017-11-18 15:22:53] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512034_43560.jpg
+[2017-11-18 15:23:37] Ah eu lembro desse cartucho
+[2017-11-18 15:24:00] Isso foi ontem ou vc está aí na USP?
+[2017-11-18 15:24:12] foi ontem. Peguei emprestado pra estudar
+[2017-11-18 15:24:19] vai emular?
+[2017-11-18 15:24:27] não tem o que emular nisso aí
+[2017-11-18 15:24:33] é só um cartucho com software
+[2017-11-18 15:24:34] já chupinhou as ROMs?
+[2017-11-18 15:24:44] extraí as duas EPROMs UV
+[2017-11-18 15:25:00] as mask roms é mais difícil por que estao soldadas na placa
+[2017-11-18 15:25:24] poderia emular talvez algum driver de impressão usando as fontes armazenadas nessas EPROMs?
+[2017-11-18 15:25:43] o ideal seria emular uma impressora laserjet
+[2017-11-18 15:25:51] ummm... remover até dá.
+[2017-11-18 15:26:05] e carregar esse cartucho como um opcional de extensão
+[2017-11-18 15:26:16] Eu tenho aqui em casa o wick e o sugador pra retirar a solda dos pinos.
+[2017-11-18 15:26:43] E minha estaçãozinha com temperatura ajustável.
+[2017-11-18 15:27:08] Taí uma idéia interessante
+[2017-11-18 15:45:09] o mundo tá repleto de idéias interessantes...
+[2017-11-18 15:46:15] idéia interessante no mundo abunda!
+[2017-11-18 15:46:39] sim sim. Falta execução.
+[2017-11-18 15:46:57] ou priorização...
+[2017-11-18 15:48:02] falando em idéias interessantes, sobre a nossa discussão de ontem, queria ver contigo um pouco sobre a parte financeira.
+[2017-11-18 15:48:50] Quero saber de vc como vc vê a melhor forma de compartilharmos os custos (atuais e os que virão).
+[2017-11-18 15:49:09] Eu dei um pontapé inicial ontem, mas esqueci de lhe perguntar isso antes.
+[2017-11-18 15:49:20] :-)
+[2017-11-18 15:50:19] Whenever you feel like.
+[2017-11-18 15:50:40] claro... mas acho que essa é uma conversa melhor para se ter pessoalmente
+[2017-11-18 15:51:44] sem problemas.
+[2017-11-18 15:51:51] up to you.
+[2017-11-18 18:03:32] https://github.com/ArqueologiaDigital
+[2017-11-18 18:04:17] Migrei todos os meus repos pessoais de escaneamento de teses de mestrado, e outros repos relacionados ao Patinho Feio e demais projetos de preservação histórica da computação
+[2017-11-18 18:05:07] Os "pinned" repos são uma boa para destacar a meia dúzia de repos que não são só armazenamento de arquivos hi-res dos scans de teses
+[2017-11-18 18:05:45] mas acho que seria melhor botar no ar um website organizando melhor o material todo disponivel aí (e no Internet Archive)
+[2017-11-18 18:06:02] talvez um arqueologiadigital.org
+[2017-11-18 18:06:15] Isso seria uma boa idéia.
+[2017-11-18 18:06:33] interfaceando com Internet Archive, GitHub, Fiozera, e esse grupo do Telegram
+[2017-11-18 18:06:38] Falta pegar o domínio e ter um host
+[2017-11-18 18:06:48] Mas sendo a "porta da frente" do "museu"/"laboratório"
+[2017-11-18 18:07:04] Criar um portal assim não é difícil
+[2017-11-18 18:07:27] eu faria tudo no Github Pages
+[2017-11-18 18:08:08] E também usaria um bug tracker nesse repo central pra geranciar as meta-tarefas
+[2017-11-18 18:08:23] coisas que a gente planeja fazer algum dia e depois larga pela metade, sabe?
+[2017-11-18 18:08:32] aqueles eternos "work-in-progress"
+[2017-11-18 18:08:43] então vamos por partes
+[2017-11-18 18:09:32] Eu nunca fiz github pages. Se eu quiser fazer isso é a partir do meu github?
+[2017-11-18 18:10:04] não tenho certeza, mas acho que não
+[2017-11-18 18:10:23] acho que nesse caso seria um repo hospedado nessa conta de organização
+[2017-11-18 18:10:42] eu posso abrir um repo desses com um index.html bobinho
+[2017-11-18 18:10:56] e depois você como colaborador teria condições de escrever lá
+[2017-11-18 18:11:13] certo
+[2017-11-18 18:11:20] me dá um tempinho que eu preparo esse setup
+[2017-11-18 18:11:21] então faz isso
+[2017-11-18 18:12:55] eu acho que essa página explica. to lendo ela agora: https://help.github.com/articles/user-organization-and-project-pages/
+[2017-11-18 18:26:33] Pronto
+[2017-11-18 18:26:42] É só contribuir para esse repo: https://github.com/ArqueologiaDigital/ArqueologiaDigital.github.io
+[2017-11-18 18:27:02] Tudo o que estiver no branch master aparecerá no website em https://ArqueologiaDigital.github.io
+[2017-11-18 18:27:24] vou comprar o nome de dominio agora
+[2017-11-18 18:27:33] arqueologiadigital.org
+[2017-11-18 18:30:19] Ironicamente já existe o .com
+[2017-11-18 18:30:21] http://arqueologiadigital.com/
+[2017-11-18 18:30:58] .org
+[2017-11-18 18:31:01] é mais chique
+[2017-11-18 18:31:10] perae q eu to mudando de PC
+[2017-11-18 18:31:31] eu tava no de HS, mexendo em algumas configurações. Agora to no de trampo
+[2017-11-18 18:31:40] vou clonar a bagaça
+[2017-11-18 18:40:03] Ok. A gente pode começar a pensar em como vc quer distribuir essas informações todas pela página. Inclusive textos, etc
+[2017-11-18 18:40:44] A idéia seria de repente formar um menu no topo, com opções pra acessar as diversas áreas q vc citou.
+[2017-11-18 18:43:06] E daí ou redireciona pra fora, no caso do fórum e Github / Internet Archive (ou pode abrir o documento direto...?)
+[2017-11-18 18:43:38] Acho q primeiro temos q ver o q a gente quer disponibilizar e como
+[2017-11-18 18:49:16] sim, tem razão
+[2017-11-18 18:49:29] precisamos fazer um brainstorming geral
+[2017-11-18 18:58:42] vou subir uma brincadeira q acabei de fazer aqui
+[2017-11-18 18:58:52] bem simples, só pra dar uma pensada
+[2017-11-18 19:02:03] beleza
+[2017-11-18 19:02:07] sobre lá pra eu ver
+[2017-11-18 19:02:16] já subi e fiz um request pra vc
+[2017-11-18 19:02:17] eu vou em seguida fazer um commit com a config de DNS
+[2017-11-18 19:02:25] ve o q acha
+[2017-11-18 19:02:31] td é mutável
+[2017-11-18 19:02:50] vc já deu git push ?
+[2017-11-18 19:03:03] não to vendo nada seu no repo ainda
+[2017-11-18 19:03:07] Já dei sim. Inclusive, só fiz uns style inline bem rapidinho.
+[2017-11-18 19:03:12] no meu aparece.
+[2017-11-18 19:03:16] https://github.com/ArqueologiaDigital/ArqueologiaDigital.github.io/commits/master
+[2017-11-18 19:03:21] First styling example with <nav>
+[2017-11-18 19:03:39] vc tá olhando no seu. Eu fiz um fork
+[2017-11-18 19:03:52] e gerei um pull request pra vc
+[2017-11-18 19:03:55] então dê um pull request pro principal
+[2017-11-18 19:04:00] eu fiz
+[2017-11-18 19:04:00] ah ok
+[2017-11-18 19:05:05] pera deixa eu só arrumar uma cagadinha q só vi agora. Nada sério
+[2017-11-18 19:08:50] http://arqueologiadigital.org/
+[2017-11-18 19:09:53] tem só q pegar uma alteraçãozinha q eu dei push agora... eu to aqui adicionando o seu remote
+[2017-11-18 19:09:55] perae
+[2017-11-18 19:10:08] :-)\
+[2017-11-18 19:10:36] acho que vc consegue escrever direto (dar push) para o master do repo principal
+[2017-11-18 19:14:28] acesso negado.
+[2017-11-18 19:16:08] ok, talvez eu tenha que liberar isso pra você
+[2017-11-18 19:16:36] blz
+[2017-11-18 19:16:57] tá atualizado o meu master... se vc quiser só dar um Ctrl-C e Ctrl-V no seu arquivo .html...
+[2017-11-18 19:17:19] daí vc pode atualizar lá no dns
+[2017-11-18 19:17:30] já atualizei o DNS agora há pouco
+[2017-11-18 19:17:33] já tá no ar
+[2017-11-18 19:17:45] acesso o site arqueologiadigital.org agora e veja
+[2017-11-18 19:17:45] eu sei mas tem uma atualizaçãozinha q eu queria colocar
+[2017-11-18 19:17:56] já vi, mas tem uma atualização
+[2017-11-18 19:18:04] ok, faz outro pull request entao
+[2017-11-18 19:19:06] já fiz
+[2017-11-18 19:24:09] Posso mudar "Documentos sobre o Patinho Feio no Internet Archive" para só "Patinho Feio no Internet Archive"?
+[2017-11-18 19:26:00] já chegou o email de autorização pra mim aqui
+[2017-11-18 19:26:05] à vontade
+[2017-11-18 19:26:11] o site é nosso
+[2017-11-18 19:26:21] vou testar se agora consigo fazer push direto
+[2017-11-18 19:26:28] tente dar o merge
+[2017-11-18 19:26:30] do PR
+[2017-11-18 19:26:47] para coisas pequenas e rápidas push para master é aceitável
+[2017-11-18 19:27:07] mas em geral se a mudança for mais do que algo trivial eu prefereria o uso de PRs
+[2017-11-18 19:27:11] peraí; eu vi q o link pro PF no Internet Archive não tem nada
+[2017-11-18 19:27:15] pois gera notificações por email
+[2017-11-18 19:27:24] sem problemas, sempre vamos nos comunicando
+[2017-11-18 19:27:35] eu criei um fork justamente pra isolar
+[2017-11-18 19:27:58] acho que minha intenção era de apontar pra cá, mas esqueci de colar a URL no html: https://archive.org/search.php?query=subject%3A%22patinho+feio%22
+[2017-11-18 19:33:59] atualizei lá no seu
+[2017-11-18 19:34:03] manda pro DNS
+[2017-11-18 19:34:28] ah parece q já foi
+[2017-11-18 19:34:32] isso tá automatico?
+[2017-11-18 19:34:39] como assim ?! Sim, é automático
+[2017-11-18 19:34:44] ah bom
+[2017-11-18 19:34:46] blz
+[2017-11-18 19:34:49] o que estiver no master aparece no site
+[2017-11-18 19:34:55] legal vc ter feito isso
+[2017-11-18 19:35:04] às vezes pode demorar uns minutinhos, mas é automatico
+[2017-11-18 19:35:13] legal, ele já tá espelhando
+[2017-11-18 19:35:36] eu sou meio impulsivo. Tem dias que eu tô inspirado e saio fazendo coisas
+[2017-11-18 19:36:48] idem
+[2017-11-18 19:36:53] e tem dias q eu travo
+[2017-11-18 19:37:56] legal, eu vou continuar fazendo umas coisinhas pra aos poucos ir melhorando o visual. Vc podia bolar uns textos pra jogar no <body>, se quiser
+[2017-11-18 19:38:00] vou comer
+[2017-11-18 19:38:03] to com fome
+[2017-11-18 19:38:36] se tiver imagens, ícones, logos, etc.. q vc queira usar na página, manda pra mim q eu insiro
+[2017-11-18 19:38:46] 321 - fui!
+[2017-11-18 19:39:58] é... eu acho que vou abrir umas issues lá com idéias de como estruturar o site
+[2017-11-18 19:40:22] agora to ocupado num outro esquema legal, já já mostro aqui
+[2017-11-18 21:11:36] show
+[2017-11-18 21:39:02] https://github.com/ArqueologiaDigital/Documentos_Scopus
+[2017-11-18 21:39:18] tá subindo os dados do escaneamento daquela publicacao da scopus que o dq trouxe
+[2017-11-18 21:39:22] logo logo aparece lá o commit
+[2017-11-18 21:39:34] preciso ainda gerar o pdf e subir no internet archive
+[2017-11-18 21:39:41] vou jantar, té mais!
+[2017-11-18 21:51:29] https://twitter.com/jessfraz/status/932028810219917312
+[2017-11-18 23:22:50] https://github.com/ArqueologiaDigital/Documentos_Scopus/blob/master/TecnologiaScopus_Out83/PDF/Tecnologia_Scopus_Outubro_1983.pdf

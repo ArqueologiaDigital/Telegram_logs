@@ -1,0 +1,332 @@
+[2017-11-07 12:07:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725515_60943.jpg
+[2017-11-07 12:07:26] E olha o que eu achei aqui em casa hoje:
+[2017-11-07 12:07:46] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725710_60165.jpg
+[2017-11-07 12:08:03] Isso é o q eu penso ser?
+[2017-11-07 12:08:12] Um conversor USB serial usando chip FTDI
+[2017-11-07 12:08:22] então deve funcionar lá
+[2017-11-07 12:08:25] yep!
+[2017-11-07 12:08:35] junto com esse adaptador de pinos 9 -> 25
+[2017-11-07 12:08:39] exatamente
+[2017-11-07 12:08:46] tem q ter driver instalado no seu computador
+[2017-11-07 12:08:48] provavelmente
+[2017-11-07 12:08:52] já tenho tudo certinho
+[2017-11-07 12:09:02] então blzinha
+[2017-11-07 12:09:31] vc ta na usp ou em casa?
+[2017-11-07 12:10:01] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722505_64050.jpg
+[2017-11-07 12:10:47] Na verdade aí no log você me vê desplugando e replugando
+[2017-11-07 12:10:54] é isso aí
+[2017-11-07 12:10:59] tá com td
+[2017-11-07 12:11:08] falta a troca dos capacitores
+[2017-11-07 12:11:15] pois é
+[2017-11-07 12:11:21] e falta montar um cabo de alimentação elétrica
+[2017-11-07 12:11:26] isso msm
+[2017-11-07 12:11:36] vc tem a foto da traseira dele d novo?
+[2017-11-07 12:11:42] vou ver se consigo anotar hoje lá todos os capacitores necessários
+[2017-11-07 12:12:11] não só os eletrolíticos, mas todos, inclusive os cerâmicos, de poliéster, etc
+[2017-11-07 12:12:35] os mais críticos são os eletrolíticos e os cerâmicos
+[2017-11-07 12:13:19] e quanto à tomada, leve um adaptador desses benjamim padrão abnt (3 pinos) fêmea, veja se ele se encaixa lá
+[2017-11-07 12:13:24] aqui!
+[2017-11-07 12:13:24] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726016_35590.jpg
+[2017-11-07 12:13:35] exato
+[2017-11-07 12:14:04] olhando com zoom, parecem ser 3 pinos banana mesmo
+[2017-11-07 12:14:27] mas tenta ver se um adaptador femea 3 pinos encaixa nele
+[2017-11-07 12:14:50] caso contrário teremos q fazer uma espécie de adaptador com 3 jacks banana
+[2017-11-07 12:16:33] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513123_34176.jpg
+[2017-11-07 12:16:41] isso aqui pode ajudar também.
+[2017-11-07 12:17:16] O q estou pensando é em fazer uma coisa q a gente prenda nesses 3 conectores garrinha e encaixe lá nos 3 pinos.
+[2017-11-07 12:17:27] eu tenho alguns desses cabos aqui em casa
+[2017-11-07 12:17:39] imagina q esses 3 pinos macho desse cabo aí sejam compatíveis com os do sagitta
+[2017-11-07 12:18:06] pra medir corretamente, pense em se vc fosse encaixar um benjamim femea nesse cabo
+[2017-11-07 12:18:13] perae
+[2017-11-07 12:19:16] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804722430_63904.jpg
+[2017-11-07 12:19:17] o truque do benjamim fêmea não vai funcionar por que os pinos do sagitta estão alinhados e no padrão brasileiro o pino do meio não é alinhado com os outros dois
+[2017-11-07 12:19:50] isso aí não vai dar certo
+[2017-11-07 12:19:58] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723422_60529.jpg
+[2017-11-07 12:20:07] ctz?
+[2017-11-07 12:20:13] não rola
+[2017-11-07 12:20:16] ele tem furos em 2 tamanhos diferentes
+[2017-11-07 12:20:31] pq vc diz isso?
+[2017-11-07 12:20:48] suponho que os furos mais largos sejam para 220V
+[2017-11-07 12:20:52] isso é só pra testar lá
+[2017-11-07 12:21:00] sim, mas e daí?
+[2017-11-07 12:21:11] estamos apenas falando mecanicamente
+[2017-11-07 12:21:24] esse adaptador aí não tem o pino de terra
+[2017-11-07 12:21:36] tem no meio
+[2017-11-07 12:21:53] só não liga em nada. A maioria das instalações elétricas no Brasil não tem.
+[2017-11-07 12:21:54] na foto nitidamente faltaum terceiro pino
+[2017-11-07 12:22:03] tem o furo
+[2017-11-07 12:22:09] pro pino do meio
+[2017-11-07 12:22:13] eu prefiro sempre ligar o terra
+[2017-11-07 12:22:22] então vc tá lascadp
+[2017-11-07 12:22:35] imagino que a faculdade de engenharia elétrica da escola politécnica da USP tenha instalações elétricas decentes
+[2017-11-07 12:22:37] pq a maioria das instalações feitas no Brasil não contemplam essa ligação
+[2017-11-07 12:22:49] esse Sagitta provavelmente viveu a vida inteira ligado sem terra
+[2017-11-07 12:23:02] vc q sabe... eu aposto minhas fichas q nao
+[2017-11-07 12:23:04] mas...
+[2017-11-07 12:23:08] 😉
+[2017-11-07 12:23:25] Mas a questão nem é essa
+[2017-11-07 12:23:30] eu volto a reiterar
+[2017-11-07 12:23:46] a gente nesse momento só precisa saber se mecanicamente os pinos entrariam nesses furos
+[2017-11-07 12:23:53] o adaptador só será utilizado pra isso
+[2017-11-07 12:24:09] daí vc pode ter a confiança q vai poder entrar numa loja de materiais elétricos
+[2017-11-07 12:24:18] eu acho que não cabe no espaço disponível
+[2017-11-07 12:24:19] e gastar um $ pra comprar uma tomada femea
+[2017-11-07 12:24:29] e ligar nas 3 pontas do seu cabo
+[2017-11-07 12:24:54] cara então não sei o q mais dizer
+[2017-11-07 12:25:14] e mesmo que caiba, se um pino ficar firme o outro ficará frouxo, dado que essa ligação gambiarrada na diagonal resulta em furos de diametro diferente
+[2017-11-07 12:25:33] vai ter q desmontar essa parte no sagitta, e trocar a tomada dele, ou simplesmente dar um jeito de conectar essas 3 pontas do seu cabo na placa da fonte
+[2017-11-07 12:25:49] outra coisa não tem
+[2017-11-07 12:25:59] leva esse seu cabo, um kit de ferramentas...
+[2017-11-07 12:26:06] alicate de corte, de bico...
+[2017-11-07 12:26:15] chaves de fenda e philips de diversos tamanhos
+[2017-11-07 12:26:28] eu acho que o melhor esquema é montar um cabo usando esse meu de 3 garras e 3 cabos com plug fêmea para banana.
+[2017-11-07 12:26:43] essa tomada é totalmente fora de qq padrão conhecido. Vai ter q dar uma de McGyver\
+[2017-11-07 12:26:56] só q daí tem um outro problema
+[2017-11-07 12:27:15] eu duvido q nesse espacinho pequeno caiba 3 conectores banana femea ali
+[2017-11-07 12:27:28] é... vou ter que testar
+[2017-11-07 12:27:30] eles são grossos
+[2017-11-07 12:27:38] então... se é pra testar...
+[2017-11-07 12:27:41] talvez dê, talvez não dÊ
+[2017-11-07 12:27:43] leva um adaptador como esse meu
+[2017-11-07 12:27:50] eu não tenho um desses aí
+[2017-11-07 12:27:55] compra no caminho...
+[2017-11-07 12:27:59] custa 3.50
+[2017-11-07 12:28:07] vc tem os banana?
+[2017-11-07 12:28:10] 😉 pode ser...
+[2017-11-07 12:28:29] outra coisa, leva esse seu cabo junto
+[2017-11-07 12:28:35] talvez. Tenho que ver aqui. Acho que eu tinha, mas não tenho certeza
+[2017-11-07 12:28:43] e fotografa dentro da fonte, onde esses 3 pinos são ligados
+[2017-11-07 12:28:54] de repente é td parafusado na placa
+[2017-11-07 12:29:18] se tiver garrinhas internamente vai ser só alegria
+[2017-11-07 12:29:26] daí se for assim, vc só precisa afrouxar os parafusos da placa, retirar as conexões q vão pra esses pinos do gabinete, e ligar o seu cabo
+[2017-11-07 12:29:44] é. Tem uma boa chance disso ser possível.
+[2017-11-07 12:29:57] e já te digo, não adianta torcer o nariz pra manter o equipamento na originalidade... vai ter q adaptar uma coisinha ou outra.
+[2017-11-07 12:30:28] não tem outro jeito, tanto pros capacitores quanto pra essa conexão elétrica.
+[2017-11-07 12:30:50] sim. Faz sentido
+[2017-11-07 12:31:16] leve seu multimetro. vc sabe medir a ddp entre o neutro/terra/fase?
+[2017-11-07 12:31:40] isso serve para descobrir qual é qual, e se tem de fato um terra lá
+[2017-11-07 12:32:16] sim, eu consigo mapear isso
+[2017-11-07 12:32:20] blz
+[2017-11-07 12:32:56] daí vc consegue até diagnosticar o equipamento um pouco
+[2017-11-07 12:33:10] tipo, imaginemos q dê pra conectar ele na tomada/
+[2017-11-07 12:33:30] vc pode medir as saídas da fonte, pra ver q tensões CC saem dela
+[2017-11-07 12:33:51] seria ideal se essa fonte estivesse conectada à placa principal através de algum conector
+[2017-11-07 12:34:02] o equipamento é tudo uma coisa só.
+[2017-11-07 12:34:18] ideal seria se desse pra isolar a fonte do resto, e medir
+[2017-11-07 12:34:36] outra coisa: fusíveis
+[2017-11-07 12:34:40] ligou na tomada, já era. Tem risco de pipocar os capacitores
+[2017-11-07 12:34:49] tem um soquete lá acima do conector de força
+[2017-11-07 12:34:59] para fusível. Veja se ele está rompido
+[2017-11-07 12:35:04] sim, vou ver
+[2017-11-07 12:35:19] se estiver rompido, precisa ser substituído por um de igual "amperagem"
+[2017-11-07 12:35:29] nunca superior
+[2017-11-07 12:35:51] no caso, 2A
+[2017-11-07 12:36:07] fusiveis custam na margem de centavos de real
+[2017-11-07 12:36:18] qq lojinha de material de construção vende
+[2017-11-07 12:36:29] e elétricas
+[2017-11-07 12:36:44] assistencias técnicas... capaz do cara te dar de graça
+[2017-11-07 12:41:03] "fusível do bom, daqueles que não queimam" http://www.tabalabs.com.br/eletronica/gambiarras/1.jpg
+[2017-11-07 12:41:17] pqp!!!!
+[2017-11-07 12:41:26] Fusivel "do bom" daqueles que nao queimam nunca versao 2.0 http://www.tabalabs.com.br/eletronica/gambiarras/5.jpg
+[2017-11-07 12:41:45] :-P
+[2017-11-07 12:41:55] olha q interessante na foto de cima, o conector com 3 pinos...
+[2017-11-07 12:42:06] se for algo assim na placa do sagitta, tbm podemos adaptar
+[2017-11-07 12:42:14] to indo almoçar
+[2017-11-07 12:42:14] mas o ideal seria parafusável
+[2017-11-07 12:42:17] blz
+[2017-11-07 12:42:20] e depois vou lá pra USP
+[2017-11-07 12:42:29] té mais
+[2017-11-07 12:42:51] 👍🏻
+[2017-11-07 14:51:32] Ô cara, valeu por isso:
+[2017-11-07 14:51:34] +   Thanks to Werner Moecke for the help in inspecting the circuits and
+ +     debugging this driver.
+[2017-11-07 14:51:41] https://github.com/mamedev/mame/pull/2776/files
+[2017-11-07 14:51:51] ☺️
+[2017-11-07 14:57:19] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804730048_40958.jpg
+[2017-11-07 14:58:08] à direita vc tem o q parece ser o conector AC externo plugando à placa?
+[2017-11-07 14:58:11] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726590_41710.jpg
+[2017-11-07 14:58:48] isso parecem ser as velocidades da serial
+[2017-11-07 14:59:38] legal q as conexões de alimentação são todas ligadas por cabos e conectores.
+Facilita na hora de medir as tensões da fonte sem medo de danificar o resto da eletrônica
+[2017-11-07 15:02:34] O cabo Azul com os vários fiozinhos coloridos conectado à placa via pin-headers vai ligado no tubo CRT
+[2017-11-07 15:02:58] Essas fotos todas são do Sagitta 150
+[2017-11-07 15:03:15] e o cabo azul com fios brancos e azuis?
+[2017-11-07 15:03:22] De fato, essas labels no silk parecem ser baud rates
+[2017-11-07 15:04:01] são sim, sem dúvida. Inclusive tem um label "Tx/Rx" ali tbm
+[2017-11-07 15:04:28] os dois cabos azuis vão ligados no CRT
+[2017-11-07 15:04:46] segue abaixo uma foto dos nomes dos sinais no silk da placa:
+[2017-11-07 15:05:02] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726868_41185.jpg
+[2017-11-07 15:06:19] são tensões de excitamento do tubo
+[2017-11-07 15:06:25] alguém usou pedaços de corpo de caneta BIC como espaçador para aparafusar o teclado:
+[2017-11-07 15:06:29] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804724741_60261.jpg
+[2017-11-07 15:06:38] altíssimas tensões, portanto nada de mãos ali durante o funcionamento
+[2017-11-07 15:06:50] choque de jogar o corpo longe.
+[2017-11-07 15:06:57] sim, conheço
+[2017-11-07 15:07:12] tá vendo, já tem gambiarras
+[2017-11-07 15:07:21] normal isso nesse tipo de equipamento.
+[2017-11-07 15:15:11] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727454_41977.jpg
+[2017-11-07 15:16:07] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804730040_40359.jpg
+[2017-11-07 15:16:44] só q um detalhe
+[2017-11-07 15:16:47] é muito dificil de levantar a placa pra ver
+[2017-11-07 15:17:10] Ali na foto anterior à do teclado, tem duas PCIs presas ao painel traseiro.
+[2017-11-07 15:17:24] o teclado não tem nenhum chip controlador especializado. Apenas aquele 74145 alí
+[2017-11-07 15:17:36] Uma delas, próxima aos potenciômetros, deve ser a que distribui força aos transformadores.
+[2017-11-07 15:18:05] imagino que os pinos de entrada de força estejam soldados a fios, cujas outras extremidades estejam soldadas a essa placa.
+[2017-11-07 15:18:19] credo! 74145 é conversor de BCD pra decimal... :-P http://www.ti.com/product/SN74145
+[2017-11-07 15:18:53] achei q ele seria somente algum latch ou buffer.
+[2017-11-07 15:19:18] pode ser q ele faça parte do circuito decodificador do teclado.
+[2017-11-07 15:19:47] não sei ao certo. Precisaria ver no q ele está ligado.
+[2017-11-07 15:20:02] ah! é usado para multiplexar as linhas (ou colunas, não sei)
+[2017-11-07 15:20:33] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804724599_61322.jpg
+[2017-11-07 15:20:52] entra um valor de 4 bits e sai ativo baixo em um dos 10 outputs
+[2017-11-07 15:21:11] preciso ver em que endereço tá mapeado esse bicho
+[2017-11-07 15:21:28] faz sentido isso aí.
+[2017-11-07 15:21:48] faz parte da lógica do teclado. Linhas e colunas.
+[2017-11-07 15:22:36] veja onde se conectam os pinos 12/13/14/15 dele
+[2017-11-07 15:22:51] pois os pinos 1 a 11 certamente são ligados ao teclado.
+[2017-11-07 15:23:21] cara, mutex não faz parte da biblioteca std?
+[2017-11-07 15:23:31] (só um parentese)
+[2017-11-07 15:24:00] to tendo um erro no código core do MAME, numa linha q diz: std::mutex
+[2017-11-07 15:24:32] e em std::thread tbm
+[2017-11-07 15:24:40] mas deixa isso pra mais tarde.
+[2017-11-07 15:24:48] voltando ao sagitta
+[2017-11-07 15:31:56] nao sei responder essa pergunta
+[2017-11-07 15:32:17] em windows o mutex não é implementado em gcc
+[2017-11-07 15:32:19] justamente estou mapeando os sinais A, B, C e D
+[2017-11-07 15:32:26] estou procurando um workaround
+[2017-11-07 15:32:33] blz
+[2017-11-07 15:37:01] os pinos A, B e C estao respectivamente ligados a uma pastilha 7493 nos pinos 9, 8 e 11
+[2017-11-07 15:38:10] o 7493 é um decodificador de display 7 segmentos
+[2017-11-07 15:38:30] perai deixa eu ler mais um pouco
+[2017-11-07 15:38:44] http://pdf.datasheetcatalog.com/datasheet/motorola/SN54LS92J.pdf
+[2017-11-07 15:38:56] bcd
+[2017-11-07 15:39:06] desculpe, ele sai código bcd
+[2017-11-07 15:39:17] é um contador
+[2017-11-07 15:39:27] sim, ele conta em bcd
+[2017-11-07 15:39:37] essa lógica é pra varrer as linhas do teclado
+[2017-11-07 15:39:42] sim
+[2017-11-07 15:39:53] então alguém dá pulsos nesse contador pra trocar a linha ativa
+[2017-11-07 15:40:12] normalmente em projetos, ele é usado conectado a um driver bcd para 7 segmentos, a fim de mostrar a contagem em um display
+[2017-11-07 15:40:21] e depois lê de algum outro lugar o padrão de pressionamento das teclas da linha selecionada
+[2017-11-07 15:40:29] mas nesse caso ele está ativando linhas no teclado
+[2017-11-07 15:41:27] procure agora onde tem as colunas
+[2017-11-07 15:41:50] isso deve levar até onde o teclado é decodificado
+[2017-11-07 15:45:43] e o quarto bit (o sinal D) tá ligado no pinio 3 de um 7474 (sinal de CLK de um flip flop)
+[2017-11-07 15:47:35] ele usa esse flip flop pra dividir o sinal provavelmente pra outra coisa
+[2017-11-07 15:48:04] (é um divisor da frequencia do flip flop)
+[2017-11-07 15:48:15] olhando na saida do flip flop ele liga em que?
+[2017-11-07 15:50:06] não tem nada que conecte esse teclado a um outro CI, um maiorzinho? Ou mesmo ao 8080?
+[2017-11-07 15:54:33] to desenhando aqui na lousa
+[2017-11-07 16:05:58] tá complicadinho o circuito aqui
+[2017-11-07 16:06:03] mas to levantando aos poucos
+[2017-11-07 16:06:35] não se prenda demais ao nitty-gritty detail... foque onde estão conectadas as duas pontas da fiozera
+[2017-11-07 16:06:42] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725321_60772.jpg
+[2017-11-07 16:06:44] uma ponta é o teclado, e a outra é...
+[2017-11-07 16:07:25] os canetões não tão ajudando muito, pra variar
+[2017-11-07 16:07:28] haha
+[2017-11-07 16:07:31] tá meio apagadão o u32 e u101
+[2017-11-07 16:07:43] u92
+[2017-11-07 16:07:44] onde vai ligado a saida do flip-flop u32?
+[2017-11-07 16:07:53] vou ver
+[2017-11-07 16:07:58] ah ta, u92
+[2017-11-07 16:10:19] vai numa das entradas de outra porta NAND
+[2017-11-07 16:12:22] puta merda... tenta ver onde isso tudo vai dar. Em algum ponto tem q conectar no barramento de dados de alguém. cazzo.
+[2017-11-07 16:13:11] não adianta muito pra gente ficar analisando todo o bloco da lógica de leitura desse teclado. Só nos interessa o endereçamento dele e/ou quem habilita os dados das teclas pro processador ler
+[2017-11-07 16:13:35] 😏
+[2017-11-07 16:23:32] ufa!
+[2017-11-07 16:23:41] arrumei canetão melhor aqui
+[2017-11-07 16:24:03] concordo
+[2017-11-07 16:31:17] tente abstrair ao máximo, tentando chegar no big picture
+[2017-11-07 16:31:35] senão vc vai endoidar desenhando flip-flops e portas lógicas
+[2017-11-07 16:31:53] pense como nos diagramas lógicos da tese do zezinho
+[2017-11-07 16:37:54] sim, to ligado
+[2017-11-07 16:38:02] to indo pra trás nos caminhos de onde vem o sinal
+[2017-11-07 16:38:13] tentando ver de onde vem os pulsos de clk por exemplo
+[2017-11-07 16:38:14] 👍🏻
+[2017-11-07 16:41:16] esse circuito tem a cara do Edson Fregni
+[2017-11-07 16:41:32] kd?
+[2017-11-07 16:42:41] me dá mais um tempinho
+[2017-11-07 16:42:50] to puxando mais um novelo de lã aqui
+[2017-11-07 16:46:24] 👍🏻
+[2017-11-07 17:23:12] Falow Juca, eu to saindo agora.
+[2017-11-07 17:23:42] Mas mais tarde eu devo voltar aqui. Só não sei te precisar o horário. Penso q esteja de volta até umas 22/23h
+[2017-11-07 17:23:54] 👍🏻
+[2017-11-07 22:12:07] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514883_34321.jpg
+[2017-11-07 22:13:25] Estou a caminho d casa. Chegando eu vejo a foto com mais zoom.
+[2017-11-07 22:14:30] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725195_60937.jpg
+[2017-11-07 22:15:14] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513566_33459.jpg
+[2017-11-07 22:15:25] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512338_34454.jpg
+[2017-11-07 22:15:50] Esses fios sao jumpers
+[2017-11-07 22:15:59] Da pra tirar
+[2017-11-07 22:17:11] Pra separar a fonte do resto do circuito.
+[2017-11-07 22:17:15] Só não entendo ainda o motivo de haver esses jumpers aí. Preciso examinar as fotos mais detalhadamente.
+[2017-11-07 22:18:33] Essa é exatamente a fronteira entre a area digital e a regiao do circuito da fonte de alimentação
+[2017-11-07 22:19:29] Ok
+[2017-11-07 22:47:38] cara, com a foto do quadro tem tanto reflexo de fundo q não dá pra ver... parece a maioria ser flip-flops com algumas portas lógicas (and, not) e o q tem bem à direita do quadro tá ilegível...
+[2017-11-07 22:47:59] o bom desses jumpers é poder desconectar pra medir as tensões das fontes
+[2017-11-07 22:48:13] exatamente!
+[2017-11-07 22:48:30] eles estão lá pra isso mesmo, eu acho
+[2017-11-07 22:48:34] vc conseguiu descobrir o q tem na outra ponta do teclado?
+[2017-11-07 22:48:43] não
+[2017-11-07 22:48:58] não vai ligado ao barramento de dados?
+[2017-11-07 22:49:01] fiquei caçando algum sinal que chegasse no barramento de endereços da CPU
+[2017-11-07 22:49:08] ou no barramento de dados
+[2017-11-07 22:49:12] mas nao achei nada
+[2017-11-07 22:49:15] tem q ser ligado lá...
+[2017-11-07 22:49:25] é... mas é um circuito complicadinho
+[2017-11-07 22:49:31] só se ele serializa os dados por flip flops... mas tem q chegar no processador
+[2017-11-07 22:49:40] deve estar um pouco mais longe o ponto onde finalmente alcança a CPU
+[2017-11-07 22:49:44] não tem como não chegar na cpu
+[2017-11-07 22:50:04] blz isso a gente pode olhar numa próxima visita
+[2017-11-07 22:50:11] ok
+[2017-11-07 22:50:13] eu posso levar meu osciloscópio de bolso
+[2017-11-07 22:50:21] se eu for
+[2017-11-07 22:50:51] ok, a gente pode ir semana que vem
+[2017-11-07 22:51:04] e a conversa lá, rolou?
+[2017-11-07 23:04:40] rolou sim
+[2017-11-07 23:04:43] foi legal
+[2017-11-07 23:04:56] vamos começar a frequentar o espaço
+[2017-11-07 23:05:17] pra continuar inspecionando as máquinas, escrevendo emuladores e possivelmente restaurando alguns equipamentos
+[2017-11-07 23:05:42] tive a impressão de que o professor Fernando gostou bastante de ver o emulador funcionando
+[2017-11-07 23:06:47] vamos tentar organizar a bagunça da sala onde ficam os equipamentos que ainda não estão na exposição aberta ao público de modo a conseguir abrir um pouco de espaço e botar lá uma mesa com alguns instrumentos úteis para restauração de computadores
+[2017-11-07 23:06:58] acho que é promissor
+[2017-11-07 23:07:25] eles estão também usando um software livre para catalogar o acervo
+[2017-11-07 23:07:39] mas parece que isso ainda está incompleto
+[2017-11-07 23:08:03] me dá só uns dois minutos por favor...
+[2017-11-07 23:08:45] uma coisa legal é que esse software livre oferece não apenas um painel de controle privado para administração, mas também gera uma cara pública para "museus". Oferece uma opção de hospedar um website com a descrição do acervo
+[2017-11-07 23:09:27] cheguei a comentar com o professor que seria legal tentar hospedar nessas páginas emuladores de algumas das máquinas do acervo, quando possível.
+[2017-11-07 23:10:44] Existe uma tecnologia chamada emscripten que permite que um código C/C++ seja compilado para javascript, capaz de rodar uma aplicação dentro de uma página web. O Internet Archive, por exemplo, usa isso para compilar o MAME e hospedar o "Internet Arcade"
+[2017-11-07 23:10:57] https://archive.org/details/internetarcade
+[2017-11-07 23:16:51] esse conversor de C/C++ para js parece ser louco... funciona? Eu cheguei a ver o seu patinho feio no js
+[2017-11-07 23:24:43] sim, funciona ;-)
+[2017-11-07 23:25:11] todos esses jogos de arcade que tem no Internet Archive são jogáveis no browser
+[2017-11-07 23:25:22] eu conhecia esse site
+[2017-11-07 23:25:44] e são na realidade os drivers de emulação das placas dessas arcades no MAME compilados pra javascript usando o emscripten
+[2017-11-07 23:25:51] não conhecia sobre LLVM
+[2017-11-07 23:26:09] o código js q ele gera é legivel?
+[2017-11-07 23:26:22] não
+[2017-11-07 23:26:45] deve sair como um jQ minified né?
+[2017-11-07 23:26:46] ele usa o javascript como "bytecode" para a compilação
+[2017-11-07 23:26:50] é
+[2017-11-07 23:26:55] isso mesmo
+[2017-11-07 23:29:29] fica meio pesado pros arcades, mas pra máquinas como as q estamos emulando, deve rodar legal.
+[2017-11-07 23:29:58] o bacana do js é q podendo ser incorporado a páginas web, eu consigo estilizar a página como eu quiser
+[2017-11-07 23:30:53] posso fazer cada máquina emulada ter um layout único, por exemplo, o pf pode ter todo o painel frontal q vc fez em svg ficar funcional e interativo. Isso seria legal.
+[2017-11-07 23:31:24] Dá para fazer um negócio bem bacana.
+[2017-11-07 23:43:10] :-)
+[2017-11-07 23:46:06] É... Nao sei como ele faz com o render do svg
+[2017-11-07 23:47:18] Não esquente. SVG se não me engano, pode ser renderizado na folha de estilos (CSS) - no último caso, acredito ser possível transformar em uma imagem png.
+[2017-11-07 23:47:30] Teoricamente daria pra fazer isso sim. Mas não sei se o esquema automatizado é tão esperto assim
+[2017-11-07 23:48:28] Eu tenho certa experiência como desenvolvedor web (front end e back end). Eu já vi alguns exemplos de SVG ser gerado em CSS preciso dar uma relembrada nisso, pois não é corriqueiro, mas acho provável q seja possível fazer.
+[2017-11-07 23:48:41] O ideal seria o arquivo svg original ser enviado ao browser. Mas realmente duvido que o sistema tenha esse tipo de esperteza
+[2017-11-07 23:49:20] https://www.w3schools.com/graphics/svg_intro.asp
+[2017-11-07 23:49:40] Ja brinquei bastante com SVG, por conta das minhas contribuicoes como desenvolvedor do Inkscape
+[2017-11-07 23:50:58] Cheguei a implementar uns 2 capítulos da spec
+[2017-11-07 23:52:07] hehehe então é o pai da matéria
+[2017-11-07 23:52:16] ;-)
+[2017-11-07 23:53:43] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804730824_41916.jpg
+[2017-11-07 23:53:57] 😉
+[2017-11-07 23:56:21] abrindo a imagem no inkscape vc consegue extrair todas as coordenadas e daí fica relativamente fácil exportá-la para uma página web.
+[2017-11-07 23:57:00] https://www.w3schools.com/graphics/svg_path.asp
+[2017-11-07 23:57:36] não tem terror - as regras para SVG inclusive já foram incorporadas ao W3C.
+[2017-11-07 23:58:13] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513503_34119.jpg

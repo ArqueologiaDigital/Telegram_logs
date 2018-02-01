@@ -1,0 +1,35 @@
+[2018-01-30 00:01:32] Obrigado Felipe pelo convite.
+[2018-01-30 01:07:48] Olá, Uriel! Seja Bem Vindo!
+[2018-01-30 01:08:41] Conta pra gente um pouco sobre você, seus interesses em história da computação, etc. E também sobre como gostaria de ajudar a resgatá-la / preservá-la.
+[2018-01-30 12:50:49] Leonardo Roman joined with an invite link
+[2018-01-30 12:51:39] Bom dia pessoal. Obrigado pelo convite Felipe.
+[2018-01-30 13:18:10] Eu iniciei com um TK-85, Atari 2600, Odyssey, MSX, TK-90X, Amiga e por fim os PCs 386 etc. Fiz análise de jogos em algumas edições da revista Micro & Vídeo e MSX Micro. Tive uma piratohouse chamada MSX Gold no RJ e trabalhei na Nemesis Informática no RJ. Hoje moro em Araranguá-SC. Já tive scans de revistas colocadas na net e tenho intenção de colocar futuramente mais alguma coisa.
+[2018-01-30 13:20:03] Tenhos alguns equipamentos retrô e "FPGAs". Muitas revistas e livros retrôs. 😉
+[2018-01-30 13:39:03] Opa! Mais dois catarinenses na área!!!
+[2018-01-30 13:39:10] Bem vindos Leo e Uriel !
+[2018-01-30 13:40:57] Sejam bem-vindos!
+[2018-01-30 18:03:55] 👍👍👍😄
+[2018-01-30 20:39:43] Estamos começando hoje a organizar por aqui os projetos de "Emulação e História da Computação" que pretendemos por em prática lá na USP: https://github.com/ArqueologiaDigital/EmuHC/issues
+[2018-01-30 21:17:23] @fsanches  Deixei um comentário lá. Posso emprestar minha kryoflux para as imagens de disco que vocês querem fazer.
+[2018-01-30 21:18:03] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_38846012097298894.webp
+[2018-01-30 21:18:09] Conta mais!
+[2018-01-30 21:18:20] O que é exatamente a tal da kryoflux ?
+[2018-01-30 21:21:15] cara, é uma interface usb "universal" para drives de disquete. Foi criada justamente com o objetivo de preservar disquetes.
+[2018-01-30 21:21:53] Mesmo que a formatação do disco seja desconhecida, ela consegue salvar o que chama de "fluxo" de dados.
+[2018-01-30 21:22:22] interessante...
+[2018-01-30 21:22:54] Mas já tem uns drivers pra várias formatações mais conhecidas: c64, alguns CP/M, amiga, etc.
+[2018-01-30 21:23:12] https://www.kryoflux.com/?page=kf_formats
+[2018-01-30 21:23:57] mas no fundo no fundo isso aí deve ser um ARM ou algum outro processador qualquer ligado a uma interface USB rodando um firmware proprietário do fabricante, é isso?
+[2018-01-30 21:24:03] Ou o firmware é livre também?
+[2018-01-30 21:25:24] Exato, deve ser algo assim. Acho que o firmware não é livre.
+[2018-01-30 21:25:26] Eu acho incrível existir uma solução pra esse tipo de demanda super específica de preservação histórica, mas ao mesmo tempo eu tenho 2 pés atrás de usar um equipamento que vai me deixar na mão quando o que eu preciso não estiver ainda programado e o desenvolvedor estiver me deixando "de fora" de propósito ao não publicar o firmware como software livre
+[2018-01-30 21:26:34] acho que vale a pena tentar usar sim
+[2018-01-30 21:26:41] mas eu sempre me preparo para o pior
+[2018-01-30 21:26:58] e procuro soluções que me dêem mais autonomia
+[2018-01-30 21:29:08] sim, entendo
+[2018-01-30 21:30:46] Essa é a mesma postura que tenho em relação aos emuladores USB de drive tipo "GOTEK". Tenho um, uso às vezes, mas eu sempre sinto um certo desconforto e fico tramando algum dia abrir esse bagulho e escrever meu próprio firmware
+[2018-01-30 21:31:35] Idem para o MiniPro (http://mamedev.emulab.it/fsanches/2014/10/14/dumping-gear-tl866cs/)
+[2018-01-30 23:42:48] Saiu o MAME 0.194 ! https://github.com/mamedev/mame/releases/tag/mame0194
+[2018-01-30 23:42:58] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804730948_99851.jpg
+[2018-01-30 23:43:07] Contendo uma contribuição nossa :-)
+[2018-01-30 23:58:05] Só que é "NOT_WORKING" já que a emulação ainda tá incompleta. Falta emular o teclado. A renderização de vídeo e a intertface serial já tão OK, entretanto. Boota e funciona (se vc conectar nele um outro terminal para enviar dados), só que não dá pra digitar nada.

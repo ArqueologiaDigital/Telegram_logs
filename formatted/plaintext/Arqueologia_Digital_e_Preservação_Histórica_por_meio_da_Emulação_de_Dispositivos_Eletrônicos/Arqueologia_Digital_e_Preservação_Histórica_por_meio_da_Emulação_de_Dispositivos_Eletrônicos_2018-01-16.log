@@ -1,0 +1,45 @@
+[2018-01-16 16:53:28] Na biblioteca do Garoa deve ter um livro que eu doei chamado Undocumented PC (estava lá quando eu separei o que podia ser vendido). Ele tem uma documentação bem completa do hardware.
+[2018-01-16 16:54:35] legal, vou consultar
+[2018-01-16 16:54:53] 1C0 não é estranho...
+[2018-01-16 16:57:31] Esta lista é do IBM PC original
+[2018-01-16 16:57:36] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514520_78457.jpg
+[2018-01-16 17:00:14] hoje rodei de novo o emulador e observei que a configuração escrita em 3D8h (CGA/VGA) é lida de 0040:0065, e o bit 3 é zerado antes de fazer o out para a porta. Entretanto, o valor inteiro é zerado a não ser que o dado lido de 0040:0072 seja 1234h ou 5678h Achei bem bizarra essa lógica. A única suposição que me passou pela cabeça é que esse endereço 0040:0072 pertença a uma área ocupada por ROM da placa CGA/VGA (que eu não sei nem se existe e se for o caso não extraí e, por isso, no emulador só tem RAM aí)
+[2018-01-16 17:02:21] 0040:xx são as variáveis do BIOS
+[2018-01-16 17:02:27] Mapa do XT:
+[2018-01-16 17:02:32] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804725883_114644.jpg
+[2018-01-16 17:03:30] conta mais!
+[2018-01-16 17:03:36] Pelos valores (1234, 5678) acho que isto é o teste para ver se é control alt del
+[2018-01-16 17:04:01] Deixa eu ver o Technical Reference...
+[2018-01-16 17:06:29] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117655_25788.jpg
+[2018-01-16 17:06:37] Bingo!
+[2018-01-16 17:07:20] hehe
+[2018-01-16 17:07:25] O 5678 é alguma invenção da Scopus. Eu fiz algumas partes do BIOS do Nexus 1600, acho que não mexi no 2600
+[2018-01-16 17:07:27] e quem bota esses valores aí?
+[2018-01-16 17:08:06] O tratamento da interrupção do teclado. Ao detectar Control Alt Del, ele coloca o 1234 e força um reset.
+[2018-01-16 17:09:24] Apesar do código do BIOS ser diferente do da IBM, procurou-se manter as variáveis porque tem programas que as acessam.
+[2018-01-16 17:10:54] interessante
+[2018-01-16 17:11:00] então aí vai RAM mesmo
+[2018-01-16 17:12:47] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804724193_114433.jpg
+[2018-01-16 17:13:02] Taí o famoso tratamento do Control Alt Del
+[2018-01-16 17:15:02] De onde vêem esses prints ?
+[2018-01-16 17:16:02] Do Technical Reference do XT
+[2018-01-16 17:16:32] Que eu peguei no Internet Archive
+[2018-01-16 17:16:51] Perfeito!
+[2018-01-16 17:17:30] Esse aqui, né?  https://archive.org/details/IBMPCXTTechnicalReference1502237
+[2018-01-16 17:18:11] olha aí, Affonso !
+[2018-01-16 17:18:21] O que eu baixei foi este: https://archive.org/details/bitsavers_ibmpcxt636ferenceApr84_11788413
+[2018-01-16 17:18:52] E também o do PC original (IBM 5150)
+[2018-01-16 17:18:59] Devem ser versões semelhantes do mesmo documento...
+[2018-01-16 17:19:23] Sim, tem várias edições. Eu escolhi estes por terem a capa azul...
+[2018-01-16 17:19:48] Eu também gosto da cor azul ;-D
+[2018-01-16 17:20:09] Era uma outra era quando os micros eram documentados com tanto detalhe.
+[2018-01-16 17:20:58] pois é... muito bom mesmo. Eu morro de vontade de montar esse kit: http://www.mtmscientific.com/pc-retro.html
+[2018-01-16 17:24:11] E o preço é baixo!
+[2018-01-16 17:24:42] Só que precisa acrescentar uma placa de vídeo e uma interface de disquete.
+[2018-01-16 17:26:33] Quando eu chegar em casa, vou ver em uma revista da época do lançamento quanto custava só a unidade de sistema (basicamente este placa + fonte + gabinete).
+[2018-01-16 18:22:59] :-)
+[2018-01-16 20:36:27] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806123071_26038.jpg
+[2018-01-16 20:52:58] 1265 dólares?
+[2018-01-16 20:53:37] "Adventure (why not?)" hahaha
+[2018-01-16 22:11:41] Uuuuuuu, nice
+[2018-01-16 22:14:06] 600 pags de qualidade, vou dar uma lida numas parte daora aí, thanks

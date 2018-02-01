@@ -1,0 +1,36 @@
+[2018-01-31 00:04:09] 👍
+[2018-01-31 21:57:37] hoje eu estive na USP e, junto com o professor Fernando Redigolo e com o Affonso, fomos visitar o professor João José Neto.
+[2018-01-31 21:59:13] Dentre as muitas histórias divertidas que o JJN nos contou, está uma sobre o dia em que o prof. Orsini (falecido agora em Janeiro) ganhou de presente um programa de computador escrito em BASIC e armazenado em fita perfurada, na década de 70. O programa fazia calculo numérico de resolução de análise nodal de circuitos.
+[2018-01-31 21:59:33] Se alguém quiser ouvir o resto da história dá um alô aí que a gente relata.
+[2018-01-31 22:02:58] Alô
+[2018-01-31 22:03:21] aê!
+[2018-01-31 22:03:24] pesquei um peixe !
+[2018-01-31 22:04:27] https://www.youtube.com/watch?v=APxPSfXIFH4
+[2018-01-31 22:05:18] Hahaha, também quero saber
+[2018-01-31 22:05:24] O Orsini já tinha muita familiaridade com o método de analise nodal, obviamente. Mas não sabia absolutamente nada sobre programação de computadores.
+[2018-01-31 22:06:13] O prof João José Neto (JJ) nos contou que o Orsini ficou muito feliz com o presente que ganhou mas foi na sala do JJ pedir ajuda para aprender a usar o programa
+[2018-01-31 22:06:39] era uma listagem de código fonte em BASIC pra ser usada nos computadores HP2116B da poli
+[2018-01-31 22:06:59] o JJ explicou pra ele como funcionava e o Orsini começou a usar o programa
+[2018-01-31 22:07:34] aí o Orsini pegou um caso particular de um circuito que ele queria abordar numa aula de analise nodal e carregou e exemplo no programa
+[2018-01-31 22:07:43] só que o programa não funcionou direito
+[2018-01-31 22:08:00] aí ele foi de novo falar com o JJ e relatou o ocorrido
+[2018-01-31 22:08:43] o JJ mencionou que poderia ser um bug no programa, mas que não tinha como saber o que exatamente estava errado pois o JJ nao tinha familiaridade com o código em questào
+[2018-01-31 22:09:33] então o que o JJ fez foi explicar pro Orsini como funciona a linguagem BASIC e exemplificou interpretando mentalmente junto com o Orsini alguns trechos do programa, para ilustrar os conceitos da linguagem
+[2018-01-31 22:09:46] o Orsini agradeceu e foi embora
+[2018-01-31 22:09:49] isso foi numa 5a feira
+[2018-01-31 22:10:00] na 6a feira o Orsini não apareceu na Poli
+[2018-01-31 22:10:55] na segunda-feira o Orsini chegou atrasado na Poli
+[2018-01-31 22:11:17] e ao chegar foi direto para a sala do JJ
+[2018-01-31 22:11:34] e disse: "Tive um dos finais de semana mais interessantes dos últimos tempos!"
+[2018-01-31 22:12:55] "Achei o problema do programa. Ele não trata o caso especial [e era justamente por ser um caso especial que ele ia mostrar em aula]. Nesse caso dá uma divisão por zero e por isso tem que usar aquele outro método com a fórmula do fulano, implementei aqui, ó."
+[2018-01-31 22:13:38] "E no meio do caminho achei outros dois erros conceituais e também consertei. A solução tá aqui, são essas as modificações que tem que fazer no programa. Como é que eu envio agora isso de volta pro cara?"
+[2018-01-31 22:14:44] Aí o JJ falou: "Pode deixar que isso é comigo!" E transcreveu o "patch" do Orsini em uma nova fita perfurada para ser enviada de presente de volta ao autor original junto com explicações (suponho que em uma carta) sobre o tratamento necessário para os casos especiais.
+[2018-01-31 22:16:09] Ou seja, o Orsini não sabia nada de programação de computadores na 4a feira, aprendeu BASIC na 5a feira, debugou o programa no final de semana e mandou um patch por correio via fita perfurada na segunda feira.
+[2018-01-31 22:21:09] Programador nato, só faltava o computador
+[2018-01-31 22:24:07] Fantástico.
+[2018-01-31 22:24:54] O Orsini tinha fama de achar bugs em programas até mesmo na época que eu estava estudando. Ele sempre pensava nos corner cases
+[2018-01-31 23:13:52] Fantástica historia. Mas se (ainda) nao foi blogada nao aconteceu.
+[2018-01-31 23:45:35] este canal tem log público. Tá "blogado"
+[2018-01-31 23:51:27] hoje no ponto de ônibus eu comentei com o Affonso sobre as técnicas incríveis que a Burguer Becky usou para implementar o port de Another World para SNES!
+[2018-01-31 23:52:16] Tá aqui o relato completo: https://www.youtube.com/watch?v=tiq0OL8rzso
+[2018-01-31 23:52:28] veja aí, Affonso

@@ -1,0 +1,98 @@
+[2017-12-04 00:10:52] acho que esse aqui é legal! https://choccyhobnob.com/tutorial-hardware-accelerated-sdl2-on-raspberry-pi/
+[2017-12-04 00:20:35] O distro jessie é usado como base em varias distros para RPi (osmc, volumio, etc)
+[2017-12-04 00:22:22] https://choccyhobnob.com/raspberry-pi/sdl2-2-0-8-on-raspberry-pi/
+[2017-12-04 00:24:13] https://choccyhobnob.com/raspberry-pi/compiling-mame-on-raspberry-pi/
+[2017-12-04 00:24:25] Agora ou vai ou racha.
+[2017-12-04 00:26:58] Só q vc vai precisar trocar de distro.
+[2017-12-04 14:21:22] eu já tinha feito tudo isso
+[2017-12-04 14:21:44] e de fato esse update de distro para stretch e a recompilação da SDL resultou em uma melhoria da performance
+[2017-12-04 14:21:48] mas ainda não é o ideal
+[2017-12-04 14:21:54] e ainda tava rodando com X
+[2017-12-04 14:22:15] nao consegui ainda fazer a SDL desenhar diretamente no framebuffer sem usar o X
+[2017-12-04 14:22:44] hoje é segunda feira, então vou focar no trampo. Mas em breve deve chegar meu LCD de 3,2 polegadas para ligar no RPi
+[2017-12-04 14:22:50] quando chegar farei novos experimentos
+[2017-12-04 14:23:38] hoje de manhã eu li um pouco um artigo sobre o subsistema de framebuffer do kernel Linux e descobri que ele nasceu no port do kernel para motorola 68k :-O
+[2017-12-04 14:24:24] pois não havia suporte a modo texto como nas placas VGA e os consoles de texto originalmente eram altamente amarrados na VGA dos 386, onde o Linux nasceu
+[2017-12-04 14:26:16] junto com a infraestrutura de drivers para framebuffers (que visa abstrair em uma API uniforme o acesso básico a renderização de buffers de pixels nos diversos hardwares existentes) aconteceu também uma generalização do console, tirando os vínculos amarrados no modo texto da VGA e fazendo uso dessa API genérica / abstrata
+[2017-12-04 14:26:47] eu concluí que se eu quero fazer a coisa direito eu preciso entender melhor qual é a função de cada coisa nesse quebra cabeça.
+[2017-12-04 14:27:03] não dá pra ficar simlesmente correndo atrás de tutoriais cegamente
+[2017-12-04 14:27:12] o bom mesmo é entender
+[2017-12-04 14:27:40] E é mais prazeroso também quando a gente entende os detalhes do problema (e das soluções)
+[2017-12-04 14:28:00] bom... daqui a algum tempo tem uma outra coisa que deve chegar aqui em casa também:
+[2017-12-04 14:28:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117582_3150.jpg
+[2017-12-04 14:53:39] Me mantenha informado sobre isso, qdo a fornada for preparada q daí conversaremos sobre os componentes a serem comprados.
+[2017-12-04 14:57:46] Qto à questão da renderização a conclusão a q cheguei (depois de acompanhar todas essas threads e tutos que foram divulgados aqui) é q realmente não dá pra deixar ele fazendo isso em soft, tem que eliminar o subsistema X da equação e forçar a escrita diretamente no fb. Isso em teoria, deveria ter sido proporcionado pela biblioteca DirectFB - acontece que ninguém parece ter chegado a uma solução integral, mesmo as poucas soluções parciais postadas são linkadas à página original da biblioteca (q sumiu do mapa há anos).
+[2017-12-04 14:59:09] Então nesse aspecto, a sensação que ficou em mim é de q estamos correndo em círculos. No meu entender, o jeito de quebrar esse círculo é escrevendo (ou reaproveitando) uma biblioteca nova. Se nada do q lemos vai servir para ajudar, o negócio é limpar a mesa e recomeçar td do zero.
+[2017-12-04 14:59:18] O q já será um puta trampo...
+[2017-12-04 15:20:16] Os argentinos do grupo PVM (Pungas de Villa Martelli) fizeram uma demo de Commodore 64 para o Garoa. Trata-se de um "music disk" com canções brasileiras em chip-tunes. No final tem um easter-egg que só aparece se deixar tocar tudo do inicio ao fim sem mudança manual de faixa. E tem uma mensagem dedicando aos "amigos do Garoa Hacker Clube" : 
+https://www.youtube.com/watch?v=fzAirWD7cjI
+[2017-12-04 15:55:24] Sensacional!
+[2017-12-04 15:56:25] pode repassar o arquivo pra rodar aqui no ccs64?
+[2017-12-04 15:59:05] https://github.com/c64scene-ar/chipdisk-brazil_bits
+[2017-12-04 16:10:33] Caramba, que chato!
+[2017-12-04 16:10:42] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121249_3073.jpg
+[2017-12-04 16:11:12] O q aconteceu?
+[2017-12-04 16:11:46] sei lá... vai ver o vendedor não tem mais o produto e tinha esquecido de atualizar a publicação no mercado livre
+[2017-12-04 16:11:53] vou ter que ir atrás de comprar outro
+[2017-12-04 16:13:32] Vai aqui: https://www.banggood.com/search/raspberry-pi-lcd-touchscreen.html?p=JY0211749485201409KV
+[2017-12-04 16:13:39] Nunca falha
+[2017-12-04 16:17:09] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804726626_63583.jpg
+[2017-12-04 16:17:12] Eu não compro no BR pois qdo vejo isso
+[2017-12-04 16:17:42] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804724622_85799.jpg
+[2017-12-04 16:18:01] eu quero display menor
+[2017-12-04 16:18:09] tava comprando de 3,2 polegadas
+[2017-12-04 16:18:11] Sim, vai lá no link q eu te passei antes
+[2017-12-04 16:18:15] tem lá cara
+[2017-12-04 16:18:19] 3.5"
+[2017-12-04 16:18:32] vai pagar 77 reais
+[2017-12-04 16:19:06] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805514074_54795.jpg
+[2017-12-04 16:19:21] a resolução do game é 320x224, então 320x240 é o ideal
+[2017-12-04 16:19:34] ctz q vc vai achar o q quer nesse site.
+[2017-12-04 16:19:37] e aquele de 3,2 pol era 320x240
+[2017-12-04 16:19:44] só te passei uns poucos exemplos.
+[2017-12-04 16:21:03] Ó, tem esse... https://www.banggood.com/3_5-LCD-Touch-Screen-Display-Module-Board-320x480-RGB-For-Raspberry-Pi-2-B-B-p-1145103.html?p=JY0211749485201409KV
+[2017-12-04 16:21:19] R$44,00
+[2017-12-04 16:22:28] https://www.banggood.com/3_2-Inch-TFT-LCD-Display-Module-Touch-Screen-For-Raspberry-Pi-B-B-A-p-1011516.html?p=JY0211749485201409KV
+[2017-12-04 16:23:21] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804730860_65585.jpg
+[2017-12-04 16:24:09] Só q esse tá em falta
+[2017-12-04 16:26:36] Mais fácil de achar é o de 320x480 3.5".
+[2017-12-04 16:50:20] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121169_3270.jpg
+[2017-12-04 16:51:29] Blz, vc consegue pra mim aquele BOM?
+[2017-12-04 16:51:43] sim, mas não agora
+[2017-12-04 16:51:57] Td bem não precisa ser já. Tem uma semana ainda
+[2017-12-04 16:52:13] Daí eu começo a caçar os componentes
+[2017-12-04 16:52:25] Tem mais de um mês ainda
+[2017-12-04 16:52:36] eu só volto pra casa ano que vem
+[2017-12-04 16:52:42] blz
+[2017-12-04 16:52:51] viajo no dia 15
+[2017-12-04 16:53:08] lá pra metade de janeiro eu devo montar esse circuito aí
+[2017-12-04 16:53:31] então. Só pra gente se manter sincronizado
+[2017-12-04 16:54:00] se bobear é melhor eu mesmo comprar os chips também e depois acertar com você uma divisão homogênea dos gastos, se vc se interessar em montar um seu também.
+[2017-12-04 16:54:56] bom... a gente vê isso ao longo do mês
+[2017-12-04 16:57:21] 👍 como vc achar melhor
+[2017-12-04 17:14:20] https://www.youtube.com/watch?v=NB_VBl7ut9Y
+[2017-12-04 17:15:21] Eu vi ontem esse video dele
+[2017-12-04 17:16:36] É bacana ver como por lá eles conseguem produzir as coisas sem custos e burocracia exagerados, tudo na cooperação mútua...
+[2017-12-04 17:18:36] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513004_54905.jpg
+[2017-12-04 17:18:39] E pelo visto, vendeu bem...
+[2017-12-04 17:51:19] @fsanches SDL 1.2 suporta fbdev direto, mas SDL 2 não
+[2017-12-04 18:15:51] ué!
+[2017-12-04 18:15:55] sabe dizer por que ?
+[2017-12-04 18:24:11] porque ninguém implementou :P
+[2017-12-04 18:57:10] acho que pode copiar e adaptar o driver sem problema
+[2017-12-04 20:15:55] seria uma boa mesmo. Talvez eu tente. Mas um outro caminho talvez seja simplesmente desinstalar os pacotes da SDL 2 e instalar os pacotes da 1.2
+[2017-12-04 20:16:24] é um teste mais fácil de se fazer antes de arregaçar as mangas pra escrever código
+[2017-12-04 20:17:52] outra questão é o uso de displays LCD. Vi que um deles usa barramento SPI para envio dos dados dos pixels. Isso deve ter um limite de performance também. E talvez a performance seja diferente (pior?) que pela saída HDMI
+[2017-12-04 20:44:30] coincidentemente, estava pesquisando sobre isso agora há pouco: https://learn.adafruit.com/hdmi-uberguide/rtd2660-hdmi-vga-ntsc-pal-driver-board
+[2017-12-04 20:44:48] http://aitendo3.sakura.ne.jp/aitendo_data/product_img/lcd_controller/Xs/RTD2660.jsp.pdf
+[2017-12-04 21:31:04] @fsanches muito pior
+[2017-12-04 21:37:02] talvez tenha alguma forma de ter execução do emulador em tempo real mas com framerate reduzido
+[2017-12-04 21:37:36] bem... o MAME tem configurações de frameskip se for necessário
+[2017-12-04 21:38:10] já que a idéia é montar uma maquete em miniatura, talvez o framerate 100% não seja estritamente necessário para o efeito visual desejado
+[2017-12-04 21:38:25] acho que o playback de áudio pode ser mais importante nessa aplicação
+[2017-12-04 22:06:12] provavelmente
+[2017-12-04 22:06:49] talvez da para implementar um driver de fbdev direto no mame
+[2017-12-04 22:07:09] essa parte é modular?
+[2017-12-04 22:11:01] acho que é mais negócio ainda passar pela SDL
+[2017-12-04 22:11:18] deve ser um pesadelo querer lidar com isso no próprio código do MAME
+[2017-12-04 22:11:27] (mas eu posso estar equivocado, é claro)
