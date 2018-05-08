@@ -1,0 +1,60 @@
+[2018-04-11 07:26:16] Se você quiser rodar um Zork que é praticamente o original, no GOG.com tem o Zotk Anthology, com o ZORK1.COM e o ZORK1.DAT. A versão do GOG vem com o DOSBOX configurado para rodar em PCs modernos, mas você deve conseguir rodar direto o ZORK1.COM no Nexus (ou outro PC XT).
+[2018-04-11 07:27:22] Se você quiser uma outra experiência antiga, devo ter em algum lugar os fontes do adventure original e um executável DOS. Obs: para ser mais preciso, uma reescrita em C do adventure original que era em Fortran.
+[2018-04-11 07:29:06] Eu tenho alguns jogos antigos *originais*. Não sei se você lembra, mas levei o disco do Hitchhacker's Guide mas não conseguimos ler no Nexus. Eu tenho backup dos arquivos em algum lugar.
+[2018-04-11 07:40:13] Neste post antigo do meu blog (http://dqsoft.blogspot.com.br/2006/11/adventure-parte-i.html) tem um link para baixar o Zork I, II e III do site http://www.infocom-if.org. Não tenho certeza da situação legal destes dowloads, os jogos foram disponibilizados gratuitamente pela Activision por um certo período no passado, não sei se podem ser redistribuidos como este site está fazendo.
+[2018-04-11 09:25:58] Só zork1.com e zork1.dat funciona, mas tem uns artefatos no texto
+[2018-04-11 09:26:11] Eu tiro uma foto quando chegar la no museu hoje
+[2018-04-11 09:27:22] Isso seria bem maneiro
+[2018-04-11 09:28:01] Entao, eu dei uma BOA limpada no cabeçote do leitor do nexus, e agora ele ta lendo os discos BEM mais facilmente
+[2018-04-11 09:28:17] Tinha parado completamente de ler esses dias
+[2018-04-11 09:28:56] Entao talvez valha a pena tentar esses discos originais mesmo denovo
+[2018-04-11 09:29:34] Uma das versoes que eu tentei foi essa oficial da infocom aí, e ainda fica cagadinho
+[2018-04-11 13:04:30] Aqui, os artefatos mencionados
+[2018-04-11 13:06:53] 1 sec, n foi
+[2018-04-11 13:07:25] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806118176_76948.jpg
+[2018-04-11 13:23:11] Isso tá parecendo códigos ANSI não suportados.
+[2018-04-11 13:24:00] Exato. Precisa carregar o ansi.sys
+[2018-04-11 13:27:00] Estou instalando aqui a versão do gog para dar uma conferida
+[2018-04-11 13:38:13] Curioso, aqui rodou legal sem ANSI.SYS. Usei o _ZORK1.COM do GOG, ZORK1.DAT precisa estar em um diretório DATA. Rodei com um DOXBOX configurado para CGA.
+[2018-04-11 13:38:33] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806007347_22086.jpg
+[2018-04-11 13:40:04] Hmm, eu vou baixar a versao do gog aqui e ver o que acontece
+[2018-04-11 13:40:14] Acho que a do gog eu n testei
+[2018-04-11 13:40:20] Estou testando a versão do www.infocom-if.org
+[2018-04-11 13:40:20] Vai que eles fizeram alguma magica
+[2018-04-11 13:40:32] Essa ta la
+[2018-04-11 13:42:56] Rodou ok executando direto o _zork1.com
+[2018-04-11 13:43:44] Também rodando o zork.bat, que carrega o driver ANSI...
+[2018-04-11 13:45:42] Você experimentou rodar direto o _zork1.com? O NNANSI fala que é para VGA.
+[2018-04-11 13:47:27] O _ZORK1.COM do gog é igual ao do infocom-if
+[2018-04-11 14:08:41] Rodando direto o _zork1.com da o mesmo resultado, o jogo abre mas com os codigos ansi
+[2018-04-11 14:08:54] A versao do jogo que veio com o nnansi n abre
+[2018-04-11 22:13:04] E eu comecei a escrever um programinha pra tentar imagear aquele hd
+[2018-04-11 22:14:09] A ideia é tentar enviar o conteudo via serial pra um otro pc que ta rodando um otro programinha que receberia e colocaria em um arquivo
+[2018-04-11 22:15:05] Eu baixei o borland C, pq eu manjo um poquinho de c, e eu fiz umas tentativas usando algumas coisas que tinham no bios.h do borland
+[2018-04-11 22:16:07] E eu to usando o emulador de xt do mame pra testar o programinha
+[2018-04-11 22:16:52] Alguem ja fez algo parecido e pode dar um help?
+[2018-04-11 22:17:39] pô! Isso é algo bem legal, hein!
+[2018-04-11 22:17:55] Sobre seu código num repositório git
+[2018-04-11 22:18:03] e eu reviso e dou uns palpites
+[2018-04-11 22:19:12] Eu to escrevendo ele direto no borland, pq tipo, pra transferir o codigo pra dentro do emulador do mame ta meio chato
+[2018-04-11 22:19:40] Tem como montar um .img direto no linux? Nunca tentei
+[2018-04-11 22:19:58] Ou um .chd do mame?
+[2018-04-11 22:19:59] não sei
+[2018-04-11 22:20:03] acho qeu sim
+[2018-04-11 22:20:20] Pq isso facilitaria muito escrever esse codigo
+[2018-04-11 22:20:34] Pq no momento eu to escrevendo ele dentro do proprio emulador
+[2018-04-11 22:20:46] vc poderia usar o dosbox pra essa etapa talvez?
+[2018-04-11 22:20:59] É o que eu tava fazendo
+[2018-04-11 22:21:11] o dosbox monta um diretorio local como c:
+[2018-04-11 22:21:37] Usava o dosbox como meio termo
+[2018-04-11 22:21:40] aí dá pra editar por fora do emulador, e depois bootar o dosbox e usar o arquivo lá dentro
+[2018-04-11 22:22:24] talvez dê pra fazer algo com img e chd montando via /dev/loop
+[2018-04-11 22:22:30] mas não sei...
+[2018-04-11 22:22:36] teria que dar uma pesquisada
+[2018-04-11 22:23:04] Isso facilitaria BASTANTE
+[2018-04-11 22:23:05] Mas okay
+[2018-04-11 22:23:21] Como ta n ta horrivel
+[2018-04-11 22:23:46] Eu subo uma versao pro git
+[2018-04-11 22:23:51] E te aviso
+[2018-04-11 22:36:20] :-)
+[2018-04-11 22:50:11] http://flashparty.dx.am/index.php?lang=en

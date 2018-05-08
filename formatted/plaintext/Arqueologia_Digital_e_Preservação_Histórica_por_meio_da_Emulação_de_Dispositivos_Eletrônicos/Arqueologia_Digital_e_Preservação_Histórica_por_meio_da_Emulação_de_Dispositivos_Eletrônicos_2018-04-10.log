@@ -1,0 +1,20 @@
+[2018-04-10 17:10:21] Breve coisinha daora que eu consegui fazer
+[2018-04-10 17:10:29] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806118571_75653.jpg
+[2018-04-10 17:10:42] Sempre quis ver zork rodando num monitor de fosforo verde
+[2018-04-10 17:10:52] Ta ai uma coisa riscada da minha listinha
+[2018-04-10 17:11:31] Foi muito mais dificil do que eu esperava fazer essa desgrama rodar no nexus 2600
+[2018-04-10 19:53:48] quer contar pra gente os detalhes dessa aventura? Quais foram as dificuldades? É assunto suficiente para uma postagem no Fiozera?
+[2018-04-10 23:49:05] Entao, eu testei varias versoes
+[2018-04-10 23:49:53] Eu queria pegar uma imagem de disco original, gravar em um 5 1/4, botar la e rodar
+[2018-04-10 23:50:58] Mas eu n consegui achar em nenhum lugar uma imagem que parecesse boa pra isso, a melhor que eu achei era um .dsk que eu n conseguia de jeito nenhum transferir pro disquete
+[2018-04-10 23:51:11] Entao eu baixei tudo solto memo, só os arquivos
+[2018-04-10 23:52:05] Algumas versoes rodaram, mas com uns artefatos no texto, eu tiro uma foto e mando
+[2018-04-10 23:52:29] e alguma versão chegou a rolar 100% ?
+[2018-04-10 23:52:44] Sim, mas eu considero meio hack
+[2018-04-10 23:53:01] Pq foi uma versao de zork rodando pelo frotz
+[2018-04-10 23:53:46] Entao TECNICAMENTE n é o jogo original, pq ta rodando por um interpretador
+[2018-04-10 23:53:52] Eu acho
+[2018-04-10 23:54:10] Mas mesmo rodando pelo frotz teve umas peculiaridades
+[2018-04-10 23:54:37] No modo Mono e Text de graficos o jogo se recusava a carregar o arquivo de dados
+[2018-04-10 23:54:44] Falava que n encontrava, ou algo do tipo
+[2018-04-10 23:55:00] Mas no modo CGA, rodava suavão

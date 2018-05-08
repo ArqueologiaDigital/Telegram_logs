@@ -1,0 +1,29 @@
+[2018-02-02 02:39:03] Hey guys, cuidadosamente eu tirei aquelas romzinha tbp28l22n da placa mãe do nexus e fiz um leitorzinho com um arduino que o juca tinha me emprestado (Thanks!), segue os dumps das roms e o código que eu usei, eu não sei muito o que eu esperava em termos de conteúdo delas, entao pra mim parece meio estranho, vejam aí, e chequem o código, pq se eu fiz uma cagada que passou despercebida e alterou o dump inteiro, eu conserto e refaço
+[2018-02-02 02:39:27] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5161293415425507350
+[2018-02-02 02:39:28] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5161293415425507351
+[2018-02-02 02:39:28] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5161293415425507352
+[2018-02-02 02:39:28] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5161293415425507353
+[2018-02-02 02:39:59] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_5161293415425507354
+[2018-02-02 02:40:43] Eu vou dormir, pq eu to morrendo ja
+[2018-02-02 03:13:24] a-ha!
+[2018-02-02 03:13:28] muito bm!
+[2018-02-02 03:13:59] sobe no git um repo com o seu código de arduino que fez esse dump aí (e bota uma licença de software livre, é óbvio!)
+[2018-02-02 03:14:47] sugiro "GNU GPL v3 or later", mas fica ao seu critério
+[2018-02-02 03:15:16] pode ser "dedicado ao domínio público" também e tá valendo :-D
+[2018-02-02 03:19:10] não vejo necessidade para o delay de 10 segundos na função setup
+[2018-02-02 03:19:21] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805512233_87106.jpg
+[2018-02-02 03:20:14] eu teria sido "espertinho" e aproveitado o loop de 8 passos pra inicializar tanto os pinos de address quanto os de data
+[2018-02-02 03:20:38] E também não vejo necessidade de inicializar em LOW todos os pinos de endereçamento
+[2018-02-02 03:24:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806122742_35311.jpg
+[2018-02-02 03:25:32] Essa função bitRead não tá definida em lugar nenhum. Tem certeza que você mandou o código mais atualizado?
+[2018-02-02 03:25:52] do jeito que tá suspeito que não deveria nem compilar
+[2018-02-02 03:26:29] ooops!!!
+[2018-02-02 03:26:32] legal
+[2018-02-02 03:26:36] essa eu nao conhecia
+[2018-02-02 03:26:44] https://www.arduino.cc/reference/en/language/functions/bits-and-bytes/bitread/
+[2018-02-02 03:26:55] parece que tá certinho então
+[2018-02-02 03:27:42] mas é meio inútil (e talvez perigoso)
+[2018-02-02 03:28:32] bitRead(data, i) é equivalente a data & (1 << i )
+[2018-02-02 03:28:55] bitRead provavelmente só tá disponível na biblioteca do arduino
+[2018-02-02 03:29:19] data & (1 << i) funciona em qualquer lugar que você possa programar em linguagem C
+[2018-02-02 03:30:01] e possivelmente em outros lugares onde você possa escrever uma expressão equivalente em outra linguagem de programação. É importante conhecer os conceitos. A linguagem a gente adapta.

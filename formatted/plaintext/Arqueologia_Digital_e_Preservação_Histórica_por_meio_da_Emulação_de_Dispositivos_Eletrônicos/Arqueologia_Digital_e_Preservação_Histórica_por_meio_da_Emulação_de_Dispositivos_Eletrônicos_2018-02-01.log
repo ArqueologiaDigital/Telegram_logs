@@ -3,3 +3,91 @@
 [2018-02-01 01:52:47] Mto bão 10/10
 [2018-02-01 01:53:09] :-)
 [2018-02-01 01:53:20] Vo assistir o do Doom tbem
+[2018-02-01 02:22:55] http://arqueologiadigital.org/Telegram_logs/formatted/html/index.html
+[2018-02-01 10:16:52] Vou partilhar um causo com os senhores
+[2018-02-01 10:16:52] O primeiro jogo eletrônico que joguei em minha vida foi no fliperama o taito SPEED RACER p&b, também conhecido como fórmula 1 ou 2
+[2018-02-01 10:16:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121020_34662.jpg
+[2018-02-01 10:16:52] Isso em 1980
+[2018-02-01 10:16:52] Eis que hoje recebo de um amigo uma doação que realmente foi além do esperado
+[2018-02-01 10:16:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117157_33406.jpg
+[2018-02-01 10:16:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806120390_34795.jpg
+[2018-02-01 10:16:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513499_85651.jpg
+[2018-02-01 10:16:52] Que nada mais é que a versão color deste jogo
+[2018-02-01 10:16:52] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121864_34133.jpg
+[2018-02-01 10:16:52] Aqui no Brasil era comum ver numa máquina amarela com o marquee escrito Grand Champion
+[2018-02-01 10:16:52] Pqp, feliz pra kct
+[2018-02-01 10:16:52] Esse jogo era muito popular mas é osso achar ele por aqui
+[2018-02-01 10:16:52] O legal desse jogo é NÃO TEM CPU!
+[2018-02-01 10:16:52] Agora a parte triste é conseguir tempo pra restaurar, e o farei com muito prazer!
+[2018-02-01 10:16:52] https://m.youtube.com/watch?v=_ogHzhArr54
+[2018-02-01 10:22:31] Será que é uma máquina de estados finitos, ou algo assim, o que implementaram na placa?
+[2018-02-01 10:22:53] Sim, provavelmente
+[2018-02-01 10:23:36] Eu tenho um projetinho atualmente engavetado de estudo dos circuitos do jogo GranTrak10 da Atari
+[2018-02-01 10:23:40] que também não tem CPU
+[2018-02-01 10:23:59] cheguei a transcrever pro KiCAD uma parte considerável do circuito já
+[2018-02-01 10:24:02] Tem rom na placa?
+[2018-02-01 10:24:16] Tem, mas é só pro desenho dos sprites
+[2018-02-01 10:24:20] não tem software
+[2018-02-01 10:24:20] Hmm
+[2018-02-01 10:24:47] https://github.com/ArqueologiaDigital/GranTrak10
+[2018-02-01 10:24:47] Se tivesse, seria um processador feito com circuitos discretos
+[2018-02-01 10:27:08] Como é que era implementada ROM em computadores antigos, antes dos chips dip? Eu sempre ouço falar em ferrite e outras tecnologias de armazenamento volátil, mas não lembro de ter visto nada sobre microcódigo e essas coisas.
+[2018-02-01 10:27:53] eu nao tenho certeza
+[2018-02-01 10:28:11] mas, sim, memória de núcleo de ferrite era uma das opções
+[2018-02-01 10:29:24] mas no caso desse arcade da Atari (e provavelmente no caso do jogo da Taito que o Augusto mencionou acima) já era usado ROM em pastilha DIP. Mas apenas para as imagens. Nada de software.
+[2018-02-01 12:51:13] Em computadores de circuitos discretos, você precisava programar um loader de fita básico pelos dip switches do painel frontal. Esses não sabiam fazer nada quando eram ligados.
+[2018-02-01 13:07:50] Era só ram, digamos?
+[2018-02-01 13:09:20] Mesmo nos PDPs, que eram computadores comerciais? Eles deviam ter um bootloader automatizado, pelo menos.
+[2018-02-01 13:21:06] Sim, pensei justamente nos PDPs. Talvez tivesse sim alguma placa de expansão pra isso, mas na versão básica era pelo painel mesmo.
+[2018-02-01 13:22:51] Talvez o carregador de fita tivesse um contador embutido pra auto-incrementar os endereços de memória durante a carga
+[2018-02-01 13:23:18] Fita de papel ou cartão perfurado, no caso
+[2018-02-01 13:29:14] o Patinho Feio tem um circuito de auto incremento de endereço
+[2018-02-01 13:29:33] mas o operador tem que inserir byte a byte o programa de boot
+[2018-02-01 13:29:37] por meio das chaves
+[2018-02-01 13:29:41] não tem ROM
+[2018-02-01 13:41:56] Me veio essa curiosidade, eu nunca li nada sobre o assunto. É quase como se tivessem inventado a RAM em chip e depois inventado ROM.
+[2018-02-01 13:42:49] a memória volátil do Patinho Feio é em nucleo de ferrite
+[2018-02-01 13:45:05] Sim, mas o caso é que eu ouço bastante histórias sobre a evolução de memória RAM, e nada sobre ROM. Ferrite não perde os dados durante o desligamento, isso deve explicar o motivo de computadores usando ela não terem ROM - os dados só eram destruídos com leitura.
+[2018-02-01 13:45:46] Seria o caso de deixar o bootloader na memória, sempre, depois de digitar uma vez.
+[2018-02-01 13:50:28] o patinho feio tem uma chave de proteção da área de boot
+[2018-02-01 13:50:46] do endereço F80 até FFF
+[2018-02-01 13:51:40] habilitando essa proteção, as instruções que alteram conteúdo de memória não surtem efeito quando tentam escrever nessa faixa de endereços
+[2018-02-01 13:51:53] assim preservando o bootloader contra bugs de software do usuário
+[2018-02-01 13:52:22] mas a memória inteira do computador (os 4k bytes de 000 a FFF) são apagados quando o computador é desligado
+[2018-02-01 13:53:12] então sempre que se liga o computador é necessário desproteger a memória, inserir o micro-pré-loader via painel de chaves, executá-lo para que ele leia o loader de uma fita e depois proteger a memória
+[2018-02-01 13:53:27] daí em diante o loader é usado para carregar programas de usuário a partir de fitas
+[2018-02-01 13:53:41] veja que á 2 etapas no boot: um micro-préloader e um loader
+[2018-02-01 13:54:05] o loader tem validação de checksum e outras facilidades pros usuários e portanto é um programa maior
+[2018-02-01 13:54:46] já o micro-pré-loader só serve pra carregar o loader e é otimizado para requerer a menor quantidade possível de manipulação de chaves do painel para sua inserção manual no inicio do boot
+[2018-02-01 13:55:32] o micro-pré-loader não valida checksum. Ele confia no operador e assim pode ser bem mais enxuto em termos de quantidade de bytes.
+[2018-02-01 13:56:08] o prof. João José Neto recentemente lembrou de cabeça a sequencia de bytes do micro-pré-loader daquela época.
+[2018-02-01 13:56:57] Hmm
+[2018-02-01 13:57:27] Eu havia ouvido falar que memória de ferrite não era volátil, talvez dependa do tipo.
+[2018-02-01 13:57:29] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806123410_34277.jpg
+[2018-02-01 13:59:18] Legal... Conseguiu testar?
+[2018-02-01 13:59:44] https://github.com/ArqueologiaDigital/PatinhoFeio/blob/master/Micro_Pr%C3%A9_Loader_do_Pato__JJN_2016-05-06.pdf
+[2018-02-01 14:01:13] Não, ainda não testei, até mesmo por que não tenho a fita especial com o loader
+[2018-02-01 14:02:13] talvez seja o caso de se fazer uma sessão de retro-programação para desenvolver um novo loader compatível com esse micro-pre-loader e com as fitas de código objeto que já tenho e tapar esse gap com uma reimplementação moderna
+[2018-02-01 14:03:01] Sim, até conseguir o original, pelo menos
+[2018-02-01 14:03:13] se o original aparecer algum dia
+[2018-02-01 14:03:21] tenho pouca esperança de encontrar isso
+[2018-02-01 14:03:23] Até lá...
+[2018-02-01 14:03:48] Vai que apareça numa estante da Nasa, hahahaha
+[2018-02-01 14:04:54] E é melhor ter um pedaço de software não-original pra acessar o resto do que simplesmente não acessar o resto.
+[2018-02-01 14:05:15] yep! concordo ;-)
+[2018-02-01 14:46:16] Memória de núcleo de ferrite (que é o que o Juca está falando aqui), não só é volátil como é dinâmica: você precisa ler e reescrever nela periodicamente para não perder os dados.
+[2018-02-01 14:50:53] https://en.wikipedia.org/wiki/Magnetic-core_memory
+[2018-02-01 14:52:33] Pensando aqui, é capaz que a confusão tenha vindo de memória ferroelétrica (FeRAM), que é um tipo de memória RAM moderna, estática e não volátil. Uso em alguns projetos, inclusive um em que estou trabalhando agora. Muito prático para sistemas embarcados.
+[2018-02-01 14:52:38] https://en.wikipedia.org/wiki/Ferroelectric_RAM
+[2018-02-01 14:53:12] Ah, olha só ,estou enganado, a memória que eu linkei é não volátil, mesmo: Core uses tiny magnetic toroids (rings), the cores, through which wires are threaded to write and read information. Each core represents one bit of information. The cores can be magnetized in two different ways (clockwise or counterclockwise) and the bit stored in a core is zero or one depending on that core's magnetization direction. The wires are arranged to allow for an individual core to be set to either a one or a zero and for its magnetization to be changed by sending appropriate electric current pulses through selected wires. The process of reading the core causes the core to be reset to a zero, thus erasing it. This is called destructive readout. When not being read or written, the cores maintain the last value they had, even when power is turned off. This makes them nonvolatile.
+[2018-02-01 15:00:32] Sim, eu ouvi falar que conseguiram ler os dados da memória dos computadores da Challenger, depois que a cabine caiu no mar
+[2018-02-01 15:02:39] So interrompendo o papo daora por 5 segs, achei um rolo de fita virgem, que parecer ser perfeito pro leitor facit
+[2018-02-01 15:02:51] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806123807_34645.jpg
+[2018-02-01 15:03:28] N sei se o tamanho desse anel no meio bate com o bagulho do leitor, mas é uma possibilidade
+[2018-02-01 15:03:35] Vo deixar junto com ele
+[2018-02-01 15:04:23] document: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_38846012097298894.webp
+[2018-02-01 15:26:00] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806117291_35206.jpg
+[2018-02-01 15:27:19] Vejam que no painel do pdp/8 tem uma lista de números com o título RIM Loader. Essa é a listagem do pré-boot pra facilitar pro programador.
+[2018-02-01 16:34:04] Engraçado que ela estava reescrita
+[2018-02-01 16:34:15] Na foto
+[2018-02-01 23:43:37] Pitanga left

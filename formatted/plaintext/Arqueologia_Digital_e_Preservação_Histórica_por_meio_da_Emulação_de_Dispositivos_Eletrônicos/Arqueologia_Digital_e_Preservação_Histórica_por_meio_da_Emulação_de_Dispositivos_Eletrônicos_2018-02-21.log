@@ -1,0 +1,58 @@
+[2018-02-21 14:39:00] https://youtu.be/ESuKNq6URm0
+[2018-02-21 19:54:28] Eai galera, então, Solution 16
+[2018-02-21 19:54:56] O grande sebastião doou o solution dele pro museu (Thanks man!)
+[2018-02-21 19:55:06] Problema, ele nao boota
+[2018-02-21 19:55:24] Ele tenta, mas nao consegue
+[2018-02-21 19:55:33] Da essa mensagem aqui
+[2018-02-21 19:55:56] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804723336_140413.jpg
+[2018-02-21 19:56:25] Como da pra ver do visual dele, eu abri o bixo ja pra dar uma limpada nos cabeçotes dos drives
+[2018-02-21 19:56:53] Mas n deu muito certo
+[2018-02-21 19:59:43] Eu tentei os dois drives já,  (trocando os jumpers como apropriado, se vc tenta com a configuraçao de jumper errada ele nem tenta ler)
+[2018-02-21 20:00:05] Um deles da essa mensagem aí de indexaçao, e o outro da essa aqui, de track not found
+[2018-02-21 20:01:26] O outro da varios estalos e da essa mensagem
+[2018-02-21 20:01:37] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_805513208_98069.jpg
+[2018-02-21 20:01:57] Ideias, sugestões?
+[2018-02-21 20:02:48] Não sei...
+[2018-02-21 20:03:09] mas isso me lembra de uma questão. Já temos um ROM dump desse solution16 ?
+[2018-02-21 20:03:18] Acredito que nao
+[2018-02-21 20:03:39] Mas é uma boa ideia dumpar antes de continuar mechendo
+[2018-02-21 20:03:43] Amanha eu dumpo
+[2018-02-21 20:03:49] Hoje ja to vazando
+[2018-02-21 20:04:25] So n sei como eu vou tirar a placa dele sem o crt dele me assassinar
+[2018-02-21 20:04:37] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_804727702_112932.jpg
+[2018-02-21 20:04:57] Parece estar num container a parte
+[2018-02-21 20:05:12] photo: /home/felipe/devel/github_ArqueologiaDigital/Telegram_logs/media/Arqueologia_Digital_e_Preservação_Histórica_por_meio_da_Emulação_de_Dispositivos_Eletrônicos/download_806121528_46174.jpg
+[2018-02-21 20:06:25] :-)
+[2018-02-21 20:06:27] boa sorte
+[2018-02-21 20:06:39] eu quero ir visitar de novo aí em breve
+[2018-02-21 20:06:53] mas eu vou viajar pra Brasília na semana que vem
+[2018-02-21 20:07:01] talvez na outra semana eu consiga ir
+[2018-02-21 20:07:23] Chega aí cara, semana que vem comecam as minhas aulas
+[2018-02-21 20:07:30] Ai eu vou diminuir o horario aqui
+[2018-02-21 20:07:42] N vai dar pra brincar tantl
+[2018-02-21 20:09:09] hahaha
+[2018-02-21 20:09:10] ok
+[2018-02-21 20:09:35] mas nos próximos dias até dia 28 realmente não dá
+[2018-02-21 20:09:40] quem sabe dia 29...
+[2018-02-21 20:09:51] oops!
+[2018-02-21 20:09:57] :-)
+[2018-02-21 20:10:07] dia primeiro...
+[2018-02-21 22:28:20] As ROMs já tem dump: https://datassette.org/softwares/ibm-pc/prologica-solution-16-rom-bios
+[2018-02-21 22:28:30] Mas tirem as de vcs também pra comparar.
+[2018-02-21 22:28:44] legal!
+[2018-02-21 22:28:51] Agora se tiverem o SO-16 aí sim vai ser um achado. Ninguém tem esse sistema
+[2018-02-21 22:29:01] uia
+[2018-02-21 22:29:05] acho que nao tem nao
+[2018-02-21 22:29:11] veio do tião
+[2018-02-21 22:29:15] teria que perguntar pra ele
+[2018-02-21 22:29:26] aliás... tem um disquete lá que veio junto
+[2018-02-21 22:30:21] Affonso, veja lá se está escrito "SO-16"  no disquete... "Vai que", né?!
+[2018-02-21 22:32:13] :)
+[2018-02-21 22:33:53] Hmmmm
+[2018-02-21 22:33:57] Vo ver amanhã
+[2018-02-21 22:34:00] Ta la no museu
+[2018-02-21 22:34:29] Eu to usando o meu disco de ibm pc-dos 3.3 pra tentar bootar
+[2018-02-21 22:34:42] Entao aquele disco ta seguro
+[2018-02-21 22:35:01] alright!
+[2018-02-21 22:35:10] EU to meio que assumindo que é compativel
+[2018-02-21 22:35:11] mas eu acho que aquel disco deve ser o SISNE
