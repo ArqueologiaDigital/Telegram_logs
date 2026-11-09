@@ -7,12 +7,12 @@ from its creation on 2017-11-06 onward.
 This repo is **layer 1, raw text data only**. Everything else is derived from it, lives
 elsewhere, and can be regenerated:
 
-| layer            | repo                   | contents                                                           |
-|------------------|------------------------|--------------------------------------------------------------------|
-| 1. raw text      | `Telegram_logs` (here) | messages, users, admin log, sync tool, 2018 legacy dump            |
-| 2. raw media     | `Telegram_logs_media`  | media of 10 MB or less, by message id; larger files on archive.org |
-| 3. derived index | (planned)              | full-text search, topic segmentation, link and file catalogues     |
-| 4. visualization | site repo (planned)    | static HTML for arqueologiadigital.org                             |
+| layer            | repo                   | contents                                                                                                  |
+|------------------|------------------------|-----------------------------------------------------------------------------------------------------------|
+| 1. raw text      | `Telegram_logs` (here) | messages, users, admin log, sync tool, 2018 legacy dump                                                   |
+| 2. raw media     | `Telegram_logs_media`  | media of 10 MB or less, by message id; larger files on archive.org                                        |
+| 3. derived index | (planned)              | full-text search, topic segmentation, link and file catalogues                                            |
+| 4. visualization | `Telegram_logs_site`   | static HTML (2018-compatible pages) on its gh-pages branch, at arqueologiadigital.org/Telegram_logs_site/ |
 
 Only `tools/tg_sync.py` writes `messages/`, `users/`, `adminlog/` and `state/`.
 
@@ -45,8 +45,10 @@ Only `tools/tg_sync.py` writes `messages/`, `users/`, `adminlog/` and `state/`.
              "deletion": { ... } }}
 ```
 
-`raw` drops `phone`, `phone_number` (shared contact cards), `file_reference`, `access_hash`
-and stripped-thumbnail `bytes` at every depth.
+`raw` drops `phone`, `phone_number` (shared contact cards), `file_reference`, `access_hash`,
+stripped-thumbnail `bytes`, `replies_pts` and `read_max_id` at every depth. Message *text* is kept
+verbatim, including phone numbers members typed; the website masks those (see the site's
+`phone_review.json`).
 
 **Deleted messages are kept** and flagged in `archive.deletion`, so that renderers can decide
 how to show them:

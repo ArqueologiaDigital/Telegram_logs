@@ -10,6 +10,8 @@ All commands assume this directory layout (the scripts expect the repos side by 
 /home/fsanches/compartilhado/Telegram_Arqueologia_Digital/
 ├── Telegram_logs/                 this repo: text archive, tools, media manifest
 ├── Telegram_logs_media/           media repo: files of 10 MB or less
+├── Telegram_logs_site/            site generator (branch main) and built site (branch gh-pages)
+├── Telegram_logs_site-gh-pages/   git worktree of the gh-pages branch (written by publish.sh)
 ├── ia_staging/                    larger files waiting for a manual archive.org upload (not in git)
 ├── Telegram_logs-2018-private/    clone of the old private repo (source of legacy/, redaction check)
 └── .venv/                         Python virtualenv with Telethon
@@ -43,7 +45,9 @@ reboot if a run was missed. It:
 2. `tools/tg_media.py fetch`: downloads new media (10 MB or less into `Telegram_logs_media`,
    larger into `ia_staging`);
 3. `tools/check_redaction.py`: stops the run if a phone number appears anywhere;
-4. commits in `Telegram_logs` and in `Telegram_logs_media`, if anything changed.
+4. commits in `Telegram_logs` and in `Telegram_logs_media`, if anything changed;
+5. `Telegram_logs_site/publish.sh`: rebuilds the website into the `gh-pages` branch of
+   `Telegram_logs_site` (after checking the 2018 page compatibility) and commits it if it changed.
 
 **It must run at least once every 48 hours.** Telegram keeps the admin log for only ~48 h, and
 the admin log is the only source of *who* deleted or edited a message and *when* (and the only
@@ -104,17 +108,21 @@ Always run the redaction check first. It must say `OK`:
 python3 -I tools/check_redaction.py ../Telegram_logs-2018-private
 ```
 
-Then push both repos:
+Then push the three repos (data, media, site):
 
 ```
 git push origin main
 git -C ../Telegram_logs_media push origin main
+git -C ../Telegram_logs_site push origin main gh-pages
 ```
+
+Push the media before the site: the site links to media files on `raw.githubusercontent.com`,
+which only exist once `Telegram_logs_media` is pushed.
 
 ### First push only
 
-Create two **empty** public repos on github.com under ArqueologiaDigital (no README, no license,
-no .gitignore): `Telegram_logs` and `Telegram_logs_media`. Then:
+Create three **empty** public repos on github.com under ArqueologiaDigital (no README, no license,
+no .gitignore): `Telegram_logs`, `Telegram_logs_media` and `Telegram_logs_site`. Then:
 
 ```
 git remote add origin git@github.com:ArqueologiaDigital/Telegram_logs.git
@@ -123,7 +131,16 @@ git push -u origin main
 cd ../Telegram_logs_media
 git remote add origin git@github.com:ArqueologiaDigital/Telegram_logs_media.git
 git push -u origin main
+
+cd ../Telegram_logs_site
+git remote add origin git@github.com:ArqueologiaDigital/Telegram_logs_site.git
+git push -u origin main gh-pages
 ```
+
+Then, on github.com, in `Telegram_logs_site` → Settings → Pages: *Deploy from a branch*, branch
+`gh-pages`, folder `/ (root)`. The site appears at
+<https://arqueologiadigital.org/Telegram_logs_site/> (the organisation's custom domain applies to
+all its project sites).
 
 (With HTTPS instead of SSH, use `https://github.com/ArqueologiaDigital/<repo>.git`.) The first
 media push is about 1 GB; GitHub accepts up to 2 GB per push.
@@ -188,16 +205,18 @@ A day without a `Daily sync` commit is normal if nobody posted, edited or delete
 
 ## Other commands
 
-| command                                                           | when                                                             |
-|-------------------------------------------------------------------|------------------------------------------------------------------|
-| `../.venv/bin/python tools/tg_sync.py sync`                       | a sync by hand (same as the daily one)                           |
-| `../.venv/bin/python tools/tg_sync.py sync --rescan-days 90`      | look further back for edits and deletions                        |
-| `../.venv/bin/python tools/tg_sync.py sync --full`                | re-scan the whole history (a few minutes; monthly is plenty)     |
-| `../.venv/bin/python tools/tg_sync.py normalize`                  | after adding a field to `REDACT`: apply it to all stored records |
-| `../.venv/bin/python tools/tg_media.py fetch`                     | media by hand; resumable, rerun to retry failures                |
-| `../.venv/bin/python tools/tg_sync.py merge-legacy`               | after a `--full` sync: 2018-only messages and 2018 names         |
-| `python3 -I tools/import_legacy.py ../Telegram_logs-2018-private` | rebuild `legacy/` from the old private repo                      |
-| `python3 -I notes/probes/legacy_vs_new.py`                        | compare the 2018 dump with the current archive                   |
+| command                                                                       | when                                                             |
+|-------------------------------------------------------------------------------|------------------------------------------------------------------|
+| `../.venv/bin/python tools/tg_sync.py sync`                                   | a sync by hand (same as the daily one)                           |
+| `../.venv/bin/python tools/tg_sync.py sync --rescan-days 90`                  | look further back for edits and deletions                        |
+| `../.venv/bin/python tools/tg_sync.py sync --full`                            | re-scan the whole history (a few minutes; monthly is plenty)     |
+| `../.venv/bin/python tools/tg_sync.py normalize`                              | after adding a field to `REDACT`: apply it to all stored records |
+| `../Telegram_logs_site/publish.sh`                                            | rebuild the site into gh-pages by hand (same as the daily run)   |
+| `python3 -I ../Telegram_logs_site/build.py --out ../Telegram_logs_site/build` | local preview build (see the site README)                        |
+| `../.venv/bin/python tools/tg_media.py fetch`                                 | media by hand; resumable, rerun to retry failures                |
+| `../.venv/bin/python tools/tg_sync.py merge-legacy`                           | after a `--full` sync: 2018-only messages and 2018 names         |
+| `python3 -I tools/import_legacy.py ../Telegram_logs-2018-private`             | rebuild `legacy/` from the old private repo                      |
+| `python3 -I notes/probes/legacy_vs_new.py`                                    | compare the 2018 dump with the current archive                   |
 
 After running any of these by hand, commit as usual (`git add -A && git commit`), in both repos
 if media changed.
@@ -213,6 +232,16 @@ if media changed.
 | `check_redaction.py` says `FAIL`                                 | a phone number got into the data. Do not push. The run did not commit; find the file it names and fix the redaction in `tools/tg_sync.py` (`REDACT`). |
 | `unavailable: msg N` from `tg_media.py`                          | the message was deleted before its media was saved (or after the 48 h admin-log window). It cannot be recovered.                                      |
 | disk filling up                                                  | `ia_staging` holds files not yet uploaded. Upload them, then delete the uploaded ones.                                                                |
+
+## Phone numbers typed into messages
+
+The raw archive keeps message text verbatim, including any phone number a member typed (decision
+of 2026-11-09). The website hides them: Telegram tags candidates, and
+`Telegram_logs_site/phone_review.json` holds a verdict per message id (`show` for year ranges,
+prices and other false positives, `mask` for real numbers). Unreviewed tags are masked, and
+`publish.sh` prints `WARNING: ... phone tag(s) not in phone_review.json` with their message ids
+(it shows up in `journalctl --user -u tg-arqueologia-sync`). Look at each one, add it to the file,
+commit in `Telegram_logs_site`.
 
 ## Rules for maintainers
 

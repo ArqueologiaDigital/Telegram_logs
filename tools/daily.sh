@@ -33,4 +33,8 @@ fi
 cd "$ROOT/Telegram_logs_media"
 git add -A
 git diff --cached --quiet || git commit -q -m "Daily media $DAY" -m "$MEDIA" -m "Automated run of Telegram_logs/tools/daily.sh."
+# Rebuild the public site (gh-pages branch of Telegram_logs_site), committed locally, not pushed.
+if [ -x "$ROOT/Telegram_logs_site/publish.sh" ]; then
+  "$ROOT/Telegram_logs_site/publish.sh"
+fi
 echo "daily run finished"
