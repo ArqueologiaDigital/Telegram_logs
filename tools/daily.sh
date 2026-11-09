@@ -19,6 +19,8 @@ trap 'rm -f -- "${OUT:?}"' EXIT
 SYNC=$(tail -1 "$OUT")
 "$PY" -u tools/tg_media.py fetch 2>&1 | tee "$OUT"
 MEDIA=$(tail -1 "$OUT")
+"$PY" -u tools/tg_avatars.py 2>&1 | tee "$OUT"         # profile photos, only when changed
+AVATARS=$(tail -1 "$OUT")
 # Large files stay in ../ia_staging: Felipe reviews and uploads them by hand (tools/ia_upload.py).
 python3 -I tools/check_redaction.py "$ROOT/Telegram_logs-2018-private"   # exits 1 on a leak
 
@@ -28,11 +30,11 @@ DAY=$(date -u +%F)
 git add -- messages users adminlog media
 if ! git diff --cached --quiet; then
   git add -- state
-  git commit -q -m "Daily sync $DAY" -m "$SYNC" -m "$MEDIA" -m "Automated run of tools/daily.sh."
+  git commit -q -m "Daily sync $DAY" -m "$SYNC" -m "$MEDIA" -m "$AVATARS" -m "Automated run of tools/daily.sh."
 fi
 cd "$ROOT/Telegram_logs_media"
 git add -A
-git diff --cached --quiet || git commit -q -m "Daily media $DAY" -m "$MEDIA" -m "Automated run of Telegram_logs/tools/daily.sh."
+git diff --cached --quiet || git commit -q -m "Daily media $DAY" -m "$MEDIA" -m "$AVATARS" -m "Automated run of Telegram_logs/tools/daily.sh."
 # Rebuild the public site (gh-pages branch of Telegram_logs_site), committed locally, not pushed.
 if [ -x "$ROOT/Telegram_logs_site/publish.sh" ]; then
   "$ROOT/Telegram_logs_site/publish.sh"
