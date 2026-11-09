@@ -49,8 +49,9 @@ LEGACY_LAST_SYNC = "2018-05-08T03:53:10Z"  # progress.json "last_modified" of th
 
 # Keys removed from every raw record, at any depth. phone/phone_number: members' numbers and
 # shared contact cards. file_reference/access_hash: expiring credentials, useless in an archive.
-# bytes: stripped thumbnail blobs.
-REDACT = {"phone", "phone_number", "file_reference", "access_hash", "bytes"}
+# bytes: stripped thumbnail blobs. replies_pts: an update counter that moves with every new message
+# (pure churn). read_max_id: the archiving account's own read position, not group data.
+REDACT = {"phone", "phone_number", "file_reference", "access_hash", "bytes", "replies_pts", "read_max_id"}
 # Fields that change without the author doing anything; ignored when detecting an edit.
 VOLATILE = {"views", "forwards", "replies", "reactions", "edit_hide", "pinned", "ttl_period"}
 
