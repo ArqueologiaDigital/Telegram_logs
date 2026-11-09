@@ -12,6 +12,7 @@ Subcommands (run from the repo root, with the venv one level up):
   merge-legacy              add 2018-only messages (ids 1..4703 deleted since) as records
                             with deletion metadata; needs a --full sync first
   stats                     message counts and the media bill (what pass 2 would download)
+  normalize                 apply the REDACT list to all stored records (run after changing it)
 
 Secrets live outside every repo, in ~/.config/tg_arqueologia/ (mode 700):
   config.json   {"api_id": 123, "api_hash": "..."}   from https://my.telegram.org
@@ -422,6 +423,24 @@ def cmd_merge_legacy(a):
     print(f"users given 2018 names: {named}")
 
 
+def cmd_normalize(a):
+    """Apply REDACT to everything already stored (records that are never re-fetched, such as
+    deleted messages and admin-log events, keep old fields otherwise). Run after changing REDACT."""
+    n = 0
+    for d in (MSG_DIR, ADMINLOG_DIR):
+        for root, _, files in os.walk(d):
+            for fn in sorted(files):
+                if not fn.endswith(".jsonl"):
+                    continue
+                path = os.path.join(root, fn)
+                text = open(path, encoding="utf-8").read()
+                new = "".join(dumps(clean(json.loads(line))) + "\n" for line in text.splitlines())
+                if new != text:
+                    atomic_write(path, new)
+                    n += 1
+    print(f"files rewritten: {n}")
+
+
 def media_size(media):
     """Best-quality byte size of a raw media dict, as pass 2 would download it."""
     if not media:
@@ -484,6 +503,7 @@ def main():
     sy.add_argument("--full", action="store_true")
     sub.add_parser("merge-legacy")
     sub.add_parser("stats")
+    sub.add_parser("normalize")
     a = p.parse_args()
     if a.cmd == "login":
         asyncio.run(cmd_login(a))
@@ -491,6 +511,8 @@ def main():
         asyncio.run(cmd_sync(a))
     elif a.cmd == "merge-legacy":
         cmd_merge_legacy(a)
+    elif a.cmd == "normalize":
+        cmd_normalize(a)
     else:
         cmd_stats(a)
 
