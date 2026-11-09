@@ -23,8 +23,13 @@ MEDIA=$(tail -1 "$OUT")
 python3 -I tools/check_redaction.py "$ROOT/Telegram_logs-2018-private"   # exits 1 on a leak
 
 DAY=$(date -u +%F)
-git add -- messages users adminlog state media   # data only: never sweep up uncommitted tool edits
-git diff --cached --quiet || git commit -q -m "Daily sync $DAY" -m "$SYNC" -m "$MEDIA" -m "Automated run of tools/daily.sh."
+# Data only, never uncommitted tool edits. A run that changed nothing but state/ (scan list,
+# last_sync) makes no commit; the state file goes in with the next real change.
+git add -- messages users adminlog media
+if ! git diff --cached --quiet; then
+  git add -- state
+  git commit -q -m "Daily sync $DAY" -m "$SYNC" -m "$MEDIA" -m "Automated run of tools/daily.sh."
+fi
 cd "$ROOT/Telegram_logs_media"
 git add -A
 git diff --cached --quiet || git commit -q -m "Daily media $DAY" -m "$MEDIA" -m "Automated run of Telegram_logs/tools/daily.sh."
