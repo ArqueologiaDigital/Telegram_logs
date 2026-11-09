@@ -54,3 +54,24 @@ Sizes are Telegram's own metadata (largest photo size, document size), not downl
 
 `python3 -I tools/check_redaction.py ../Telegram_logs-2018-private`: on 2026-11-09, 118 files
 checked against the 11 numbers known from the 2018 dump, 0 problems. Run it before every push.
+
+## Pass 2 (media), 2026-11-09
+
+`../.venv/bin/python tools/tg_media.py legacy`, then `tools/tg_media.py fetch` (about 1 h 50 min):
+
+| store                         | via         | files | GB    |
+|-------------------------------|-------------|-------|-------|
+| git (`Telegram_logs_media`)   | message     | 3723  |       |
+| git                           | legacy-copy | 395   |       |
+| git                           | admin_log   | 3     |       |
+| git, total                    |             | 4121  | 0.923 |
+| ia (`ia_staging`, not in git) | message     | 79    |       |
+| ia                            | legacy-copy | 2     |       |
+| ia, total                     |             | 81    | 4.181 |
+
+0 failures; for all 4202 entries the downloaded size equals Telegram's reported size, and every
+manifest entry has its file on disk (checked with a one-off read of `media/manifest.jsonl`
+against the two directories). `legacy-copy` = the 2018 file had exactly Telegram's size and was
+copied instead of downloaded (397 of the 401 files the 2018 dump saved). The 3 `admin_log`
+files are the media of messages deleted on 2026-11-08, saved through the admin log within its
+48 h window.
