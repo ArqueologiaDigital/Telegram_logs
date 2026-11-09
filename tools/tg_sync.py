@@ -401,6 +401,25 @@ def cmd_merge_legacy(a):
     archive.save()
     print(f"legacy-only messages added (deleted from Telegram since 2018): {added}")
 
+    # Names from 2018: many of those accounts are deleted now, and Telegram no longer gives names.
+    users, named = load_users(), 0
+    for line in open(LEGACY, encoding="utf-8"):
+        leg = json.loads(line)
+        for lu in (leg.get("from") or {}, (leg.get("action") or {}).get("user") or {}):
+            uid = lu.get("peer_id")
+            if not uid or lu.get("peer_type") != "user":
+                continue
+            u = users.setdefault(uid, {"id": uid, "kind": "User", "names_seen": [], "first_name": None,
+                                       "last_name": None, "title": None, "username": None})
+            entry = {"first_name": lu.get("first_name") or None, "last_name": lu.get("last_name") or None,
+                     "title": None, "username": lu.get("username") or None,
+                     "seen": LEGACY_LAST_SYNC, "source": "legacy-2018"}
+            if not any(n.get("source") == "legacy-2018" for n in u["names_seen"]):
+                u["names_seen"].insert(0, entry)
+                named += 1
+    save_users(users)
+    print(f"users given 2018 names: {named}")
+
 
 def media_size(media):
     """Best-quality byte size of a raw media dict, as pass 2 would download it."""

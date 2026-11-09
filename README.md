@@ -18,21 +18,21 @@ Only `tools/tg_sync.py` writes `messages/`, `users/`, `adminlog/` and `state/`.
 
 ## Layout
 
-| path                               | what                                                                                   |
-|------------------------------------|----------------------------------------------------------------------------------------|
-| `messages/YYYY/YYYY-MM.jsonl`      | one message per line, UTC month, sorted by message id                                  |
-| `users/users.jsonl`                | senders: id, names and usernames over time (`names_seen`); **no phone numbers**        |
-| `adminlog/YYYY/YYYY-MM.jsonl`      | raw admin-log events (Telegram keeps only ~48 h, so every sync saves them)             |
-| `state/sync_state.json`            | last message id and the list of scans (used to date deletions)                         |
-| `legacy/2018-telegram-cli/`        | the 2018 dump (ids 1..4703), phone numbers redacted, plus its media map                |
-| `tools/tg_sync.py`                 | login, sync, merge-legacy, stats                                                       |
-| `tools/import_legacy.py`           | rebuilds `legacy/` from the old private repo and checks that no phone number leaks     |
-| `tools/check_redaction.py`         | scans the repo for phone fields and known numbers; run before every push               |
-| `media/manifest.jsonl`             | per message with media: file path or archive.org URL, size, sha256, how it was fetched |
-| `tools/tg_media.py`                | pass 2: downloads media into `../Telegram_logs_media` or `../ia_staging`               |
-| `tools/ia_upload.py`               | uploads `../ia_staging` to the archive.org item and records `ia_url`                   |
-| `tools/daily.sh`, `tools/systemd/` | daily run (sync, media, IA upload, redaction check, local commits; never pushes)       |
-| `notes/`                           | measurements and the probe scripts that produced them                                  |
+| path                               | what                                                                                              |
+|------------------------------------|---------------------------------------------------------------------------------------------------|
+| `messages/YYYY/YYYY-MM.jsonl`      | one message per line, UTC month, sorted by message id                                             |
+| `users/users.jsonl`                | senders: id, names and usernames over time (`names_seen`, incl. 2018 names); **no phone numbers** |
+| `adminlog/YYYY/YYYY-MM.jsonl`      | raw admin-log events (Telegram keeps only ~48 h, so every sync saves them)                        |
+| `state/sync_state.json`            | last message id and the list of scans (used to date deletions)                                    |
+| `legacy/2018-telegram-cli/`        | the 2018 dump (ids 1..4703), phone numbers redacted, plus its media map                           |
+| `tools/tg_sync.py`                 | login, sync, merge-legacy, stats                                                                  |
+| `tools/import_legacy.py`           | rebuilds `legacy/` from the old private repo and checks that no phone number leaks                |
+| `tools/check_redaction.py`         | scans the repo for phone fields and known numbers; run before every push                          |
+| `media/manifest.jsonl`             | per message with media: file path or archive.org URL, size, sha256, how it was fetched            |
+| `tools/tg_media.py`                | pass 2: downloads media into `../Telegram_logs_media` or `../ia_staging`                          |
+| `tools/ia_upload.py`               | uploads `../ia_staging` to the archive.org item and records `ia_url`                              |
+| `tools/daily.sh`, `tools/systemd/` | daily run (sync, media, IA upload, redaction check, local commits; never pushes)                  |
+| `notes/`                           | measurements and the probe scripts that produced them                                             |
 
 ## Message records
 
@@ -59,6 +59,10 @@ how to show them:
 
 Edits are kept the same way in `archive.previous_versions` (`via`: `rescan` or `admin_log`;
 admin-log ones also carry `edited_at`/`edited_by`).
+
+Deleted Telegram accounts (120 of 244 on 2026-11-09) no longer have names; for 18 of them
+the 2018 dump supplies one (`names_seen` entries with `"source": "legacy-2018"`). Renderers
+should use the last non-empty entry of `names_seen`.
 
 ## Running it
 

@@ -13,4 +13,5 @@ Install (the user has linger enabled, so it runs without a login session):
 Check: `systemctl --user list-timers tg-arqueologia-sync.timer`,
 `journalctl --user -u tg-arqueologia-sync`. Run once by hand: `systemctl --user start tg-arqueologia-sync`.
 
-It commits locally in both repos and never pushes.
+It commits locally in both repos and never pushes. It never uploads to archive.org either:
+large files wait in `../ia_staging/` for a manual, reviewed upload (`tools/ia_upload.py`).

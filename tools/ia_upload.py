@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""Upload the large media files (store == "ia") to one Internet Archive item, then record their URLs.
+"""Large media files (store == "ia") -> one Internet Archive item. Run BY HAND, after review.
 
-Question it answers: which large files are on archive.org, at what URL, and does the uploaded
-copy have the checksum recorded in media/manifest.jsonl?
+The daily job only downloads these files into ../ia_staging/; uploading is always a manual,
+reviewed step.
 
-    ../.venv/bin/pip install internetarchive && ../.venv/bin/ia configure    # once, your IA account
-    ../.venv/bin/python tools/ia_upload.py [--item arqueologiadigital-telegram-media] [--dry-run]
+    ../.venv/bin/python tools/ia_upload.py list      # review: what is pending, with message context
+    ../.venv/bin/python tools/ia_upload.py upload    # upload pending files, then record their URLs
+    ../.venv/bin/python tools/ia_upload.py record    # only record URLs of files uploaded some other
+                                                     # way (e.g. your own `ia upload` commands)
+    --item arqueologiadigital-telegram-media (default)
+    --only 1234,5678                                 # restrict to these message ids
 
-Files come from ../ia_staging/<path>, go to https://archive.org/download/<item>/<path>, and
-`ia_url` is written into the manifest entry only once archive.org lists the file with the
-same md5 as the local copy (IA publishes md5/sha1, not sha256; the sha256 stays in the manifest).
-Re-running is safe: entries that already have ia_url are skipped.
+Setup, once: ../.venv/bin/pip install internetarchive && ../.venv/bin/ia configure
+
+Remote path = the manifest "path" (YYYY/YYYY-MM/<msgid>-<name>), so the URL is
+https://archive.org/download/<item>/<path>. `ia_url` is written into media/manifest.jsonl only
+when archive.org lists the file with the same md5 as the local copy (IA publishes md5/sha1;
+the sha256 stays in the manifest). Commit media/manifest.jsonl afterwards.
 """
 import argparse
 import hashlib
@@ -20,6 +26,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tg_media import IA_STAGING, load_manifest, save_manifest  # noqa: E402
+from tg_sync import CONF_DIR, Archive, load_users  # noqa: E402
 
 METADATA = {
     "title": "Arqueologia Digital: Telegram group media (large files)",
@@ -43,35 +50,84 @@ def md5(path):
     return h.hexdigest()
 
 
-def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("--item", default="arqueologiadigital-telegram-media")
-    p.add_argument("--dry-run", action="store_true")
-    a = p.parse_args()
-    manifest = load_manifest()
-    todo = [e for e in manifest.values() if e.get("store") == "ia" and not e.get("ia_url")]
-    print(f"to upload: {len(todo)} files, {sum(e['size'] for e in todo) / 1e9:.3f} GB -> item {a.item}")
-    if a.dry_run or not todo:
-        return
+def pending(manifest, only):
+    out = [e for e in manifest.values() if e.get("store") == "ia" and not e.get("ia_url")]
+    return [e for e in out if not only or e["msg_id"] in only]
+
+
+def cmd_list(todo):
+    archive, users = Archive(), load_users()
+    print(f"{len(todo)} files pending, {sum(e['size'] for e in todo) / 1e9:.3f} GB, in {IA_STAGING}\n")
+    for e in sorted(todo, key=lambda e: e["msg_id"]):
+        rec = archive.get(e["msg_id"]) or {}
+        raw = rec.get("raw") or {}
+        uid = (raw.get("from_id") or {}).get("user_id")
+        u = users.get(uid, {})
+        who = str(uid)
+        for n in [u] + list(reversed(u.get("names_seen", []))):   # current name, else last known one
+            name = n.get("username") and "@" + n["username"] or " ".join(filter(None, [n.get("first_name"), n.get("last_name")]))
+            if name:
+                who = name + (" (deleted account)" if u.get("deleted") else "")
+                break
+        flag = "  [DELETED in Telegram]" if rec.get("archive", {}).get("deletion") else ""
+        text = (raw.get("message") or "").replace("\n", " ")
+        print(f"msg {e['msg_id']}  {rec.get('date', '?')}  {who}  {e['size'] / 1e6:.1f} MB{flag}")
+        print(f"    {e['path']}")
+        if text:
+            print(f"    \"{text[:160]}{'…' if len(text) > 160 else ''}\"")
+
+
+def record(item_id, todo, manifest):
     import internetarchive as ia
-    item = ia.get_item(a.item)
+    files = {f["name"]: f for f in ia.get_item(item_id).files}
+    n = 0
     for e in todo:
-        local = os.path.join(IA_STAGING, e["path"])
-        remote = e["path"]
-        r = item.upload({remote: local}, metadata=METADATA if not item.exists else None,
+        f = files.get(e["path"])
+        if f and f.get("md5") == md5(os.path.join(IA_STAGING, e["path"])):
+            e["ia_url"] = f"https://archive.org/download/{item_id}/{e['path']}"
+            n += 1
+    save_manifest(manifest)
+    print(f"recorded ia_url for {n} of {len(todo)} pending files")
+
+
+def cmd_upload(item_id, todo, manifest):
+    import internetarchive as ia
+    item = ia.get_item(item_id)
+    for e in todo:
+        print(f"  uploading {e['path']} ({e['size'] / 1e6:.1f} MB)", flush=True)
+        r = item.upload({e["path"]: os.path.join(IA_STAGING, e["path"])},
+                        metadata=None if item.exists else METADATA,
                         verify=True, checksum=True, retries=5, retries_sleep=30)
         if any(x.status_code != 200 for x in r):
-            print(f"  failed: {remote}")
-            continue
-        item = ia.get_item(a.item)  # refresh file list
-        f = next((x for x in item.files if x["name"] == remote), None)
-        if f and f.get("md5") == md5(local):
-            e["ia_url"] = f"https://archive.org/download/{a.item}/{remote}"
-            save_manifest(manifest)
-            print(f"  ok: {remote}")
-        else:
-            print(f"  uploaded but not yet listed or md5 differs, will retry: {remote}")
-    print("done")
+            print(f"  failed: {e['path']}")
+        item = ia.get_item(item_id)
+    record(item_id, todo, manifest)   # IA may take a while to list new files; rerun `record` later
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("cmd", choices=["list", "upload", "record"])
+    p.add_argument("--item", default="arqueologiadigital-telegram-media")
+    p.add_argument("--only", help="comma-separated message ids")
+    a = p.parse_args()
+    only = {int(x) for x in a.only.split(",")} if a.only else set()
+    if a.cmd != "list":   # upload/record rewrite the manifest: never alongside the daily job
+        import fcntl
+        lock = open(os.path.join(CONF_DIR, "run.lock"), "w")
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            sys.exit("the daily sync (or a fetch) is running; try again when it finishes")
+    manifest = load_manifest()
+    todo = pending(manifest, only)
+    if a.cmd == "list":
+        cmd_list(todo)
+    elif not todo:
+        print("nothing pending")
+    elif a.cmd == "upload":
+        cmd_upload(a.item, todo, manifest)
+    else:
+        record(a.item, todo, manifest)
 
 
 if __name__ == "__main__":

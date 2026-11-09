@@ -13,9 +13,7 @@ export TMPDIR=/home/fsanches/compartilhado/tmp
 cd "$ROOT/Telegram_logs"
 SYNC=$("$PY" -u tools/tg_sync.py sync | tee /dev/stderr | tail -1)
 MEDIA=$("$PY" -u tools/tg_media.py fetch | tee /dev/stderr | tail -1)
-if [ -f "$HOME/.config/internetarchive/ia.ini" ]; then   # large files, once IA is configured
-  "$PY" -u tools/ia_upload.py
-fi
+# Large files stay in ../ia_staging: Felipe reviews and uploads them by hand (tools/ia_upload.py).
 python3 -I tools/check_redaction.py "$ROOT/Telegram_logs-2018-private"   # exits 1 on a leak
 
 DAY=$(date -u +%F)
