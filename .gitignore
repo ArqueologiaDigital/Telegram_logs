@@ -1,0 +1,7 @@
+# Telethon sessions and credentials never belong in a repo (they live in ~/.config/tg_arqueologia/)
+*.session
+*.session-journal
+config.json
+login_pending.json
+*.tmp
+__pycache__/
