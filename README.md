@@ -27,6 +27,8 @@ Only `tools/tg_sync.py` writes `messages/`, `users/`, `adminlog/` and `state/`.
 | `legacy/2018-telegram-cli/`             | the 2018 dump (ids 1..4703), phone numbers redacted, plus its media map               |
 | `tools/tg_sync.py`                      | login, sync, merge-legacy, stats                                                      |
 | `tools/import_legacy.py`                | rebuilds `legacy/` from the old private repo and checks that no phone number leaks    |
+| `tools/check_redaction.py`              | scans the repo for phone fields and known numbers; run before every push              |
+| `notes/`                                | measurements and the probe scripts that produced them                                 |
 
 ## Message records
 
@@ -77,6 +79,6 @@ daily to learn who deleted what.
 
 The 2018 logs were taken with `vysheng/telegram-cli` + `telegram-history-dump` into the
 original `ArqueologiaDigital/Telegram_logs`, which exposed members' phone numbers and is now
-private. This repo was started from scratch on 2026-11-09. `legacy/` is rebuilt from that repo by
-`python3 -I tools/import_legacy.py ../Telegram_logs-2018-private`: 4640 messages, 401 media
+private, as `ArqueologiaDigital/Telegram_logs_old_repo_now_private`. This repo was started from scratch on 2026-11-09. `legacy/` is rebuilt from that repo by
+`python3 -I tools/import_legacy.py ../Telegram_logs-2018-private` (a clone of that repo): 4640 messages, 401 media
 references, 11 distinct phone numbers removed, 0 found in the output by the built-in check.
