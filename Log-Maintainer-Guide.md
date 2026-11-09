@@ -188,15 +188,16 @@ A day without a `Daily sync` commit is normal if nobody posted, edited or delete
 
 ## Other commands
 
-| command                                                           | when                                                         |
-|-------------------------------------------------------------------|--------------------------------------------------------------|
-| `../.venv/bin/python tools/tg_sync.py sync`                       | a sync by hand (same as the daily one)                       |
-| `../.venv/bin/python tools/tg_sync.py sync --rescan-days 90`      | look further back for edits and deletions                    |
-| `../.venv/bin/python tools/tg_sync.py sync --full`                | re-scan the whole history (a few minutes; monthly is plenty) |
-| `../.venv/bin/python tools/tg_media.py fetch`                     | media by hand; resumable, rerun to retry failures            |
-| `../.venv/bin/python tools/tg_sync.py merge-legacy`               | after a `--full` sync: 2018-only messages and 2018 names     |
-| `python3 -I tools/import_legacy.py ../Telegram_logs-2018-private` | rebuild `legacy/` from the old private repo                  |
-| `python3 -I notes/probes/legacy_vs_new.py`                        | compare the 2018 dump with the current archive               |
+| command                                                           | when                                                             |
+|-------------------------------------------------------------------|------------------------------------------------------------------|
+| `../.venv/bin/python tools/tg_sync.py sync`                       | a sync by hand (same as the daily one)                           |
+| `../.venv/bin/python tools/tg_sync.py sync --rescan-days 90`      | look further back for edits and deletions                        |
+| `../.venv/bin/python tools/tg_sync.py sync --full`                | re-scan the whole history (a few minutes; monthly is plenty)     |
+| `../.venv/bin/python tools/tg_sync.py normalize`                  | after adding a field to `REDACT`: apply it to all stored records |
+| `../.venv/bin/python tools/tg_media.py fetch`                     | media by hand; resumable, rerun to retry failures                |
+| `../.venv/bin/python tools/tg_sync.py merge-legacy`               | after a `--full` sync: 2018-only messages and 2018 names         |
+| `python3 -I tools/import_legacy.py ../Telegram_logs-2018-private` | rebuild `legacy/` from the old private repo                      |
+| `python3 -I notes/probes/legacy_vs_new.py`                        | compare the 2018 dump with the current archive                   |
 
 After running any of these by hand, commit as usual (`git add -A && git commit`), in both repos
 if media changed.
