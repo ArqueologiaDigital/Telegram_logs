@@ -98,6 +98,7 @@ class Archive:
         self.months = {}   # "YYYY-MM" -> {id: record}
         self.dirty = set()
         self.where = {}    # id -> "YYYY-MM", for every month on disk
+        self.written = set()  # months written during this run, over all save() calls
 
         for root, _, files in os.walk(MSG_DIR):
             for fn in files:
@@ -138,9 +139,9 @@ class Archive:
         for ym in sorted(self.dirty):
             recs = self.months[ym]
             atomic_write(self._path(ym), "".join(dumps(recs[i]) + "\n" for i in sorted(recs)))
-        n = len(self.dirty)
+        self.written |= self.dirty
         self.dirty.clear()
-        return n
+        return len(self.written)
 
 
 def load_state():
