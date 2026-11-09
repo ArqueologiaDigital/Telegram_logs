@@ -66,6 +66,10 @@ should use the last non-empty entry of `names_seen`.
 
 ## Running it
 
+For the day-to-day routine (daily timer, weekly archive.org uploads, pushing, troubleshooting)
+see **[Log-Maintainer-Guide.md](Log-Maintainer-Guide.md)**.
+
+
 Secrets live outside every repo, in `~/.config/tg_arqueologia/` (mode 700):
 `config.json` = `{"api_id": ..., "api_hash": "..."}` from <https://my.telegram.org>, and the
 Telethon session, which grants **full access to the account**. Never commit either.
