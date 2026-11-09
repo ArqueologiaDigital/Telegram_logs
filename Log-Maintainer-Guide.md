@@ -44,7 +44,7 @@ reboot if a run was missed. It:
 1. `tools/tg_sync.py sync`: fetches new messages, re-scans the last 30 days for edits and
    deletions, and saves the admin log;
 2. `tools/tg_media.py fetch`: downloads new media (10 MB or less into `Telegram_logs_media`,
-   larger into `ia_staging`);
+   larger into `ia_staging`), then `tools/tg_avatars.py`: profile photos that changed;
 3. `tools/check_redaction.py`: stops the run if a phone number appears anywhere;
 4. commits in `Telegram_logs` and in `Telegram_logs_media`, if anything changed;
 5. `Telegram_logs_site/publish.sh`: rebuilds the website into the `gh-pages` branch of
@@ -224,6 +224,8 @@ A day without a `Daily sync` commit is normal if nobody posted, edited or delete
 | `../.venv/bin/python tools/tg_sync.py normalize`                              | after adding a field to `REDACT`: apply it to all stored records |
 | `../Telegram_logs_site/publish.sh`                                            | rebuild the site into gh-pages by hand (same as the daily run)   |
 | `SEARCH=1 ../Telegram_logs_site/publish.sh`                                   | same, and rebuild the search index now instead of on Sunday      |
+| `../.venv/bin/python tools/tg_avatars.py`                                     | profile photos by hand (same as the daily run)                   |
+| `touch ../Telegram_logs_site/topics/publish` (and commit it)                  | put the reviewed topic index pages on the site (topics/README)   |
 | `python3 -I ../Telegram_logs_site/build.py --out ../Telegram_logs_site/build` | local preview build (see the site README)                        |
 | `../.venv/bin/python tools/tg_media.py fetch`                                 | media by hand; resumable, rerun to retry failures                |
 | `../.venv/bin/python tools/tg_sync.py merge-legacy`                           | after a `--full` sync: 2018-only messages and 2018 names         |
