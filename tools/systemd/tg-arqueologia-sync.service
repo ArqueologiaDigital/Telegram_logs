@@ -6,3 +6,5 @@ After=network-online.target
 Type=oneshot
 ExecStart=/home/fsanches/compartilhado/Telegram_Arqueologia_Digital/Telegram_logs/tools/daily.sh
 Nice=10
+# scratch (the search indexer writes ~38k small files there briefly); /tmp is a small tmpfs
+Environment=TMPDIR=/home/fsanches/compartilhado/tmp

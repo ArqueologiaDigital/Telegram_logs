@@ -49,6 +49,8 @@ reboot if a run was missed. It:
 4. commits in `Telegram_logs` and in `Telegram_logs_media`, if anything changed;
 5. `Telegram_logs_site/publish.sh`: rebuilds the website into the `gh-pages` branch of
    `Telegram_logs_site` (after checking the 2018 page compatibility) and commits it if it changed.
+   On Sundays it also rebuilds the search index (`search.html`); other days keep the previous
+   one, because each rebuild adds ~3.6 MB to the `gh-pages` history (see the site README).
 
 **It must run at least once every 48 hours.** Telegram keeps the admin log for only ~48 h, and
 the admin log is the only source of *who* deleted or edited a message and *when* (and the only
@@ -176,6 +178,7 @@ A day without a `Daily sync` commit is normal if nobody posted, edited or delete
    git clone git@github.com:ArqueologiaDigital/Telegram_logs_old_repo_now_private.git Telegram_logs-2018-private
    python3 -m venv .venv
    .venv/bin/pip install telethon internetarchive      # tested with telethon 1.45.0
+   .venv/bin/pip install -r Telegram_logs_site/requirements.txt   # pagefind, for the site search
    .venv/bin/ia configure                              # your archive.org account
    ```
 
@@ -220,6 +223,7 @@ A day without a `Daily sync` commit is normal if nobody posted, edited or delete
 | `../.venv/bin/python tools/tg_sync.py sync --full`                            | re-scan the whole history (a few minutes; monthly is plenty)     |
 | `../.venv/bin/python tools/tg_sync.py normalize`                              | after adding a field to `REDACT`: apply it to all stored records |
 | `../Telegram_logs_site/publish.sh`                                            | rebuild the site into gh-pages by hand (same as the daily run)   |
+| `SEARCH=1 ../Telegram_logs_site/publish.sh`                                   | same, and rebuild the search index now instead of on Sunday      |
 | `python3 -I ../Telegram_logs_site/build.py --out ../Telegram_logs_site/build` | local preview build (see the site README)                        |
 | `../.venv/bin/python tools/tg_media.py fetch`                                 | media by hand; resumable, rerun to retry failures                |
 | `../.venv/bin/python tools/tg_sync.py merge-legacy`                           | after a `--full` sync: 2018-only messages and 2018 names         |
