@@ -14,6 +14,7 @@ All commands assume this directory layout (the scripts expect the repos side by 
 ├── Telegram_logs_site-gh-pages/   git worktree of the gh-pages branch (written by publish.sh)
 ├── ia_staging/                    larger files waiting for a manual archive.org upload (not in git)
 ├── Telegram_logs-2018-private/    clone of the old private repo (source of legacy/, redaction check)
+├── ArqueologiaDigital.github.io/  the main site arqueologiadigital.org (links to the log, 404 redirect)
 └── .venv/                         Python virtualenv with Telethon
 ```
 
@@ -144,6 +145,13 @@ all its project sites).
 
 (With HTTPS instead of SSH, use `https://github.com/ArqueologiaDigital/<repo>.git`.) The first
 media push is about 1 GB; GitHub accepts up to 2 GB per push.
+
+**Do not turn on GitHub Pages for `Telegram_logs`.** The 2018 site lived at
+`arqueologiadigital.org/Telegram_logs/`. The main site's repo (`ArqueologiaDigital.github.io`)
+has a `404.html` that forwards those old links to the same file under `/Telegram_logs_site/`.
+That only works while no repo named `Telegram_logs` serves Pages, because GitHub would then
+answer those paths itself. The "Log do Chat" link on the main site's front page points to the
+new site directly.
 
 ## Health checks
 
