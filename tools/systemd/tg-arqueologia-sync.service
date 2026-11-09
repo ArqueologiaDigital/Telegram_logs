@@ -1,0 +1,8 @@
+[Unit]
+Description=Archive @arqueologiadigital (text, admin log, media) into local git repos
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/fsanches/compartilhado/Telegram_Arqueologia_Digital/Telegram_logs/tools/daily.sh
+Nice=10

@@ -201,8 +201,20 @@ def save_users(users):
 
 # ---------------------------------------------------------------- telegram
 
+_LOCK = None
+
+
 def client():
+    """One Telethon client per session at a time: two processes on one session file corrupt it."""
+    global _LOCK
+    import fcntl
     from telethon import TelegramClient
+    if _LOCK is None:
+        _LOCK = open(os.path.join(CONF_DIR, "run.lock"), "w")
+        try:
+            fcntl.flock(_LOCK, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            sys.exit("another tg_sync/tg_media process is using the Telegram session; try later")
     conf = json.load(open(os.path.join(CONF_DIR, "config.json")))
     return TelegramClient(os.path.join(CONF_DIR, "arqueologia"), conf["api_id"], conf["api_hash"])
 
