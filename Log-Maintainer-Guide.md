@@ -117,7 +117,12 @@ Then push the three repos (data, media, site):
 git push origin main
 git -C ../Telegram_logs_media push origin main
 git -C ../Telegram_logs_site push origin main gh-pages
+git -C ../ArqueologiaDigital.github.io push origin master
 ```
+
+The daily job also commits the topic, community and project pages into the main site's repository
+(`ArqueologiaDigital.github.io`, directories `topicos/`, `comunidade/`, `projetos/`): they are served
+at the short addresses, and the site's own copies redirect to them, so push it together with the site.
 
 Push the media before the site: the site links to media files on `raw.githubusercontent.com`,
 which only exist once `Telegram_logs_media` is pushed.
