@@ -1,9 +1,9 @@
 {
-  "adminlog_last_id": 3488276784052,
+  "adminlog_last_id": 3494837946016,
   "chat": "arqueologiadigital",
   "chat_id": 1148437212,
   "last_id": 42277,
-  "last_sync": "2026-11-09T12:11:49Z",
+  "last_sync": "2026-11-10T06:06:21Z",
   "scans": [
     {
       "at": "2026-11-09T00:56:45Z",
@@ -54,6 +54,11 @@
       "at": "2026-11-09T12:11:40Z",
       "max_id": 42277,
       "min_id": 41315
+    },
+    {
+      "at": "2026-11-10T06:06:12Z",
+      "max_id": 42277,
+      "min_id": 41346
     }
   ],
   "title": "Arqueologia Digital e Preservação Histórica por meio da Emulação de Dispositivos Eletrônicos",
