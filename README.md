@@ -28,7 +28,7 @@ Only `tools/tg_sync.py` writes `messages/`, `users/`, `adminlog/` and `state/`.
 | `tools/tg_sync.py`                 | login, sync, merge-legacy, stats                                                                  |
 | `tools/import_legacy.py`           | rebuilds `legacy/` from the old private repo and checks that no phone number leaks                |
 | `tools/check_redaction.py`         | scans the repo for phone fields and known numbers; run before every push                          |
-| `media/manifest.jsonl`             | per message with media: file path or archive.org URL, size, sha256, how it was fetched            |
+| `media/manifest.jsonl`             | per message with media or a link-preview photo: path or archive.org URL, size, sha256, source     |
 | `tools/tg_media.py`                | pass 2: downloads media into `../Telegram_logs_media` or `../ia_staging`                          |
 | `tools/ia_upload.py`               | uploads `../ia_staging` to the archive.org item and records `ia_url`                              |
 | `tools/daily.sh`, `tools/systemd/` | daily run (sync, media, IA upload, redaction check, local commits; never pushes)                  |

@@ -10,11 +10,17 @@ Where files go:
   larger                               ../ia_staging/YYYY/YYYY-MM/<msgid>-<name>            (for the
                                        Internet Archive item; not in git; ia_url filled in on upload)
   2018 files                           ../Telegram_logs_media/legacy/2018-telegram-cli/<name>
+  link-preview photos                  ../Telegram_logs_media/YYYY/YYYY-MM/<msgid>-preview.jpg  (git)
+
+Link previews: when Telegram attached a photo to a message's link preview (YouTube, GitHub,
+articles...), `fetch` stores its version at most PREVIEW_MAX_W pixels wide (320x180 for YouTube,
+~16 KB) as kind "preview", with its "w"/"h". A YouTube link whose message has no preview photo
+(and no other media) gets https://i.ytimg.com/vi/<id>/mqdefault.jpg instead, "via": "ytimg".
 
 The manifest is media/manifest.jsonl in THIS repo, one line per message with media:
   {"msg_id", "kind", "expected_size", "size", "sha256", "store": "git"|"ia",
-   "path" (relative to the media repo or ia_staging), "ia_url"?, "via": "message"|"admin_log"|"legacy-copy",
-   "fetched_at"}
+   "path" (relative to the media repo or ia_staging), "ia_url"?,
+   "via": "message"|"admin_log"|"legacy-copy"|"ytimg", "fetched_at", "w"?, "h"? (previews), "source_url"? (ytimg)}
 So the text archive can verify media without carrying it.
 
 Deleted messages: their media can only be fetched through the admin-log event (~48 h), so
@@ -32,6 +38,8 @@ import os
 import re
 import shutil
 import sys
+import urllib.error
+import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tg_sync import CHAT, REPO, Archive, atomic_write, client, dumps, media_size, now  # noqa: E402
@@ -44,6 +52,8 @@ LEGACY_SRC = os.path.join(os.path.dirname(REPO), "Telegram_logs-2018-private", "
 LEGACY_MAP = os.path.join(REPO, "legacy", "2018-telegram-cli", "media_map.jsonl")
 LEGACY_DST = os.path.join(MEDIA_REPO, "legacy", "2018-telegram-cli")
 DOWNLOADABLE = {"photo", "document", "video", "audio", "sticker", "gif"}
+PREVIEW_MAX_W = 320
+YOUTUBE = re.compile(r"(?:youtube\.com/(?:watch\?(?:[^\s]*&)?v=|shorts/|embed/|live/)|youtu\.be/)([A-Za-z0-9_-]{11})")
 
 
 def sha256(path):
@@ -73,9 +83,35 @@ def safe(name):
     return (root[:100] + ext[:12]) or "file"
 
 
-def file_name(rec):
+def preview_size(sizes):
+    """The size of a link-preview photo to keep: the widest at most PREVIEW_MAX_W pixels wide,
+    else the narrowest. `sizes` are raw dicts or Telethon objects; None if there is no real size."""
+    get = (lambda x, k: x.get(k)) if sizes and isinstance(sizes[0], dict) else (lambda x, k: getattr(x, k, None))
+    real = [x for x in sizes or [] if get(x, "w") and get(x, "type") not in ("i", "j")]
+    small = [x for x in real if get(x, "w") <= PREVIEW_MAX_W]
+    if small:
+        return max(small, key=lambda x: get(x, "w"))
+    return min(real, key=lambda x: get(x, "w")) if real else None
+
+
+def size_bytes(x):
+    get = x.get if isinstance(x, dict) else (lambda k: getattr(x, k, None))
+    return get("size") or max(get("sizes") or [0])
+
+
+def youtube_id(raw):
+    """First YouTube video id linked from a message (text, text links or preview URL), or None."""
+    urls = [raw.get("message") or ""] + [e.get("url") or "" for e in raw.get("entities") or []]
+    urls.append(((raw.get("media") or {}).get("webpage") or {}).get("url") or "")
+    m = YOUTUBE.search(" ".join(urls))
+    return m.group(1) if m else None
+
+
+def file_name(rec, kind=None):
     media = rec["raw"]["media"]
     mid = rec["id"]
+    if kind == "preview":
+        return f"{mid}-preview.jpg"
     if media.get("_") == "MessageMediaPhoto":
         return f"{mid}.jpg"
     doc = media["document"]
@@ -94,15 +130,39 @@ def wanted(archive):
     out = []
     for ym in sorted(set(archive.where.values())):
         for rec in archive.month(ym).values():
-            kind, size = media_size((rec.get("raw") or {}).get("media"))
+            media = (rec.get("raw") or {}).get("media")
+            kind, size = media_size(media)
             if kind in DOWNLOADABLE:
                 out.append((rec, kind, size))
+            elif kind == "webpage":
+                photo = (media.get("webpage") or {}).get("photo") or {}
+                best = preview_size(photo.get("sizes"))
+                if best:
+                    out.append((rec, "preview", size_bytes(best)))
     return out
 
 
-def destination(rec, store):
+def youtube_fallbacks(archive, manifest):
+    """(record, video id) for messages linking to YouTube that have neither a preview photo
+    nor any other media (the manifest has one entry per message)."""
+    out = []
+    for ym in sorted(set(archive.where.values())):
+        for rec in archive.month(ym).values():
+            raw = rec.get("raw") or {}
+            media = raw.get("media")
+            if rec["id"] in manifest or (media and media.get("_") != "MessageMediaWebPage"):
+                continue
+            if ((media or {}).get("webpage") or {}).get("photo"):
+                continue          # Telegram has a photo: the Telegram pass fetches it
+            vid = youtube_id(raw)
+            if vid:
+                out.append((rec, vid))
+    return out
+
+
+def destination(rec, store, kind=None):
     ym = rec["date"][:7]
-    rel = os.path.join(ym[:4], ym, file_name(rec))
+    rel = os.path.join(ym[:4], ym, file_name(rec, kind))
     return rel, os.path.join(MEDIA_REPO if store == "git" else IA_STAGING, rel)
 
 
@@ -149,10 +209,10 @@ async def cmd_fetch(a):
             live = {m.id: m for m in await c.get_messages(entity, ids=live_ids) if m} if live_ids else {}
             for rec, kind, size in batch:
                 store = "git" if size <= a.max_bytes else "ia"
-                rel, path = destination(rec, store)
+                rel, path = destination(rec, store, kind)
                 os.makedirs(os.path.dirname(path), exist_ok=True)
                 entry = {"msg_id": rec["id"], "kind": kind, "expected_size": size, "store": store, "path": rel}
-                leg = legacy.get(rec["id"])
+                leg = legacy.get(rec["id"]) if kind != "preview" else None
                 if leg and leg.get("size") == size:
                     shutil.copy2(os.path.join(LEGACY_SRC, leg["file"]), path)
                     entry["via"] = "legacy-copy"
@@ -163,8 +223,18 @@ async def cmd_fetch(a):
                         failed += 1
                         continue
                     part = path + ".part"
+                    target, thumb = msg, None
+                    if kind == "preview":
+                        target = getattr(getattr(msg.media, "webpage", None), "photo", None)
+                        thumb = preview_size(getattr(target, "sizes", None))
+                        if thumb is None:
+                            print(f"  unavailable: msg {rec['id']} (preview photo gone)", flush=True)
+                            failed += 1
+                            continue
+                        entry.update(w=thumb.w, h=thumb.h)
                     try:
-                        await c.download_media(msg, file=part)
+                        if await c.download_media(target, file=part, thumb=thumb) is None:
+                            raise RuntimeError("nothing downloaded")
                     except Exception as ex:  # noqa: BLE001 - log and move on; rerun retries
                         print(f"  failed: msg {rec['id']}: {type(ex).__name__}: {ex}", flush=True)
                         failed += 1
@@ -176,7 +246,41 @@ async def cmd_fetch(a):
                 done += 1
             save_manifest(manifest)
             print(f"  {done} fetched, {failed} failed ({i + len(batch)}/{len(todo)})", flush=True)
-    print(f"done: fetched {done}, failed {failed}")
+    yt_done, yt_failed = fetch_youtube(archive, manifest, a.limit)
+    print(f"done: fetched {done}, failed {failed}; YouTube thumbnails from ytimg: {yt_done}, unavailable {yt_failed}")
+
+
+def fetch_youtube(archive, manifest, limit=None):
+    """The ytimg fallback for YouTube links without a Telegram preview photo. No Telegram session."""
+    todo = youtube_fallbacks(archive, manifest)[:limit] if limit else youtube_fallbacks(archive, manifest)
+    done = failed = 0
+    for rec, vid in todo:
+        url = f"https://i.ytimg.com/vi/{vid}/mqdefault.jpg"
+        rel, path = destination(rec, "git", "preview")
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (archive thumbnail fetcher)"})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = r.read()
+        except (urllib.error.URLError, TimeoutError) as ex:   # 404: video removed; rerun retries
+            print(f"  ytimg unavailable: msg {rec['id']} {vid}: {ex}", flush=True)
+            failed += 1
+            continue
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        atomic_bytes(path, body)
+        manifest[rec["id"]] = {"msg_id": rec["id"], "kind": "preview", "expected_size": len(body),
+                               "store": "git", "path": rel, "via": "ytimg", "source_url": url,
+                               "w": 320, "h": 180, "size": len(body), "sha256": sha256(path),
+                               "fetched_at": now()}
+        done += 1
+    if todo:
+        save_manifest(manifest)
+    return done, failed
+
+
+def atomic_bytes(path, body):
+    with open(path + ".part", "wb") as f:
+        f.write(body)
+    os.replace(path + ".part", path)
 
 
 def main():
