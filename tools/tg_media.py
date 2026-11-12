@@ -233,7 +233,9 @@ async def cmd_fetch(a):
                             continue
                         entry.update(w=thumb.w, h=thumb.h)
                     try:
-                        if await c.download_media(target, file=part, thumb=thumb) is None:
+                        # by type letter: Telethon ignores a PhotoSizeProgressive object as thumb
+                        letter = thumb.type if thumb is not None else None
+                        if await c.download_media(target, file=part, thumb=letter) is None:
                             raise RuntimeError("nothing downloaded")
                     except Exception as ex:  # noqa: BLE001 - log and move on; rerun retries
                         print(f"  failed: msg {rec['id']}: {type(ex).__name__}: {ex}", flush=True)
