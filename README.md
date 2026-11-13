@@ -22,10 +22,11 @@ Only `tools/tg_sync.py` writes `messages/`, `users/`, `adminlog/` and `state/`.
 |------------------------------------|---------------------------------------------------------------------------------------------------|
 | `messages/YYYY/YYYY-MM.jsonl`      | one message per line, UTC month, sorted by message id                                             |
 | `users/users.jsonl`                | senders: id, names and usernames over time (`names_seen`, incl. 2018 names); **no phone numbers** |
+| `users/dropped_reactors.json`      | users whose reactions are not archived (banned); `tg_sync.py` drops them, `normalize` reapplies   |
 | `adminlog/YYYY/YYYY-MM.jsonl`      | raw admin-log events (Telegram keeps only ~48 h, so every sync saves them)                        |
 | `state/sync_state.json`            | last message id and the list of scans (used to date deletions)                                    |
 | `legacy/2018-telegram-cli/`        | the 2018 dump (ids 1..4703), phone numbers redacted, plus its media map                           |
-| `tools/tg_sync.py`                 | login, sync, merge-legacy, stats                                                                  |
+| `tools/tg_sync.py`                 | login, sync, merge-legacy, stats, normalize                                                       |
 | `tools/import_legacy.py`           | rebuilds `legacy/` from the old private repo and checks that no phone number leaks                |
 | `tools/check_redaction.py`         | scans the repo for phone fields and known numbers; run before every push                          |
 | `media/manifest.jsonl`             | per message with media or a link-preview photo: path or archive.org URL, size, sha256, source     |

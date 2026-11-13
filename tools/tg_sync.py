@@ -12,7 +12,8 @@ Subcommands (run from the repo root, with the venv one level up):
   merge-legacy              add 2018-only messages (ids 1..4703 deleted since) as records
                             with deletion metadata; needs a --full sync first
   stats                     message counts and the media bill (what pass 2 would download)
-  normalize                 apply the REDACT list to all stored records (run after changing it)
+  normalize                 apply the REDACT list and users/dropped_reactors.json to all stored
+                            records (run after changing either)
 
 Secrets live outside every repo, in ~/.config/tg_arqueologia/ (mode 700):
   config.json   {"api_id": 123, "api_hash": "..."}   from https://my.telegram.org
@@ -47,6 +48,8 @@ ADMINLOG_DIR = os.path.join(REPO, "adminlog")
 USERS = os.path.join(REPO, "users", "users.jsonl")
 LEGACY = os.path.join(REPO, "legacy", "2018-telegram-cli", "messages.jsonl")
 LEGACY_LAST_SYNC = "2018-05-08T03:53:10Z"  # progress.json "last_modified" of the 2018 dump
+# Users whose reactions are not archived (e.g. banned spammers), {"<user id>": {"since", "reason"}}.
+DROPPED_REACTORS = os.path.join(REPO, "users", "dropped_reactors.json")
 
 # Keys removed from every raw record, at any depth. phone/phone_number: members' numbers and
 # shared contact cards. file_reference/access_hash: expiring credentials, useless in an archive.
@@ -75,6 +78,42 @@ def clean(obj):
     if isinstance(obj, bytes):
         return {"_b64": base64.b64encode(obj).decode()}
     return obj
+
+
+_DROPPED = None
+
+
+def drop_reactors(raw):
+    """Remove the reactions of the users in DROPPED_REACTORS from a raw message, in place.
+
+    Only reactions Telegram attributes (recent_reactions) can be removed: each one found is taken
+    out of that list and its emoji's count lowered; an emoji left at 0 goes, and a message left
+    with no reactions gets reactions = None, as if it never had any. Returns how many were removed.
+    """
+    global _DROPPED
+    if _DROPPED is None:
+        try:
+            with open(DROPPED_REACTORS, encoding="utf-8") as f:
+                _DROPPED = {int(k) for k in json.load(f)}
+        except FileNotFoundError:
+            _DROPPED = set()
+    rx = (raw or {}).get("reactions")
+    if not _DROPPED or not rx:
+        return 0
+    gone = [p for p in rx.get("recent_reactions") or []
+            if (p.get("peer_id") or {}).get("user_id") in _DROPPED]
+    if not gone:
+        return 0
+    rx["recent_reactions"] = [p for p in rx["recent_reactions"] if p not in gone]
+    for p in gone:
+        for res in rx.get("results") or []:
+            if res.get("reaction") == p.get("reaction"):
+                res["count"] = max(0, res.get("count", 0) - 1)
+                break
+    rx["results"] = [res for res in rx.get("results") or [] if res.get("count", 0) > 0]
+    if not rx["results"]:
+        raw["reactions"] = None
+    return len(gone)
 
 
 def atomic_write(path, text):
@@ -255,6 +294,7 @@ async def cmd_login(a):
 
 def make_record(msg, arch_prev=None):
     raw = clean(msg.to_dict())
+    drop_reactors(raw)
     rec = {"id": msg.id, "date": iso(msg.date), "raw": raw,
            "archive": {"first_fetched": now(), "source": "telegram"}}
     if arch_prev:
@@ -425,9 +465,10 @@ def cmd_merge_legacy(a):
 
 
 def cmd_normalize(a):
-    """Apply REDACT to everything already stored (records that are never re-fetched, such as
-    deleted messages and admin-log events, keep old fields otherwise). Run after changing REDACT."""
-    n = 0
+    """Apply REDACT and DROPPED_REACTORS to everything already stored (records that are never
+    re-fetched, such as deleted messages and admin-log events, keep old fields otherwise). Run after
+    changing either."""
+    n = dropped = 0
     for d in (MSG_DIR, ADMINLOG_DIR):
         for root, _, files in os.walk(d):
             for fn in sorted(files):
@@ -435,11 +476,15 @@ def cmd_normalize(a):
                     continue
                 path = os.path.join(root, fn)
                 text = open(path, encoding="utf-8").read()
-                new = "".join(dumps(clean(json.loads(line))) + "\n" for line in text.splitlines())
+                recs = [clean(json.loads(line)) for line in text.splitlines()]
+                for rec in recs:
+                    if isinstance(rec.get("raw"), dict):
+                        dropped += drop_reactors(rec["raw"])
+                new = "".join(dumps(rec) + "\n" for rec in recs)
                 if new != text:
                     atomic_write(path, new)
                     n += 1
-    print(f"files rewritten: {n}")
+    print(f"files rewritten: {n}; reactions dropped: {dropped}")
 
 
 def media_size(media):
